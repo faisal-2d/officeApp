@@ -4,7 +4,8 @@ import logo from '../assets/blackLogo-01.png'
 
 const Header = () => {
     const menu = <>
-    <li><Link to="/">Courses</Link></li>        
+    <li><Link to="/courses">কোর্স সমূহ</Link></li>        
+    <li><Link to="/schedule">ক্লাসের সময়</Link></li>    
     <li><Link to="/">Prizes</Link></li>    
     <li><Link to="/">About</Link></li>        
     </>
@@ -27,7 +28,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to="/" className="btn btn-ghost text-red-500">Registration</Link>
+    <Link to="/" className="btn btn-ghost text-red-500">রেজিস্ট্রেশন</Link>
   </div>
 </div>       
     );
