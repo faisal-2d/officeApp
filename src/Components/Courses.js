@@ -5,8 +5,7 @@ import CourseCard from "./CourseCard";
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    axios.get("CourseList.json").then((data) => setCourses(data.data));
-    console.log(courses);
+    axios.get("CourseList.json").then((data) => setCourses(data.data));    
   }, []);
   return (
     <div className="container mx-auto my-10">

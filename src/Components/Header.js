@@ -4,10 +4,12 @@ import logo from '../assets/blackLogo-01.png'
 
 const Header = () => {
     const menu = <>
+    <li><Link to="/">হোম</Link></li>        
     <li><Link to="/courses">কোর্স সমূহ</Link></li>        
     <li><Link to="/schedule">ক্লাসের সময়</Link></li>    
-    <li><Link to="/">Prizes</Link></li>    
-    <li><Link to="/">About</Link></li>        
+    <li><Link to="/noticeboard">নোটিশ বোর্ড</Link></li>    
+    <li><Link to="/about-us">আমাদের সম্পর্কে</Link></li>        
+    <li><Link to="/registration" className="btn btn-ghost text-red-500">রেজিস্ট্রেশন</Link></li>        
     </>
     return (  
             <div className="container mx-auto navbar bg-base-100">
@@ -28,7 +30,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to="/" className="btn btn-ghost text-red-500">রেজিস্ট্রেশন</Link>
+  <Link to="/about-us">লগ ইন</Link>
   </div>
 </div>       
     );

@@ -16,8 +16,8 @@ const ArabicSchedule = () => {
             <tr>
               <th></th>
               <th className="text-xl">বার</th>
-              <th className="text-xl">মেয়েদের ক্লাসের সময়</th>
-              <th className="text-xl">ছেলেদের ক্লাসের সময়</th>
+              <th className="text-xl">মেয়েদের ক্লাস</th>
+              <th className="text-xl">ছেলেদের ক্লাস</th>
             </tr>
           </thead>
           <tbody>
