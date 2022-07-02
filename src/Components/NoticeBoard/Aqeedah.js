@@ -11,7 +11,7 @@ const Aqeedah = () => {
         <div className="card-body">
           <h2 className="card-title">ব্যাচ ১৬</h2>
           <p>ক্লাস শুরুঃ মে'২২</p>
-          <p>মোট শিক্ষার্থীঃ ৩০০ জন</p>
+          <p>মোট শিক্ষার্থীঃ ২৬২ জন</p>
           <div className="card-actions justify-end">
           <Link to='/aqeedah-homepage'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
           </div>

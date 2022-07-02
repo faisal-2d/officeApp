@@ -30,7 +30,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <Link to="/about-us">লগ ইন</Link>
+  <Link to="/login">লগ ইন</Link>
   </div>
 </div>       
     );

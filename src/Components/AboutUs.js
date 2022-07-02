@@ -5,7 +5,7 @@ const AboutUs = () => {
     <div>
       <p className="text-center text-2xl">আমাদের সম্পর্কে জানতে আগ্রহী হওয়ার জন্য ধন্যবাদ</p>
       <div className="my-5 w-4/5 mx-auto">
-      <div tabindex="0"className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+      <div tabIndex="0"className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
         <div className="collapse-title text-xl font-medium">
           এই প্রতিষ্ঠানটি কাদের দ্বারা পরিচালিত?
         </div>
@@ -14,7 +14,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div tabindex="0"className="my-2 collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+      <div tabIndex="0"className="my-2 collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
         <div className="collapse-title text-xl font-medium">
           এই কোর্সগুলো কি যে কেউ করতে পারবে?
         </div>
