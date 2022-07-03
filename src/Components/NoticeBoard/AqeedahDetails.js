@@ -5,6 +5,7 @@ import femaleProfile from '../../assets/female-profile.png'
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from 'recharts';
 import { useParams } from 'react-router-dom';
 import Loading from "../Loading/Loading";
+import UpdateResult from "./UpdateResult";
 
 const AqeedahDetails = () => {
     const [student, setStudent] = useState();
@@ -17,22 +18,7 @@ useEffect(()=> {
     if(!student){
         return <Loading></Loading>
     }
-    const data = [
-        {
-          "name": "Exm 1",
-          "Score": 90,
-          "ResultBook": "www.google.com"          
-        },
-        {
-          "name": "Exm 2",
-          "Score": 50          
-        },
-        {
-          "name": "Exm 3",
-          "Score": 60          
-        }        
-      ]
-
+    const data = student.aqeedah1data;
      
     return (
         <div className='container mx-auto'>
@@ -77,25 +63,24 @@ useEffect(()=> {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 <div className=' text-center p-5 rounded bg-yellow-200'>
                     <p className='text-2xl'>১ম সেমিস্টার পরীক্ষা</p>
-                    <p className='text-4xl'>90</p>
-                    <button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button>
+                    <p className='text-4xl'>{student.aqeedah1data[0].Score}</p>
+                    {student.aqeedah1data[0].resultBook && <a target='_blank' href={student.aqeedah1data[0].resultBook}><button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button></a>}
                 </div>
             
 
             
-                <div className=' text-center p-5 rounded bg-yellow-200'>
+                {/* <div className=' text-center p-5 rounded bg-yellow-200'>
                     <p className='text-2xl'>২য় সেমিস্টার পরীক্ষা</p>
-                    <p className='text-4xl'>50</p>
+                    <p className='text-4xl'>{student.aqeedah1data[1].Score}</p>
                     <button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button>
                 </div>
             
                 <div className=' text-center p-5 rounded bg-yellow-200'>
                     <p className='text-2xl'>৩য় সেমিস্টার পরীক্ষা</p>
-                    <p className='text-4xl'>60</p>
+                    <p className='text-4xl'>{student.aqeedah1data[2].Score}</p>
                     <button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button>
-                </div>            
+                </div>             */}
             </div>
-
 
         </div>
     );
