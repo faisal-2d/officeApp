@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import AqeedahRow from "./AqeedahRow";
 
 const AqeedahResultPage = () => {
   const [students, setStudents] = useState();
-  // const [result, setResult] = useState();
 
   useEffect(()=> {
     axios.get(`https://flannel-loonie-61461.herokuapp.com/students`)
@@ -26,16 +24,8 @@ const searchByName = e => {
     .then(data => setStudents(data.data))
 }
 
-// // update result 
-// const updateLevel_1 = () => {
-//   axios.get('Aqeedah16Exm1.json')
-// .then(data => setResult(data.data))
-// }
-
-
   return (
     <div>
-      {/* <button className="btn" onClick={updateLevel_1}>Update</button> */}
       <p className="text-center text-2xl">আক্বিদাহ কোর্সে স্বাগতম!</p>
 
       <form onSubmit={searchByName} >
@@ -65,7 +55,6 @@ const searchByName = e => {
       {students?.map(student => <AqeedahRow
       key={student.sn}
       student={student}
-      // result={result}
       ></AqeedahRow> ) }     
 
       

@@ -50,11 +50,7 @@ useEffect(()=> {
 
             <div className='p-5 rounded bg-green-200 order-2'>
             <p className='text-xl'>Batch: 16</p>
-            <p className='text-xl'>Course: Aqeedah - Level 1</p>
-            {/* <div className='flex items-center'>
-            <p className='text-xl'>Course Fee:</p>
-            <p className='rounded py-0.5 px-3 font-bold bg-green-500 hover-none outline-none ml-3'>PAID</p>
-            </div> */}
+            <p className='text-xl'>Course: Aqeedah - Level 1</p>            
             </div>
             
             </div>
@@ -66,20 +62,7 @@ useEffect(()=> {
                     <p className='text-4xl'>{student.aqeedah1data[0].Score}</p>
                     {student.aqeedah1data[0].resultBook && <a target='_blank' href={student.aqeedah1data[0].resultBook}><button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button></a>}
                 </div>
-            
-
-            
-                {/* <div className=' text-center p-5 rounded bg-yellow-200'>
-                    <p className='text-2xl'>২য় সেমিস্টার পরীক্ষা</p>
-                    <p className='text-4xl'>{student.aqeedah1data[1].Score}</p>
-                    <button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button>
-                </div>
-            
-                <div className=' text-center p-5 rounded bg-yellow-200'>
-                    <p className='text-2xl'>৩য় সেমিস্টার পরীক্ষা</p>
-                    <p className='text-4xl'>{student.aqeedah1data[2].Score}</p>
-                    <button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button>
-                </div>             */}
+                
             </div>
 
         </div>

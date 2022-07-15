@@ -10,33 +10,7 @@ const AqeedahRow = ({student, result}) => {
         navigate(`aqeedah-16/${student?.sn}`);
     }
 
-    /*
-    start
-   */
-
-  //  result?.map(singleResult => {
-  //    if(student?.sn === singleResult.sn){
-
-  //     const levelOne = {
-  //       "name" : "Exm 1",
-  //       "Score" : singleResult.score,
-  //       "resultBook" : singleResult.drive
-  //     } 
-  //   const update = () => {     
-  //     axios.put(`http://localhost:5000/levelOne/${student?.sn}`, levelOne)
-  //     .then(data => console.log(data.data))
-  //   }
-  //   // update();
-
-  //    }
-  //  } )
-
-
-    /*
-    end
-    */
-
-
+  
    
     if(!student){
   return <Loading></Loading>
