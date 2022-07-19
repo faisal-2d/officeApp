@@ -15,7 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <div className='bg-sky-100 p-16 rounded text-white my-10'>
                 <div className='mb-10'>
-                <p className='text-center text-sky-900 font-bold text-3xl mb-4'>আক্বিদাহ কোর্সের পরবর্তী ব্যাচে (১৭) রেজিস্ট্রেশন</p>
+                <p className='text-center text-sky-900 font-bold text-3xl mb-4'>আক্বিদাহ কোর্সের ১৭তম ব্যাচে ভর্তি চলছে!</p>
                 <p className='text-center text-black text-2xl'>কিভাবে ভর্তি হবেন? <Link to='registration' className='underline'>বিস্তারিত জানুন</Link></p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 text-black font-bold text-2xl'>

@@ -1,28 +1,36 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import AqeedahRow from "./AqeedahRow";
+import { useQuery } from 'react-query'
 
 const AqeedahResultPage = () => {
-  const [students, setStudents] = useState();
 
-  useEffect(()=> {
-    axios.get(`https://flannel-loonie-61461.herokuapp.com/students`)
-    .then(data => setStudents(data.data))
-  },[]);
+  const params = useParams();
+  let searchName = '';
+  const getStudentList = async (searchName) => {
+    const {data} = await axios.get(`http://localhost:5000/students_${params.batch}/${searchName}`)
+    return data;
+  }
 
+  const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
+ 
+ 
 
-if(!students){
+if(isLoading || isFetching){
   return <Loading></Loading>
 }
 
+
 const searchByName = e => {
   e.preventDefault();
-  const name = e.target.name.value;
-  axios.get(`https://flannel-loonie-61461.herokuapp.com/students/${name}`)
-    .then(data => setStudents(data.data))
+  const name = e.target.name.value;  
+  searchName = name;
+  refetch()
 }
+ 
 
   return (
     <div>

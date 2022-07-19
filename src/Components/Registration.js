@@ -9,7 +9,7 @@ const Registration = () => {
             <ul className="steps steps-vertical">
                 <li className="step step-primary">১০০০ টাকা সেন্ডমানি করুন</li>
                 <li className="step step-primary">ভর্তি ফর্ম পূরন করুন</li>
-                <li className="step step-primary">গ্রুপে জয়েন করুন</li>
+                <li className="step step-primary">হোয়াটসঅ্যাপ গ্রুপে জয়েন করুন</li>
             </ul>
             </div>
             <div className='text-center my-5'>

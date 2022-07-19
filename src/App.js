@@ -24,7 +24,7 @@ function App() {
         <Route path='courses' element={<Courses/>}></Route>
         <Route path='noticeboard' element={<NoticeBoard/>}></Route>
         <Route path='aqeedah' element={<Aqeedah/>}></Route>
-        <Route path='aqeedah-homepage' element={<AqeedahResultPage/>}></Route>
+        <Route path='aqeedah-:batch' element={<AqeedahResultPage/>}></Route>
         <Route path='aqeedah-homepage/aqeedah-16/:sn' element={<AqeedahDetails/>}></Route>
         <Route path='about-us' element={<AboutUs/>}></Route>
         <Route path='schedule' element={<Schedule></Schedule>}></Route>
