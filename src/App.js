@@ -10,10 +10,11 @@ import Schedule from './Components/Schedule/Schedule';
 import Messenger from './Components/Messenger';
 import AboutUs from './Components/AboutUs';
 import NoticeBoard from './Components/NoticeBoard/NoticeBoard';
-import Aqeedah from './Components/NoticeBoard/Aqeedah';
-import AqeedahResultPage from './Components/NoticeBoard/AqeedahResultPage';
-import AqeedahDetails from './Components/NoticeBoard/AqeedahDetails';
 import Login from './Components/Login/Login';
+import Aqeedah from './Components/NoticeBoard/Aqeedah/Aqeedah';
+import AqeedahResultPage from './Components/NoticeBoard/Aqeedah/AqeedahResultPage';
+import AqeedahDetails from './Components/NoticeBoard/Aqeedah/AqeedahDetails';
+import MeritList from './Components/NoticeBoard/Aqeedah/MeritList';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route path='noticeboard' element={<NoticeBoard/>}></Route>
         <Route path='aqeedah' element={<Aqeedah/>}></Route>
         <Route path='aqeedah-:batch' element={<AqeedahResultPage/>}></Route>
-        <Route path='aqeedah-homepage/aqeedah-16/:sn' element={<AqeedahDetails/>}></Route>
+        <Route path='aqeedah-:batch/:sn' element={<AqeedahDetails/>}></Route>
+        <Route path='meritlist-aqeedah-:batch' element={<MeritList/>}></Route>
         <Route path='about-us' element={<AboutUs/>}></Route>
         <Route path='schedule' element={<Schedule></Schedule>}></Route>
         <Route path='registration' element={<Registration/>}></Route>

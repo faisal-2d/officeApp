@@ -9,7 +9,8 @@ const Aqeedah = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-10">
 
       {
-        batchList.map(batch => <div className="card w-96 bg-base-100 shadow-xl">
+        batchList.map((batch, index) => <div className="card w-96 bg-base-100 shadow-xl"
+        key={index}>
         <div className="card-body mx-auto">
           <h2 className="text-center text-3xl">ব্যাচ {batch}</h2>          
           <div className="card-actions">

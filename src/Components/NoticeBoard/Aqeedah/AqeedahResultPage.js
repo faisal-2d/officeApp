@@ -2,16 +2,17 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../Loading/Loading";
+import Loading from "../../Loading/Loading";
 import AqeedahRow from "./AqeedahRow";
 import { useQuery } from 'react-query'
 
 const AqeedahResultPage = () => {
 
   const params = useParams();
-  let searchName = '';
+  let searchName = 'a';
   const getStudentList = async (searchName) => {
-    const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/students_${params.batch}/${searchName}`)
+    const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/aqeedah/${params.batch}/${searchName}`)
+    // http://localhost:5000
     return data;
   }
 
@@ -22,19 +23,22 @@ if(isLoading){
   return <Loading></Loading>
 }
 
+if(students?.length === 0){
+  return <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
+}
+
 
 const searchByName = e => {
   e.preventDefault();
   const name = e.target.name.value;  
   searchName = name;
   refetch();
-  // e.target.reset();
 }
- 
+
 
   return (
     <div>
-      <p className="text-center text-2xl">আক্বিদাহ কোর্সে স্বাগতম!</p>
+      <p className="text-center text-2xl">আক্বিদাহ কোর্সের {params.batch} তম ব্যাচে স্বাগতম!</p>
 
       <form onSubmit={searchByName} >
       <div className="form-control my-10">
@@ -68,6 +72,7 @@ const searchByName = e => {
       {students?.map(student => <AqeedahRow
       key={student.sn}
       student={student}
+      batch={params.batch}
       ></AqeedahRow> ) }     
 
       
