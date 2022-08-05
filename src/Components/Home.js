@@ -19,10 +19,10 @@ const Home = () => {
                 <p className='text-center text-black text-2xl'>কিভাবে ভর্তি হবেন? <Link to='registration' className='underline'>বিস্তারিত জানুন</Link></p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 text-black font-bold text-2xl'>
-                    <p className='p-3 bg-green-300 rounded'>ভর্তি শুরু হয়েছে (১৫ জুলাই)</p>
-                    <p className='p-3 bg-orange-300 rounded'>ভর্তি শেষ হবে ১০ আগস্ট</p>
-                    <p className='p-3 bg-blue-300 rounded'>ব্যাচের অরিয়েন্টেশন ১২ আগস্ট</p>
-                    <p className='p-3 bg-red-300 rounded'>ক্লাস শুরু হবে ১৫ আগস্ট</p>
+                    <p className='p-3 bg-green-300 rounded'>ভর্তি শুরু হয়েছে</p>
+                    <p className='p-3 bg-orange-300 rounded'>ভর্তি শেষ হবে ২০ আগস্ট</p>
+                    <p className='p-3 bg-blue-300 rounded'>ব্যাচের অরিয়েন্টেশন ২২ আগস্ট</p>
+                    <p className='p-3 bg-red-300 rounded'>ক্লাস শুরু হবে ২৫ আগস্ট</p>
                 </div>
             </div>
             

@@ -5,9 +5,19 @@ import femaleProfile from '../../../assets/female-profile.png'
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from 'recharts';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Loading from "../../Loading/Loading";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const AqeedahDetails = () => {
+
+
+
+const AqeedahDetails = () => {    
     const [student, setStudent] = useState();
+    const [user, loading, error] = useAuthState(auth);
+    const [admin] = useAdmin(user);
+
     const sn = useParams();
     const location = useLocation();
     const nevigate = useNavigate();   
@@ -20,6 +30,12 @@ useEffect(()=> {
 
     if(!student){
         return <Loading></Loading>
+    }
+
+    const myData = {}
+    const updatedata = () => {
+        axios.put(`https://flannel-loonie-61461.herokuapp.com/level3total/${sn.sn}`, myData)
+    .then(data => console.log(data.data))
     }
         
     return (
@@ -34,7 +50,7 @@ useEffect(()=> {
                     <p className=''>SN <strong>{sn.sn}</strong></p>
                     <p className='text-3xl'><strong>{student.name.toUpperCase()}</strong></p>                                   
                     <p className='text-xl'>{student.gender==="female" ? "BINTE" : "BIN"} <strong>{student.fatherName.toUpperCase()}</strong></p>
-                    <p className=''>Phone <strong>{student.phone}</strong></p>
+                    <p className=''><FontAwesomeIcon icon="fa-solid fa-phone" /> <strong>{student.phone}</strong></p>
                     
                 </div>
             </div>
@@ -71,6 +87,9 @@ useEffect(()=> {
             {student.aqeedah1data && <span> Level 1</span>}
             {student.aqeedah3data && <span> Level 2 + 3</span>}
             </p>
+            {student.aqeedah1payment && <div>
+                <p className='text-xl'>Payment: <span className="uppercase font-bold">{student.aqeedah1payment}</span></p>
+                </div>}
             <br />
             {student.aqeedah3data && <Link className="p-1 rounded bg-green-300" to={'/meritlist-aqeedah-'+location.state.batch}>Merit List</Link>}            
             </div>
@@ -81,11 +100,14 @@ useEffect(()=> {
             {/* Level 1 */}
             <p className="text-2xl mt-12 mb-5">আপনার পরীক্ষার রেজাল্টসমূহ</p>
             { student.aqeedah1data && <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                <div className=' text-center p-5 rounded bg-yellow-200'>
-                    <p className='text-2xl'>১ম সেমিস্টার পরীক্ষা</p>
-                    <p className='text-4xl'>{student.aqeedah1data[0].Score}</p>
-                    {student.aqeedah1data[0].resultBook && <a target='_blank' href={student.aqeedah1data[0].resultBook}><button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button></a>}
-                </div>
+                {
+                    student.aqeedah1data.map((exm, index) => <div key={index} className=' text-center p-5 rounded bg-yellow-200'>
+                            <p className='text-2xl'>{exm.name}</p>
+                            <p className='text-4xl'>{exm.Score}</p>
+                            {exm.resultBook && <a target='_blank' href={exm.resultBook}><button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button></a>}
+                        </div>
+                    )
+                }
                 
             </div>}
 
@@ -103,7 +125,12 @@ useEffect(()=> {
             </div>}
             
             
-
+                {
+                    admin && <div className="text-center">
+                        <p>Now You can update!</p>
+                        <button onClick={updatedata} className='btn btn-primary mx-auto'>update</button>
+                    </div>
+                }
         </div>
     );
 };

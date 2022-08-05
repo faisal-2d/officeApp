@@ -9358,5 +9358,25 @@
             "resultBook" : ""
           }
         ]
+  },
+  {
+    "sn": 1,
+    "name": "juyel sk",
+    "fatherName": "tahseen sk",
+    "phone": "2011",
+     "aqeedah1data" : [{
+            "name" : "Exm 1",
+            "Score" : 90,
+            "resultBook" : ""
+          },{
+            "name" : "Exm 2",
+            "Score" : 90,
+            "resultBook" : ""
+          },{
+            "name" : "Exm 3",
+            "Score" : 90,
+            "resultBook" : ""
+          }
+        ]
   }
  ]

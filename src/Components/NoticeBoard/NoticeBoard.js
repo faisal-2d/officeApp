@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NoticeBoard = () => {
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen container mx-auto my-10'>
             <p className='text-center text-2xl'>নোটিশ বোর্ডে স্বাগতম!</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-10">
       <div className="card w-96 bg-base-100 shadow-xl">

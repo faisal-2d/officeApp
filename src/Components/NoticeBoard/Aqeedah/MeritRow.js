@@ -38,7 +38,7 @@ const MeritRow = ({merit, student, batch}) => {
     //           ]
     //           }
 
-    //             git add (``, myData)
+    //             axios.put(``, myData)
     //             .then(data => console.log(data.data))
     //         })            
         

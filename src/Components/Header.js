@@ -1,8 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../assets/blackLogo-01.png'
+import auth from '../firebase.init';
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+
     const menu = <>
     <li><Link to="/">হোম</Link></li>        
     <li><Link to="/courses">কোর্স সমূহ</Link></li>        
@@ -30,7 +35,15 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <Link to="/login">লগ ইন</Link>
+    { user 
+    ?   <div className="dropdown dropdown-hover">
+        <label tabIndex="0" className="btn btn-ghost m-1">{user.displayName}</label>
+          <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li onClick={() => signOut(auth)}><a>Log Out</a></li>
+          </ul>
+      </div>
+    :   <Link to="/login">লগ ইন</Link>
+      }
   </div>
 </div>       
     );
