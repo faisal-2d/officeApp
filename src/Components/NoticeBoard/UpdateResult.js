@@ -36,6 +36,20 @@ const snList = [75, 76, 101, 105, 186, 205, 209, 215, 216, 340, 368, 392]
     }
 
 
+    const genderUpdate = () => {
+      axios.get(`Gender.json`)
+      .then(data => data.data.map(stud => {
+        const data = {
+          "gender" : stud.gender
+        }
+          axios.put(`http://localhost:/${stud.sn}`, data)
+        .then(data => console.log(data.data))
+      }))
+      
+       
+    }
+
+
     return (
         <div className='text-center'>
             <button onClick={updateAll} className='btn btn-primary'>Update All</button>

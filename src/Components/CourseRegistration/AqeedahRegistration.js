@@ -17,7 +17,7 @@ import paypal from '../../assets/paypal.png'
 
 const AqeedahRegistration = () => {
     return (
-        <div className='min-h-screen container mx-auto my-10'>
+        <div className='min-h-screen container mx-auto my-10 px-5'>
             <p className='text-center text-2xl'>আক্বিদাহ কোর্সে রেজিস্ট্রেশন চলছে!</p>
             <div className='mx-auto my-5 text-center '>
             <ul className="steps steps-vertical">

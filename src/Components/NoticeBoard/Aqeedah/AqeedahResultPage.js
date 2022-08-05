@@ -16,9 +16,11 @@ const AqeedahResultPage = () => {
     return data;
   }
 
-  const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
+const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
  
  
+
+
 if(isLoading){
   return <Loading></Loading>
 }
