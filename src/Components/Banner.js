@@ -10,7 +10,7 @@ const Banner = () => {
                     <img className='w-80' src={banner} alt="" />
                 </div>
                 <div className='col-span-2 flex '>
-                <FontAwesomeIcon className='text-yellow-200 px-5' icon={faQuoteLeft} size="4x" fade/>
+                    <FontAwesomeIcon className='text-yellow-200 px-5' icon={faQuoteLeft} size="4x" fade/>
                     <div>
                     <p className='text-6xl text-red-800'>জেনে রাখো, আল্লাহ ছাড়া সত্য কোন উপাস্য নেই।</p>
                     <p className='italic'>সূরা মুহাম্মাদ : ১৯</p>

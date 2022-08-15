@@ -18,7 +18,20 @@ const AqeedahResultPage = () => {
 
 const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
  
- 
+// const exm2update = () => {
+//   axios.get(`LevelOneExm.json`)
+//   .then(data => data.data.map(stud => {
+//     const data = {
+//       "name" : "Exm 2",
+//       "Score" : stud.score,
+//       "resultBook" : stud.drive
+//     }
+//       axios.put(`http://localhost:16/${stud.sn}`, data)
+//     .then(data => console.log(data.data))
+//     // console.log(stud.sn, stud.score, stud.drive);
+//   }))    
+// }
+
 
 
 if(isLoading){
@@ -39,7 +52,8 @@ const searchByName = e => {
 
 
   return (
-    <div>
+    <div className="my-10">
+      {/* <button onClick={exm2update} className="btn-primary text-center">Update</button> */}
       <p className="text-center text-2xl">আক্বিদাহ কোর্সের {params.batch} তম ব্যাচে স্বাগতম!</p>
 
       <form onSubmit={searchByName} >

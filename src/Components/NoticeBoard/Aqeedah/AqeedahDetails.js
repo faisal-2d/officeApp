@@ -9,6 +9,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import useAdmin from "../../hooks/useAdmin";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileCerficate, faFilePdf } from "@fortawesome/fontawesome-free-solid";
+import graduation from '../../../assets/graduation.jpg'
 
 
 
@@ -37,9 +39,10 @@ useEffect(()=> {
         axios.put(`https://flannel-loonie-61461.herokuapp.com/level3total/${sn.sn}`, myData)
     .then(data => console.log(data.data))
     }
+    
         
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-5'>
             <p className="text-center text-2xl my-10">আক্বিদাহ কোর্সের {location.state.batch} তম ব্যাচে স্বাগতম!</p>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
             <div className='flex items-center p-5 rounded bg-blue-200'>
@@ -92,10 +95,17 @@ useEffect(()=> {
                 </div>}
             <br />
             {student.aqeedah3data && <Link className="p-1 rounded bg-green-300" to={'/meritlist-aqeedah-'+location.state.batch}>Merit List</Link>}            
+            </div> 
             </div>
-                        
-            
-            </div>
+
+            {/* Aqeedah Certificate  */}
+            {student.aqeedahCertificate && <div>
+                <p className="text-2xl mt-12 mb-5">অভিনন্দন! আপনি সার্টিফিকেট পেয়েছেন!</p>
+                <div className="text-center p-5 rounded bg-sky-200 w-fit">
+                    <img className="rounded" src={graduation} alt="" />
+                    <a className="bg-red-400 block mt-2 text-white p-2 rounded shadow" href={student.aqeedahCertificate} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-5' icon={faFilePdf}/> Certificate</a>
+                </div>
+                </div>}
 
             {/* Level 1 */}
             <p className="text-2xl mt-12 mb-5">আপনার পরীক্ষার রেজাল্টসমূহ</p>

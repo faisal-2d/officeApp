@@ -1,20 +1,29 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../assets/blackLogo-01.png'
 import auth from '../firebase.init';
+import useAdmin from './hooks/useAdmin';
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
+  const [admin, isLoading] = useAdmin(user);
+
 
     const menu = <>
-    <li><Link to="/">হোম</Link></li>        
-    <li><Link to="/courses">কোর্স সমূহ</Link></li>        
-    <li><Link to="/schedule">ক্লাসের সময়</Link></li>    
-    <li><Link to="/noticeboard">নোটিশ বোর্ড</Link></li>    
-    <li><Link to="/about-us">আমাদের সম্পর্কে</Link></li>        
-    <li><Link to="/registration" className="btn btn-ghost text-red-500">রেজিস্ট্রেশন</Link></li>        
+    {admin 
+    ? <li><Link to="/new-registration">নতুন ভর্তি</Link></li>
+    : <>
+        <li><Link to="/">হোম</Link></li>        
+        <li><Link to="/courses">কোর্স সমূহ</Link></li>        
+        <li><Link to="/schedule">ক্লাসের সময়</Link></li>    
+        <li><Link to="/noticeboard">নোটিশ বোর্ড</Link></li>    
+        <li><Link to="/about-us">আমাদের সম্পর্কে</Link></li>
+    </>
+    }        
+    <li><Link to="/registration" className="text-red-500">রেজিস্ট্রেশন</Link></li>        
     </>
     return (  
             <div className="container mx-auto navbar bg-base-100">
@@ -42,7 +51,7 @@ const Header = () => {
             <li onClick={() => signOut(auth)}><a>Log Out</a></li>
           </ul>
       </div>
-    :   <Link to="/login">লগ ইন</Link>
+    :   <Link to="/login"><FontAwesomeIcon icon="fa-solid fa-user" /></Link>
       }
   </div>
 </div>       

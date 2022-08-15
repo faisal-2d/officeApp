@@ -88,8 +88,7 @@ const AqeedahRegistration = () => {
                 <div>
                     <h2 className='text-2xl text-green-600'><FontAwesomeIcon className='pr-5' icon={faUserGroup}/>কিভাবে গ্রুপে যুক্ত হবেন?</h2>
                     <p className=' mt-3'>টাকা পাঠানো এবং ফর্ম পূরন করা হয়ে গেলে গ্রুপে জয়েন করুন।</p>
-                    <p className=''>আমরা আপনার টাকা পাওয়ার পর নিশ্চিত হয়ে আপনাকে গ্রুপে এড করব। আপনি ফর্ম পূরন করার ২/৩ ঘন্টার মধ্যেই এড করে দেয়া হবে।</p>
-                    <p className=' mb-3'>টাকা পাঠানো বা গ্রুপে যুক্ত হওয়া নিয়ে কোন সমস্যা হলে আমাদেরকে সাপোর্টে/ফেসবুক পেইজে মেসেজ দিন।</p>
+                    <p className='mb-3'>আমরা আপনার টাকা পাওয়ার পর নিশ্চিত হয়ে আপনাকে গ্রুপে এড করব। আপনি ফর্ম পূরন করার ২/৩ ঘন্টার মধ্যেই এড করে দেয়া হবে।</p>
 
                     <div className='flex gap-10 flex-col md:flex-row'>
                         <div className='flex flex-col items-center my-5'>
@@ -112,6 +111,7 @@ const AqeedahRegistration = () => {
                         </div>
                         
                     </div>
+                    <p className='my-3'>টাকা পাঠানো বা গ্রুপে যুক্ত হওয়া নিয়ে কোন সমস্যা হলে আমাদেরকে সাপোর্টে/ফেসবুক পেইজে মেসেজ দিন।</p>
                 </div>
             </section>
 
