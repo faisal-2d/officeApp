@@ -34,18 +34,21 @@ useEffect(()=> {
         return <Loading></Loading>
     }
 
-    const myData = {}
-    const updatedata = () => {
-        axios.put(`https://flannel-loonie-61461.herokuapp.com/level3total/${sn.sn}`, myData)
-    .then(data => console.log(data.data))
+    const updateLeaderBoard = () => {
+        const myData = {}
+
+    for(let i=1; i<259;i++){
+    // axios.put(`http://localhost:5000/${location.state.batch}aqeedah1total/${i}`, myData)
+    // .then(data => console.log(data.data))
+
+    }
     }
     
         
     return (
         <div className='container mx-auto px-5'>
             <p className="text-center text-2xl my-10">আক্বিদাহ কোর্সের {location.state.batch} তম ব্যাচে স্বাগতম!</p>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-            <div className='flex items-center p-5 rounded bg-blue-200'>
+            <div className='flex items-center p-5 rounded bg-gradient-to-tl from-sky-200'>
                 <div className='mr-5'>                   
                     <img src={student.gender==="female" ? femaleProfile : maleProfile} alt="" />                        
                 </div>
@@ -58,45 +61,102 @@ useEffect(()=> {
                 </div>
             </div>
 
-            {/* Level 1 */}
+{/* Level 1 */}
+            {student.aqeedah1data && <section className="my-10">
+           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>            
 
-            { student.aqeedah1data && <div className='mx-auto order-3 md:order-2'>
-                <BarChart width={270} height={200} data={student.aqeedah1data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis type="number" domain={[0, 100]} />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="Score" fill="#FF6A4A" />
-                </BarChart>
-            </div>}
-
-            {/* Level 2+3 */}
-
-            { student.aqeedah3data && <div className='mx-auto order-3 md:order-2'>
-                <BarChart width={270} height={200} data={student.aqeedah3data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis type="number" domain={[0, 100]} />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="Score" fill="#FF6A4A" />
-                </BarChart>
-            </div>}
-
-            <div className='p-5 rounded bg-green-200 order-2'>
+            <div className='p-5 rounded bg-gradient-to-tl from-green-300'>
             <p className='text-xl'>Batch: {location.state.batch}</p>
             <p className='text-xl'>Course: Aqeedah  
             {student.aqeedah1data && <span> Level 1</span>}
-            {student.aqeedah3data && <span> Level 2 + 3</span>}
             </p>
             {student.aqeedah1payment && <div>
                 <p className='text-xl'>Payment: <span className="uppercase font-bold">{student.aqeedah1payment}</span></p>
                 </div>}
             <br />
-            {student.aqeedah3data && <Link className="p-1 rounded bg-green-300" to={'/meritlist-aqeedah-'+location.state.batch}>Merit List</Link>}            
-            </div> 
+            {student.aqeedah1data && <Link className="py-2 px-4 rounded bg-green-300" to={'/leaderboard-aqeedah1-'+location.state.batch}> <FontAwesomeIcon icon="fa-solid fa-trophy" /> Leaderboard</Link>}            
             </div>
+
+            <div className='mx-auto px-5 py-1 bg-gradient-to-tl from-orange-200'>
+                <BarChart width={300} height={200} data={student.aqeedah1data}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis type="number" domain={[0, 100]} />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="Score" fill="#FF6A4A" />
+                </BarChart>
+            </div>  
+               
+            
+            </div>
+
+            <p className="text-2xl mt-12 mb-5">আপনার লেভেল ১ এর পরীক্ষার রেজাল্টসমূহ</p>
+           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                {
+                    student.aqeedah1data.map((exm, index) => <div key={index} className=' text-center p-5 rounded bg-yellow-200'>
+                            <p className='text-2xl'>{exm.name}</p>
+                            <p className='text-5xl'>{exm.Score}</p>
+                        </div>
+                    )
+                }
+                
+            </div>
+
+
+            </section>
+            }
+
+
+{/* Level 2+3 */}
+            {student.aqeedah3data && <section className="my-10">
+           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>            
+
+            <div className='p-5 rounded bg-gradient-to-tl from-green-300'>
+            <p className='text-xl'>Batch: {location.state.batch}</p>
+            <p className='text-xl'>Course: Aqeedah  
+            {student.aqeedah3data && <span> Level 2 + 3</span>}
+            </p>
+            {student.aqeedah3payment && <div>
+                <p className='text-xl'>Payment: <span className="uppercase font-bold">{student.aqeedah3payment}</span></p>
+                </div>}
+            <br />
+           {student.aqeedah3data && <Link className="py-2 px-4 rounded bg-green-300" to={'/meritlist-aqeedah-'+location.state.batch}> <FontAwesomeIcon icon="fa-solid fa-trophy" /> Leaderboard</Link>}
+            </div>
+
+            <div className='mx-auto px-5 py-1 bg-gradient-to-tl from-orange-200'>
+                <BarChart width={300} height={200} data={student.aqeedah3data}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis type="number" domain={[0, 100]} />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="Score" fill="#FF6A4A" />
+                </BarChart>
+            </div>  
+               
+            
+            </div>
+
+           <p className="text-2xl mt-12 mb-5">আপনার লেভেল ২ + ৩ এর পরীক্ষার রেজাল্টসমূহ</p>
+           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                {
+                    student.aqeedah3data.map((exm, index) => <div key={index} className=' text-center p-5 rounded bg-yellow-200'>
+                            <p className='text-2xl'>{exm.name}</p>
+                            <p className='text-5xl'>{exm.Score}</p>
+                        </div>
+                    )
+                }
+                
+            </div>
+
+
+            </section>
+            }      
+            
+
+             
+            
 
             {/* Aqeedah Certificate  */}
             {student.aqeedahCertificate && <div>
@@ -107,38 +167,16 @@ useEffect(()=> {
                 </div>
                 </div>}
 
-            {/* Level 1 */}
-            <p className="text-2xl mt-12 mb-5">আপনার পরীক্ষার রেজাল্টসমূহ</p>
-            { student.aqeedah1data && <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                {
-                    student.aqeedah1data.map((exm, index) => <div key={index} className=' text-center p-5 rounded bg-yellow-200'>
-                            <p className='text-2xl'>{exm.name}</p>
-                            <p className='text-4xl'>{exm.Score}</p>
-                            {exm.resultBook && <a target='_blank' href={exm.resultBook}><button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button></a>}
-                        </div>
-                    )
-                }
-                
-            </div>}
+        
+            
 
-            {/* Level 2 + 3 */}
-            { student.aqeedah3data && <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                {
-                    student.aqeedah3data.map((exm, index) => <div key={index} className=' text-center p-5 rounded bg-yellow-200'>
-                            <p className='text-2xl'>{exm.name}</p>
-                            <p className='text-4xl'>{exm.Score}</p>
-                            {exm.resultBook && <a target='_blank' href={exm.resultBook}><button className="btn btn-active btn-ghost btn-wide">পরীক্ষার উত্তরপত্র দেখুন</button></a>}
-                        </div>
-                    )
-                }
-                
-            </div>}
             
             
                 {
-                    admin && <div className="text-center">
+                    admin && <div className="text-center my-20">
                         <p>Now You can update!</p>
-                        <button onClick={updatedata} className='btn btn-primary mx-auto'>update</button>
+                        {/* <button onClick={updateLeaderBoard} className="btn-primary"> update leaderboard</button> */}
+                        
                     </div>
                 }
         </div>

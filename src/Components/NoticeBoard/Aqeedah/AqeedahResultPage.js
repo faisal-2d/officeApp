@@ -5,33 +5,71 @@ import { useParams } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 import AqeedahRow from "./AqeedahRow";
 import { useQuery } from 'react-query'
+import useAdmin from "../../hooks/useAdmin";
+import auth from "../../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const AqeedahResultPage = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const [admin, isLoadingAdmin] = useAdmin(user);
 
   const params = useParams();
   let searchName = 'a';
   const getStudentList = async (searchName) => {
     const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/aqeedah/${params.batch}/${searchName}`)
     // http://localhost:5000
+    // https://flannel-loonie-61461.herokuapp.com
     return data;
   }
 
 const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
  
-// const exm2update = () => {
-//   axios.get(`LevelOneExm.json`)
-//   .then(data => data.data.map(stud => {
-//     const data = {
-//       "name" : "Exm 2",
-//       "Score" : stud.score,
-//       "resultBook" : stud.drive
-//     }
-//       axios.put(`http://localhost:16/${stud.sn}`, data)
-//     .then(data => console.log(data.data))
-//     // console.log(stud.sn, stud.score, stud.drive);
-//   }))    
-// }
+const exm2update = () => {
+  axios.get(`LevelTwo.json`)
+  .then(data => data.data.map(stud => {
+    
+    const data = {
+      "aqeedah3data" : [
+        {
+          "name" : "Exm 1",
+          "Score" : 0,
+          "resultBook" : ""
+        },{
+          "name" : "Exm 2",
+          "Score" : stud.exm2,
+          "resultBook" : stud.drive
+        },{
+          "name" : "Exm 3",
+          "Score" : 0,
+          "resultBook" : ""
+        },{
+          "name" : "Exm 4",
+          "Score" : 0,
+          "resultBook" : ""
+        }
+      ]
+  }
+      axios.put(`http://localhost:5000/exm2level2/${stud.sn}`, data)
+    .then(data => console.log(data.data))
+    // console.log(stud.sn, stud.score, stud.drive);
+  }))    
+}
 
+
+const levelOneUpdate = () => {
+  axios.get(`LevelOneFinal.json`)
+  .then(data => data.data.map(stud => {
+    
+    const data = {         
+          "name" : "Exm 3",
+          "Score" : stud.finalScore,
+          "resultBook" : ""      
+      }
+      axios.put(`http://localhost:5000/exm3/aqeedah/16/${stud.sn}`, data)
+    .then(data => console.log(data.data))
+    // console.log(stud.sn, stud.finalScore);
+  }))    
+}
 
 
 if(isLoading){
@@ -51,10 +89,11 @@ const searchByName = e => {
 }
 
 
-  return (
-    <div className="my-10">
-      {/* <button onClick={exm2update} className="btn-primary text-center">Update</button> */}
+
+return (
+  <div className="my-10">
       <p className="text-center text-2xl">আক্বিদাহ কোর্সের {params.batch} তম ব্যাচে স্বাগতম!</p>
+    {/* { admin && <button onClick={levelOneUpdate} className="text-center btn-primary text-center">Level 1 Update</button>} */}
 
       <form onSubmit={searchByName} >
       <div className="form-control my-10">

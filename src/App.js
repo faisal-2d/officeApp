@@ -22,6 +22,8 @@ import RequireAdmin from './Components/Login/RequireAdmin';
 import AqeedahReviews from './Components/Reviews/AqeedahReviews';
 import AddReview from './Components/Reviews/AddReview';
 import NewRegAqeedah from './Components/CourseRegistration/NewRegAqeedah';
+import ReqiureAuth from './Components/Login/RequireAuth';
+import Aqeedah1LeaderBoard from './Components/NoticeBoard/Aqeedah/LeaderBoard/Aqeedah1LeaderBoard';
 
 function App() {
   return (
@@ -36,12 +38,13 @@ function App() {
         <Route path='aqeedah-:batch/:sn' element={<AqeedahDetails/>}></Route>
         <Route path='aqeedah-14/:sn/update-result' element={<RequireAdmin><Aqeedah3ResultUpdate></Aqeedah3ResultUpdate></RequireAdmin>}></Route>
         <Route path='meritlist-aqeedah-:batch' element={<MeritList/>}></Route>
+        <Route path='leaderboard-aqeedah1-:batch' element={<Aqeedah1LeaderBoard/>}></Route>
         <Route path='reviews' element={<AqeedahReviews/>}></Route>
         <Route path='add-review' element={<AddReview/>}></Route>
         <Route path='about-us' element={<AboutUs/>}></Route>
         <Route path='schedule' element={<Schedule></Schedule>}></Route>
         <Route path='registration' element={<Registration/>}></Route>
-        <Route path='new-registration' element={<RequireAdmin><NewRegAqeedah/></RequireAdmin>}></Route>
+        <Route path='new-registration' element={<ReqiureAuth><RequireAdmin><NewRegAqeedah/></RequireAdmin></ReqiureAuth>}></Route>
         <Route path='login' element={<Login/>}></Route>
         <Route path='signup' element={<SignUp/>}></Route>
         <Route path='forgot-password' element={<ForgotPassword/>}></Route>

@@ -10,12 +10,13 @@ import { faArrowUpAZ } from '@fortawesome/free-solid-svg-icons';
 const MeritList = () => {
     const params = useParams();
   const getStudentList = async () => {
-    const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/meritlist/aqeedah/${params.batch}`)
+    const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/leaderboard/aqeedah/${params.batch}`)
     // http://localhost:5000
+    // https://flannel-loonie-61461.herokuapp.com/
     return data;
   }
 
-  const {isLoading, isFetching, data: students, refetch} = useQuery('mertiList', getStudentList)
+  const {isLoading, isFetching, data: students, refetch} = useQuery('leaderBoard', getStudentList)
  
  
 if(isLoading){
@@ -24,7 +25,7 @@ if(isLoading){
 
     return (
         <div>
-            <p className='text-center my-10 text-xl'>Welcome to Merit List, Batch: {params.batch} </p>
+            <p className='text-center my-10 text-xl'>Welcome to Leaderboard, Batch: Aqeedah - {params.batch} </p>
 
             <div>
             <div className="overflow-x-auto w-10/12 mx-auto">

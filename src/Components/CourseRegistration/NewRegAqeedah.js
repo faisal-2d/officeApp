@@ -158,6 +158,17 @@ const NewRegAqeedah = () => {
             />
             <span>Due</span>
         </label>                
+        <label htmlFor="field-scholarship" className='flex align-center mb-1'>
+            <input
+                {...register("payment")}
+                type="radio"
+                name="payment"
+                value="scholarship"
+                id="field-scholarship"
+                className='radio mr-3 checked:bg-cyan-500'
+            />
+            <span>Scholarship</span>
+        </label>                
       </div>
 
       <div className="form-control mt-10">        
