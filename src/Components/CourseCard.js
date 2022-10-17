@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CourseCard = ({course}) => {
   return (
@@ -15,8 +16,8 @@ const CourseCard = ({course}) => {
           <p className="text-xl">কোর্সের মেয়াদ: {course.duration}</p>            
           <p className="text-xl">কোর্স টিচার: {course.courseTeacher}</p>          
           {/* <p>{course.description}</p> */}
-          <div className="card-actions justify-end">
-            {/* <button className="btn btn-sm text-emerald-700 outline-none bg-emerald-300">বিস্তারিত দেখুন</button> */}
+            <Link className="btn btn-primary mt-3 outline-none" to={course.info}>বিস্তারিত দেখুন</Link>
+          <div className="card-actions">
           </div>
         </div>
       </div>

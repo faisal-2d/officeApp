@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 const MeritRow = ({merit, student, batch}) => {
     
     const th = m => {
-        const meritString = JSON.stringify(m);
-        if (meritString.endsWith(0)) return 'st';
-        if (meritString.endsWith(1)) return 'nd';
-        if (meritString.endsWith(2)) return 'rd';
+        if (m===0) return 'st';
+        if (m===1) return 'nd';
+        if (m===2) return 'rd';
         return 'th';
     }
 

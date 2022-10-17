@@ -1,498 +1,662 @@
 [
-    {
-      "sn": 85,
-      "finalScore": 95
-    },
-    {
-      "sn": 161,
-      "finalScore": 60
-    },
-    {
-      "sn": 173,
-      "finalScore": 90
-    },
-    {
-      "sn": 248,
-      "finalScore": 100
-    },
-    {
-      "sn": 197,
-      "finalScore": 100
-    },
-    {
-      "sn": 199,
-      "finalScore": 100
-    },
-    {
-      "sn": 256,
-      "finalScore": 95
-    },
-    {
-      "sn": 159,
-      "finalScore": 90
-    },
-    {
-      "sn": 241,
-      "finalScore": 100
-    },
-    {
-      "sn": 6,
-      "finalScore": 50
-    },
-    {
-      "sn": 205,
-      "finalScore": 100
-    },
-    {
-      "sn": 88,
-      "finalScore": 75
-    },
-    {
-      "sn": 183,
-      "finalScore": 100
-    },
-    {
-      "sn": 80,
-      "finalScore": 100
-    },
-    {
-      "sn": 69,
-      "finalScore": 100
-    },
-    {
-      "sn": 244,
-      "finalScore": 100
-    },
-    {
-      "sn": 145,
-      "finalScore": 90
-    },
-    {
-      "sn": 196,
-      "finalScore": 100
-    },
-    {
-      "sn": 83,
-      "finalScore": 100
-    },
-    {
-      "sn": 188,
-      "finalScore": 100
-    },
-    {
-      "sn": 204,
-      "finalScore": 95
-    },
-    {
-      "sn": 160,
-      "finalScore": 100
-    },
-    {
-      "sn": 126,
-      "finalScore": 75
-    },
-    {
-      "sn": 165,
-      "finalScore": 95
-    },
-    {
-      "sn": 124,
-      "finalScore": 100
-    },
-    {
-      "sn": 216,
-      "finalScore": 95
-    },
-    {
-      "sn": 53,
-      "finalScore": 100
-    },
-    {
-      "sn": 101,
-      "finalScore": 90
-    },
-    {
-      "sn": 253,
-      "finalScore": 85
-    },
-    {
-      "sn": 127,
-      "finalScore": 100
-    },
-    {
-      "sn": 258,
-      "finalScore": 90
-    },
-    {
-      "sn": 240,
-      "finalScore": 90
-    },
-    {
-      "sn": 151,
-      "finalScore": 100
-    },
-    {
-      "sn": 62,
-      "finalScore": 95
-    },
-    {
-      "sn": 61,
-      "finalScore": 70
-    },
-    {
-      "sn": 54,
-      "finalScore": 90
-    },
-    {
-      "sn": 236,
-      "finalScore": 100
-    },
-    {
-      "sn": 130,
-      "finalScore": 100
-    },
-    {
-      "sn": 200,
-      "finalScore": 85
-    },
-    {
-      "sn": 48,
-      "finalScore": 80
-    },
-    {
-      "sn": 155,
-      "finalScore": 85
-    },
-    {
-      "sn": 114,
-      "finalScore": 100
-    },
-    {
-      "sn": 70,
-      "finalScore": 70
-    },
-    {
-      "sn": 162,
-      "finalScore": 100
-    },
-    {
-      "sn": 227,
-      "finalScore": 95
-    },
-    {
-      "sn": 141,
-      "finalScore": 95
-    },
-    {
-      "sn": 169,
-      "finalScore": 95
-    },
-    {
-      "sn": 195,
-      "finalScore": 95
-    },
-    {
-      "sn": 117,
-      "finalScore": 85
-    },
-    {
-      "sn": 154,
-      "finalScore": 55
-    },
-    {
-      "sn": 36,
-      "finalScore": 95
-    },
-    {
-      "sn": 135,
-      "finalScore": 80
-    },
-    {
-      "sn": 51,
-      "finalScore": 100
-    },
-    {
-      "sn": 242,
-      "finalScore": 80
-    },
-    {
-      "sn": 20,
-      "finalScore": 100
-    },
-    {
-      "sn": 181,
-      "finalScore": 70
-    },
-    {
-      "sn": 98,
-      "finalScore": 90
-    },
-    {
-      "sn": 40,
-      "finalScore": 90
-    },
-    {
-      "sn": 220,
-      "finalScore": 85
-    },
-    {
-      "sn": 96,
-      "finalScore": 90
-    },
-    {
-      "sn": 247,
-      "finalScore": 85
-    },
-    {
-      "sn": 89,
-      "finalScore": 100
-    },
-    {
-      "sn": 110,
-      "finalScore": 75
-    },
-    {
-      "sn": 105,
-      "finalScore": 75
-    },
-    {
-      "sn": 72,
-      "finalScore": 95
-    },
-    {
-      "sn": 8,
-      "finalScore": 100
-    },
-    {
-      "sn": 203,
-      "finalScore": 70
-    },
-    {
-      "sn": 60,
-      "finalScore": 100
-    },
-    {
-      "sn": 239,
-      "finalScore": 80
-    },
-    {
-      "sn": 252,
-      "finalScore": 85
-    },
-    {
-      "sn": 129,
-      "finalScore": 90
-    },
-    {
-      "sn": 44,
-      "finalScore": 65
-    },
-    {
-      "sn": 17,
-      "finalScore": 95
-    },
-    {
-      "sn": 223,
-      "finalScore": 70
-    },
-    {
-      "sn": 31,
-      "finalScore": 50
-    },
-    {
-      "sn": 103,
-      "finalScore": 90
-    },
-    {
-      "sn": 148,
-      "finalScore": 80
-    },
-    {
-      "sn": 238,
-      "finalScore": 95
-    },
-    {
-      "sn": 206,
-      "finalScore": 60
-    },
-    {
-      "sn": 99,
-      "finalScore": 75
-    },
-    {
-      "sn": 250,
-      "finalScore": 85
-    },
-    {
-      "sn": 153,
-      "finalScore": 80
-    },
-    {
-      "sn": 50,
-      "finalScore": 95
-    },
-    {
-      "sn": 95,
-      "finalScore": 90
-    },
-    {
-      "sn": 172,
-      "finalScore": 80
-    },
-    {
-      "sn": 108,
-      "finalScore": 85
-    },
-    {
-      "sn": 194,
-      "finalScore": 75
-    },
-    {
-      "sn": 147,
-      "finalScore": 100
-    },
-    {
-      "sn": 259,
-      "finalScore": 100
-    },
-    {
-      "sn": 168,
-      "finalScore": 90
-    },
-    {
-      "sn": 11,
-      "finalScore": 100
-    },
-    {
-      "sn": 64,
-      "finalScore": 100
-    },
-    {
-      "sn": 251,
-      "finalScore": 90
-    },
-    {
-      "sn": 221,
-      "finalScore": 95
-    },
-    {
-      "sn": 93,
-      "finalScore": 85
-    },
-    {
-      "sn": 202,
-      "finalScore": 85
-    },
-    {
-      "sn": 46,
-      "finalScore": 80
-    },
-    {
-      "sn": 222,
-      "finalScore": 85
-    },
-    {
-      "sn": 232,
-      "finalScore": 75
-    },
-    {
-      "sn": 113,
-      "finalScore": 85
-    },
-    {
-      "sn": 137,
-      "finalScore": 75
-    },
-    {
-      "sn": 215,
-      "finalScore": 100
-    },
-    {
-      "sn": 10,
-      "finalScore": 100
-    },
-    {
-      "sn": 102,
-      "finalScore": 100
-    },
-    {
-      "sn": 210,
-      "finalScore": 85
-    },
-    {
-      "sn": 193,
-      "finalScore": 85
-    },
-    {
-      "sn": 249,
-      "finalScore": 90
-    },
-    {
-      "sn": 43,
-      "finalScore": 100
-    },
-    {
-      "sn": 38,
-      "finalScore": 75
-    },
-    {
-      "sn": 67,
-      "finalScore": 85
-    },
-    {
-      "sn": 84,
-      "finalScore": 55
-    },
-    {
-      "sn": 111,
-      "finalScore": 70
-    },
-    {
-      "sn": 15,
-      "finalScore": 100
-    },
-    {
-      "sn": 167,
-      "finalScore": 80
-    },
-    {
-      "sn": 12,
-      "finalScore": 40
-    },
-    {
-      "sn": 134,
-      "finalScore": 90
-    },
-    {
-      "sn": 33,
-      "finalScore": 90
-    },
-    {
-      "sn": 224,
-      "finalScore": 85
-    },
-    {
-      "sn": 2,
-      "finalScore": 70
-    },
-    {
-      "sn": 149,
-      "finalScore": 80
-    },
-    {
-      "sn": 234,
-      "finalScore": 80
-    },
-    {
-      "sn": 146,
-      "finalScore": 90
-    },
-    {
-      "sn": 115,
-      "finalScore": 75
-    },
-    {
-      "sn": 25,
-      "finalScore": 80
-    }
-   ]
+  {
+    "SN": 1,
+    "Score1": 65
+  },
+  {
+    "SN": 138,
+    "Score1": 95
+  },
+  {
+    "SN": 239,
+    "Score1": 80
+  },
+  {
+    "SN": 86,
+    "Score1": 85
+  },
+  {
+    "SN": 18,
+    "Score1": 80
+  },
+  {
+    "SN": 26,
+    "Score1": 90
+  },
+  {
+    "SN": 85,
+    "Score1": 70
+  },
+  {
+    "SN": 237,
+    "Score1": 65
+  },
+  {
+    "SN": 74,
+    "Score1": 95
+  },
+  {
+    "SN": 135,
+    "Score1": 95
+  },
+  {
+    "SN": 96,
+    "Score1": 100
+  },
+  {
+    "SN": 208,
+    "Score1": 100
+  },
+  {
+    "SN": 244,
+    "Score1": 100
+  },
+  {
+    "SN": 33,
+    "Score1": 70
+  },
+  {
+    "SN": 258,
+    "Score1": 65
+  },
+  {
+    "SN": 119,
+    "Score1": 75
+  },
+  {
+    "SN": 95,
+    "Score1": 80
+  },
+  {
+    "SN": 97,
+    "Score1": 70
+  },
+  {
+    "SN": 256,
+    "Score1": 60
+  },
+  {
+    "SN": 35,
+    "Score1": 90
+  },
+  {
+    "SN": 115,
+    "Score1": 40
+  },
+  {
+    "SN": 53,
+    "Score1": 100
+  },
+  {
+    "SN": 15,
+    "Score1": 90
+  },
+  {
+    "SN": 22,
+    "Score1": 80
+  },
+  {
+    "SN": 87,
+    "Score1": 70
+  },
+  {
+    "SN": 123,
+    "Score1": 100
+  },
+  {
+    "SN": 173,
+    "Score1": 95
+  },
+  {
+    "SN": 164,
+    "Score1": 85
+  },
+  {
+    "SN": 249,
+    "Score1": 85
+  },
+  {
+    "SN": 83,
+    "Score1": 100
+  },
+  {
+    "SN": 75,
+    "Score1": 75
+  },
+  {
+    "SN": 111,
+    "Score1": 85
+  },
+  {
+    "SN": 16,
+    "Score1": 80
+  },
+  {
+    "SN": 146,
+    "Score1": 100
+  },
+  {
+    "SN": 63,
+    "Score1": 80
+  },
+  {
+    "SN": 68,
+    "Score1": 95
+  },
+  {
+    "SN": 98,
+    "Score1": 75
+  },
+  {
+    "SN": 210,
+    "Score1": 85
+  },
+  {
+    "SN": 145,
+    "Score1": 80
+  },
+  {
+    "SN": 55,
+    "Score1": 90
+  },
+  {
+    "SN": 17,
+    "Score1": 85
+  },
+  {
+    "SN": 142,
+    "Score1": 85
+  },
+  {
+    "SN": 51,
+    "Score1": 35
+  },
+  {
+    "SN": 246,
+    "Score1": 70
+  },
+  {
+    "SN": 4,
+    "Score1": 65
+  },
+  {
+    "SN": 260,
+    "Score1": 80
+  },
+  {
+    "SN": 179,
+    "Score1": 80
+  },
+  {
+    "SN": 134,
+    "Score1": 95
+  },
+  {
+    "SN": 70,
+    "Score1": 70
+  },
+  {
+    "SN": 3,
+    "Score1": 100
+  },
+  {
+    "SN": 42,
+    "Score1": 70
+  },
+  {
+    "SN": 221,
+    "Score1": 85
+  },
+  {
+    "SN": 176,
+    "Score1": 90
+  },
+  {
+    "SN": 71,
+    "Score1": 40
+  },
+  {
+    "SN": 160,
+    "Score1": 95
+  },
+  {
+    "SN": 132,
+    "Score1": 75
+  },
+  {
+    "SN": 171,
+    "Score1": 65
+  },
+  {
+    "SN": 11,
+    "Score1": 85
+  },
+  {
+    "SN": 23,
+    "Score1": 100
+  },
+  {
+    "SN": 130,
+    "Score1": 65
+  },
+  {
+    "SN": 60,
+    "Score1": 50
+  },
+  {
+    "SN": 182,
+    "Score1": 85
+  },
+  {
+    "SN": 80,
+    "Score1": 65
+  },
+  {
+    "SN": 124,
+    "Score1": 90
+  },
+  {
+    "SN": 43,
+    "Score1": 70
+  },
+  {
+    "SN": 121,
+    "Score1": 85
+  },
+  {
+    "SN": 214,
+    "Score1": 85
+  },
+  {
+    "SN": 13,
+    "Score1": 90
+  },
+  {
+    "SN": 230,
+    "Score1": 70
+  },
+  {
+    "SN": 37,
+    "Score1": 90
+  },
+  {
+    "SN": 166,
+    "Score1": 85
+  },
+  {
+    "SN": 45,
+    "Score1": 50
+  },
+  {
+    "SN": 224,
+    "Score1": 80
+  },
+  {
+    "SN": 21,
+    "Score1": 70
+  },
+  {
+    "SN": 153,
+    "Score1": 70
+  },
+  {
+    "SN": 5,
+    "Score1": 70
+  },
+  {
+    "SN": 113,
+    "Score1": 70
+  },
+  {
+    "SN": 150,
+    "Score1": 100
+  },
+  {
+    "SN": 241,
+    "Score1": 35
+  },
+  {
+    "SN": 27,
+    "Score1": 100
+  },
+  {
+    "SN": 158,
+    "Score1": 75
+  },
+  {
+    "SN": 168,
+    "Score1": 50
+  },
+  {
+    "SN": 250,
+    "Score1": 85
+  },
+  {
+    "SN": 77,
+    "Score1": 75
+  },
+  {
+    "SN": 154,
+    "Score1": 65
+  },
+  {
+    "SN": 14,
+    "Score1": 80
+  },
+  {
+    "SN": 122,
+    "Score1": 65
+  },
+  {
+    "SN": 6,
+    "Score1": 40
+  },
+  {
+    "SN": 44,
+    "Score1": 95
+  },
+  {
+    "SN": 209,
+    "Score1": 70
+  },
+  {
+    "SN": 222,
+    "Score1": 85
+  },
+  {
+    "SN": 34,
+    "Score1": 80
+  },
+  {
+    "SN": 219,
+    "Score1": 95
+  },
+  {
+    "SN": 58,
+    "Score1": 90
+  },
+  {
+    "SN": 159,
+    "Score1": 100
+  },
+  {
+    "SN": 187,
+    "Score1": 70
+  },
+  {
+    "SN": 128,
+    "Score1": 95
+  },
+  {
+    "SN": 144,
+    "Score1": 80
+  },
+  {
+    "SN": 170,
+    "Score1": 85
+  },
+  {
+    "SN": 49,
+    "Score1": 85
+  },
+  {
+    "SN": 56,
+    "Score1": 95
+  },
+  {
+    "SN": 229,
+    "Score1": 90
+  },
+  {
+    "SN": 202,
+    "Score1": 85
+  },
+  {
+    "SN": 104,
+    "Score1": 95
+  },
+  {
+    "SN": 20,
+    "Score1": 65
+  },
+  {
+    "SN": 137,
+    "Score1": 55
+  },
+  {
+    "SN": 78,
+    "Score1": 75
+  },
+  {
+    "SN": 139,
+    "Score1": 45
+  },
+  {
+    "SN": 114,
+    "Score1": 75
+  },
+  {
+    "SN": 157,
+    "Score1": 95
+  },
+  {
+    "SN": 259,
+    "Score1": 35
+  },
+  {
+    "SN": 232,
+    "Score1": 90
+  },
+  {
+    "SN": 199,
+    "Score1": 45
+  },
+  {
+    "SN": 94,
+    "Score1": 80
+  },
+  {
+    "SN": 251,
+    "Score1": 75
+  },
+  {
+    "SN": 7,
+    "Score1": 70
+  },
+  {
+    "SN": 48,
+    "Score1": 80
+  },
+  {
+    "SN": 72,
+    "Score1": 50
+  },
+  {
+    "SN": 106,
+    "Score1": 55
+  },
+  {
+    "SN": 8,
+    "Score1": 70
+  },
+  {
+    "SN": 169,
+    "Score1": 75
+  },
+  {
+    "SN": 180,
+    "Score1": 70
+  },
+  {
+    "SN": 129,
+    "Score1": 95
+  },
+  {
+    "SN": 235,
+    "Score1": 45
+  },
+  {
+    "SN": 218,
+    "Score1": 65
+  },
+  {
+    "SN": 191,
+    "Score1": 45
+  },
+  {
+    "SN": 90,
+    "Score1": 80
+  },
+  {
+    "SN": 73,
+    "Score1": 95
+  },
+  {
+    "SN": 32,
+    "Score1": 75
+  },
+  {
+    "SN": 183,
+    "Score1": 90
+  },
+  {
+    "SN": 101,
+    "Score1": 80
+  },
+  {
+    "SN": 93,
+    "Score1": 100
+  },
+  {
+    "SN": 161,
+    "Score1": 100
+  },
+  {
+    "SN": 69,
+    "Score1": 80
+  },
+  {
+    "SN": 188,
+    "Score1": 80
+  },
+  {
+    "SN": 206,
+    "Score1": 85
+  },
+  {
+    "SN": 102,
+    "Score1": 80
+  },
+  {
+    "SN": 110,
+    "Score1": 55
+  },
+  {
+    "SN": 195,
+    "Score1": 95
+  },
+  {
+    "SN": 178,
+    "Score1": 80
+  },
+  {
+    "SN": 186,
+    "Score1": 70
+  },
+  {
+    "SN": 172,
+    "Score1": 95
+  },
+  {
+    "SN": 200,
+    "Score1": 95
+  },
+  {
+    "SN": 189,
+    "Score1": 55
+  },
+  {
+    "SN": 165,
+    "Score1": 75
+  },
+  {
+    "SN": 66,
+    "Score1": 65
+  },
+  {
+    "SN": 31,
+    "Score1": 100
+  },
+  {
+    "SN": 107,
+    "Score1": 85
+  },
+  {
+    "SN": 238,
+    "Score1": 100
+  },
+  {
+    "SN": 108,
+    "Score1": 50
+  },
+  {
+    "SN": 47,
+    "Score1": 65
+  },
+  {
+    "SN": 25,
+    "Score1": 60
+  },
+  {
+    "SN": 62,
+    "Score1": 85
+  },
+  {
+    "SN": 174,
+    "Score1": 85
+  },
+  {
+    "SN": 105,
+    "Score1": 75
+  },
+  {
+    "SN": 24,
+    "Score1": 95
+  },
+  {
+    "SN": 149,
+    "Score1": 90
+  },
+  {
+    "SN": 67,
+    "Score1": 85
+  },
+  {
+    "SN": 99,
+    "Score1": 85
+  },
+  {
+    "SN": 242,
+    "Score1": 80
+  },
+  {
+    "SN": 181,
+    "Score1": 50
+  },
+  {
+    "SN": 217,
+    "Score1": 80
+  },
+  {
+    "SN": 40,
+    "Score1": 70
+  },
+  {
+    "SN": 12,
+    "Score1": 75
+  },
+  {
+    "SN": 207,
+    "Score1": 75
+  }
+ ]

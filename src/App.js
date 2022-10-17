@@ -24,6 +24,14 @@ import AddReview from './Components/Reviews/AddReview';
 import NewRegAqeedah from './Components/CourseRegistration/NewRegAqeedah';
 import ReqiureAuth from './Components/Login/RequireAuth';
 import Aqeedah1LeaderBoard from './Components/NoticeBoard/Aqeedah/LeaderBoard/Aqeedah1LeaderBoard';
+import AqeedahInfo from './Components/NoticeBoard/Aqeedah/AqeedahInfo';
+import ArabicInfo from './Components/NoticeBoard/Arabic/ArabicInfo';
+import FiqhInfo from './Components/NoticeBoard/Fiqh/FiqhInfo';
+import TafseerInfo from './Components/NoticeBoard/Tafseer/TafseerInfo';
+import SeeratInfo from './Components/NoticeBoard/Seerat/SeeratInfo';
+import Arabic from './Components/NoticeBoard/Arabic/Arabic';
+import ArabicResultPage from './Components/NoticeBoard/Arabic/ArabicResultPage/ArabicResultPage';
+import ArabicDetails from './Components/NoticeBoard/Arabic/ArabicResultPage/ArabicDetails';
 
 function App() {
   return (
@@ -32,6 +40,11 @@ function App() {
       <Routes>
         <Route path='' element={<Home/>}></Route>
         <Route path='courses' element={<Courses/>}></Route>
+        <Route path='courses/aqeedah' element={<AqeedahInfo/>}></Route>
+        <Route path='courses/arabic' element={<ArabicInfo/>}></Route>
+        <Route path='courses/fiqh' element={<FiqhInfo/>}></Route>
+        <Route path='courses/tafseer' element={<TafseerInfo/>}></Route>
+        <Route path='courses/seerat' element={<SeeratInfo/>}></Route>
         <Route path='noticeboard' element={<NoticeBoard/>}></Route>
         <Route path='aqeedah' element={<Aqeedah/>}></Route>
         <Route path='aqeedah-:batch' element={<AqeedahResultPage/>}></Route>
@@ -41,6 +54,9 @@ function App() {
         <Route path='leaderboard-aqeedah1-:batch' element={<Aqeedah1LeaderBoard/>}></Route>
         <Route path='reviews' element={<AqeedahReviews/>}></Route>
         <Route path='add-review' element={<AddReview/>}></Route>
+        <Route path='arabic' element={<Arabic/>}></Route>
+        <Route path='arabic-:batch' element={<ArabicResultPage/>}></Route>
+        <Route path='arabic-:batch/:sn' element={<ArabicDetails/>}></Route>
         <Route path='about-us' element={<AboutUs/>}></Route>
         <Route path='schedule' element={<Schedule></Schedule>}></Route>
         <Route path='registration' element={<Registration/>}></Route>

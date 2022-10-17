@@ -24,53 +24,83 @@ const AqeedahResultPage = () => {
 
 const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
  
-const exm2update = () => {
+// const exm1update = () => {
+//   axios.get(`LevelOneFinal.json`)
+//   .then(data => data.data.map(stud => {
+    
+//     const data = {
+//       "aqeedah3data" : [
+//         {
+//           "name" : "Exm 1",
+//           "Score" : stud.Score1,
+//           "resultBook" : ""
+//         },{
+//           "name" : "Exm 2",
+//           "Score" : 0,
+//           "resultBook" :""
+//         },{
+//           "name" : "Exm 3",
+//           "Score" : 0,
+//           "resultBook" : ""
+//         }
+//       ]
+//   }
+//       axios.put(`http://localhost:5000/exm2level2/${stud.sn}`, data)
+//     .then(data => console.log(data.data))
+//     // console.log(stud.sn, stud.score, stud.drive);
+//   }))    
+// }
+
+
+const levelTwoUpdate = () => {
   axios.get(`LevelTwo.json`)
   .then(data => data.data.map(stud => {
     
+    // const data = {         
+    //       // "name" : "Exm 1",
+    //       // "Score" : stud.Score1,
+    //       "aqeedah3Total" : 0      
+    //   }
+
     const data = {
-      "aqeedah3data" : [
-        {
-          "name" : "Exm 1",
-          "Score" : 0,
-          "resultBook" : ""
-        },{
-          "name" : "Exm 2",
-          "Score" : stud.exm2,
-          "resultBook" : stud.drive
-        },{
-          "name" : "Exm 3",
-          "Score" : 0,
-          "resultBook" : ""
-        },{
-          "name" : "Exm 4",
-          "Score" : 0,
-          "resultBook" : ""
-        }
-      ]
-  }
-      axios.put(`http://localhost:5000/exm2level2/${stud.sn}`, data)
-    .then(data => console.log(data.data))
-    // console.log(stud.sn, stud.score, stud.drive);
+            // "aqeedah3payment" : stud.Payment,
+            "aqeedah3Total" : stud.score1,
+            "aqeedah3data" : [
+               {
+                 "name" : "Exm 1",
+                 "Score" : stud.score1,
+               },{
+                 "name" : "Exm 2",
+               "Score" : 0,
+               },{
+                 "name" : "Exm 3",
+                 "Score" : 0,
+              },{
+                 "name" : "Exm 4",
+                 "Score" : 0,
+              }
+             ]
+         }
+         
+
+           axios.put(`http://localhost:5000/payment/aqeedah/16/${stud.sn}`, data)
+           .then(data => console.log(data.data))
+         
+    // console.log(stud.sn, stud.score1);
   }))    
 }
 
-
-const levelOneUpdate = () => {
-  axios.get(`LevelOneFinal.json`)
-  .then(data => data.data.map(stud => {
-    
-    const data = {         
-          "name" : "Exm 3",
-          "Score" : stud.finalScore,
-          "resultBook" : ""      
-      }
-      axios.put(`http://localhost:5000/exm3/aqeedah/16/${stud.sn}`, data)
-    .then(data => console.log(data.data))
-    // console.log(stud.sn, stud.finalScore);
-  }))    
+const checkBefore = () => {
+  const data = {         
+    "name" : "Exm 1",
+    "Score" : 0,
+    "resultBook" : ""      
 }
-
+ for(let i=1; i<415; i++){
+   axios.put(`http://localhost:5000/exm1/aqeedah/17/${i}`, data)
+.then(data => console.log(data.data))
+ }
+}
 
 if(isLoading){
   return <Loading></Loading>
@@ -89,11 +119,29 @@ const searchByName = e => {
 }
 
 
+const digitConverter = engDigit => {
+  const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+    const str = engDigit.toString();
+    let bangDigit = '';
+    
+    for(let i=0; i<str.length; i++){
+      for(let j=0; j<engD.length; j++){
+        if(str[i]==engD[j]){
+          bangDigit+=bangD[j];
+        }
+      }           
+  }
+  return bangDigit;
+}    
+const b = digitConverter(params.batch);
+
 
 return (
   <div className="my-10">
-      <p className="text-center text-2xl">আক্বিদাহ কোর্সের {params.batch} তম ব্যাচে স্বাগতম!</p>
-    {/* { admin && <button onClick={levelOneUpdate} className="text-center btn-primary text-center">Level 1 Update</button>} */}
+      <p className="text-center text-2xl">আক্বিদাহ কোর্সের {b} তম ব্যাচে স্বাগতম!</p>
+    { admin && <div className="text-center mx-auto"><button onClick={levelTwoUpdate} className="btn-primary text-center">Result Update</button></div> }
 
       <form onSubmit={searchByName} >
       <div className="form-control my-10">

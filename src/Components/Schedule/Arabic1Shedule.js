@@ -1,14 +1,14 @@
 import React from 'react';
 
-const ArabicSchedule = () => {
+const Arabic1Shedule = () => {
     return (
         <div>
-            {/* Arabic */}      
+            {/* Arabic 1*/}      
       <div className="mt-20 mb-10">
-        <p className="text-center text-blue-600 font-bold text-3xl">
-        আরবি ভাষা কোর্সঃ লেভেল ১ (সপ্তাহে ২ দিন ক্লাস)
+        <p className="text-center text-green-600 font-bold text-3xl">
+        আরবি ভাষা কোর্সঃ লেভেল ১
         </p>
-        <p className="text-xl text-center text-red-600 my-4">(জুমে ক্লাস)</p>
+        <p className="text-xl text-center text-red-600 my-4">(জুমে ক্লাস, সপ্তাহে ২ দিন)</p>
       </div>
       <div className="overflow-x-auto ">
         <table className="table w-full w-3/4 mx-auto text-xl ">
@@ -24,15 +24,15 @@ const ArabicSchedule = () => {
             <tr className="hover">
               <th>১</th>
               <td>শনিবার</td>
-              <td>বিকাল ৪ঃ৩০</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>বিকাল ৪ঃ০০</td>
+              <td>সন্ধ্যা ৭ঃ০০</td>
             </tr>
 
             <tr className="hover">
               <th>২</th>
               <td>মঙ্গলবার</td>
-              <td>বিকাল ৪ঃ৩০</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>বিকাল ৪ঃ০০</td>
+              <td>সন্ধ্যা ৭ঃ০০</td>
             </tr>
            
           </tbody>
@@ -42,4 +42,4 @@ const ArabicSchedule = () => {
     );
 };
 
-export default ArabicSchedule;
+export default Arabic1Shedule;

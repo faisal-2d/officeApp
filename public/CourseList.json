@@ -1,6 +1,7 @@
 [
     {
-        "courseName": "আক্বিদাহ",
+        "courseName": "সহীহ আক্বিদাহ",
+        "info" : "aqeedah",
         "duration": "৭.৫ মাস",
         "fee": "২৫০০",
         "img": "https://i.ibb.co/PcB7j8T/aqeedah-thumbnail.jpg",
@@ -9,7 +10,8 @@
     },
     {
         "courseName": "আরবি ভাষা",
-        "duration": "৪ মাস",
+        "info" : "arabic",
+        "duration": "১ বছর ৬ মাস",
         "fee": "১৫০০",
         "img": "https://i.ibb.co/KzmbqJy/arabic-thumbnail.jpg",
         "description" : "অত্যন্ত গ্রুরুত্বপূর্ণ কোর্স",
@@ -17,6 +19,7 @@
     },
     {
         "courseName": "ফিকহ",
+        "info" : "fiqh",
         "duration": "৬ মাস",
         "fee": "২০০০",
         "img": "https://i.ibb.co/Dg7DYK3/course-thumbnail-3.jpg",
@@ -25,10 +28,20 @@
     },
     {
         "courseName": "সংক্ষিপ্ত তাফসীর",
+        "info" : "tafseer",
         "duration": "৩ মাস",
         "fee": "১০০০",
         "img": "https://i.ibb.co/Dg7DYK3/course-thumbnail-3.jpg",
         "description" : "২০ টি সূরার অনুবাদ, তাফসীর",
+        "courseTeacher": "শায়খ আব্দুল্লাহ আল কাফী হাফি."
+    },
+    {
+        "courseName": "সীরাতুন নবী (সঃ)",
+        "info" : "seerat",
+        "duration": "৩ মাস",
+        "fee": "১০০০",
+        "img": "https://i.ibb.co/Dg7DYK3/course-thumbnail-3.jpg",
+        "description" : "",
         "courseTeacher": "শায়খ আব্দুল্লাহ আল কাফী হাফি."
     }
     
