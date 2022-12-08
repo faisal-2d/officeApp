@@ -23,7 +23,7 @@ const AqeedahDetails = () => {
 
     const params = useParams();
 useEffect(()=> {
-  axios.get(`https://flannel-loonie-61461.herokuapp.com/aqeedah/${params.batch}/sn/${params.sn}`)
+  axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/sn/${params.sn}`)
 //   http://localhost:5000/
   .then(data => setStudent(data.data))
 },[params]);
@@ -33,10 +33,37 @@ useEffect(()=> {
         return <Loading></Loading>
     }
 
+    const accessLevelTwo = () => {
+        const data = {
+                        "aqeedah3payment" : "due",
+                        "aqeedah3Total" : 0,
+                        "aqeedah3data" : [
+                           {
+                             "name" : "Exm 1",
+                             "Score" : 0,
+                           },{
+                             "name" : "Exm 2",
+                           "Score" : 0,
+                           },{
+                             "name" : "Exm 3",
+                             "Score" : 0,
+                          },{
+                             "name" : "Exm 4",
+                             "Score" : 0,
+                          }
+                         ]
+                     }
+
+
+            axios.put(`https://alharamanin-backend-web.onrender.com/accessLevelTwo/aqeedah17/${params.sn}`, data)
+           .then(data => console.log(data.data))
+    }
+
     const updateLeaderBoard = () => {
         const myData = {}
+        
 
-    for(let i=1; i<261;i++){
+    for(let i=1; i<262;i++){
     axios.put(`http://localhost:5000/${params.batch}aqeedah1total/${i}`, myData)
     .then(data => console.log(data.data))
     }
@@ -122,7 +149,7 @@ useEffect(()=> {
             <p className='text-xl'>Course: Aqeedah Level 2 + 3 </p>
             
             <br />
-           <Link className="py-2 px-4 rounded bg-green-300" to={'/meritlist-aqeedah-'+params.batch}> <FontAwesomeIcon icon="fa-solid fa-trophy" /> Leaderboard</Link>
+           <Link className="py-2 px-4 rounded bg-green-300" to={'/meritlist-aqeedah-'+params.batch+'/'+params.sn}> <FontAwesomeIcon icon="fa-solid fa-trophy" /> Leaderboard</Link>
             </div>
 
             <div className='mx-auto px-5 py-1 bg-gradient-to-tl from-indigo-200'>
@@ -166,7 +193,7 @@ useEffect(()=> {
             </p>
            
             <br />
-           <Link className="py-2 px-4 rounded bg-green-300" to={'/leaderboard-aqeedah1-'+params.batch}> <FontAwesomeIcon icon="fa-solid fa-trophy" /> Leaderboard</Link>           
+           <Link className="py-2 px-4 rounded bg-green-300" to={'/leaderboard-aqeedah1-'+params.batch+'/'+params.sn}> <FontAwesomeIcon icon="fa-solid fa-trophy" /> Leaderboard</Link>           
             </div>
 
             <div className='mx-auto px-5 py-1 bg-gradient-to-tl from-orange-200'>
@@ -222,7 +249,8 @@ useEffect(()=> {
                 {
                     admin && <div className="text-center my-20">
                         <p>Now You can update!</p>
-                        <button onClick={updateLeaderBoard} className="btn-primary"> update leaderboard</button>
+                        <button onClick={updateLeaderBoard} className="p-2 m-2 btn-primary"> update leaderboard</button>
+                        <button onClick={accessLevelTwo} className="p-2 m-2 btn-secondary"> Access Level 2</button>
                         
                     </div>
                 }

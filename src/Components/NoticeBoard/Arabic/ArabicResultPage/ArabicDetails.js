@@ -26,7 +26,7 @@ const ArabicDetails  = () => {
 
     const params = useParams();
     useEffect(()=> {
-      axios.get(`https://flannel-loonie-61461.herokuapp.com/arabic/${params.batch}/sn/${params.sn}`)
+      axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/sn/${params.sn}`)
 
       .then(data => setStudent(data.data))
     },[params]);

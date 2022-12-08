@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../../../firebase.init';
 import useAdmin from '../../../hooks/useAdmin';
+import Loading from '../../../Loading/Loading';
 import ArabicResultPageRow from './ArabicResultPageRow';
 
 const ArabicResultPage = () => {
@@ -16,7 +17,7 @@ const ArabicResultPage = () => {
     const params = useParams();
     let searchName = 'a';
     const getStudentList = async (searchName) => {
-      const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/arabic/${params.batch}/${searchName}`)
+      const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/${searchName}`)
       // http://localhost:5000
       // https://flannel-loonie-61461.herokuapp.com
       return data;
@@ -24,6 +25,14 @@ const ArabicResultPage = () => {
   
   const {isLoading, isFetching, data: students, refetch} = useQuery('arabicList', () => getStudentList(searchName))
    
+
+  if(isLoading){
+    return <Loading></Loading>
+  }
+  
+  if(students?.length === 0){
+    return <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
+  }
 
   const searchByName = e => {
     e.preventDefault();

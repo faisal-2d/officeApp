@@ -11,7 +11,7 @@ const NewRegAqeedah = () => {
 
 
     useEffect(() => {
-        axios.get(`https://flannel-loonie-61461.herokuapp.com/count/aqeedah/17`)
+        axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/18`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -42,14 +42,14 @@ const NewRegAqeedah = () => {
             
         }
         
-        axios.post(`https://flannel-loonie-61461.herokuapp.com/newregister`, insertData)
+        axios.post(`https://alharamanin-backend-web.onrender.com/newAqeedahregister`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 
 
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
-            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 17</p>
+            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 18</p>
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
             <div className="card-body">
        <form onSubmit={handleSubmit(handleFormSubmit)}> 

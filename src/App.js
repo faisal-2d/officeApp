@@ -50,8 +50,8 @@ function App() {
         <Route path='aqeedah-:batch' element={<AqeedahResultPage/>}></Route>
         <Route path='aqeedah-:batch/:sn' element={<AqeedahDetails/>}></Route>
         <Route path='aqeedah-14/:sn/update-result' element={<RequireAdmin><Aqeedah3ResultUpdate></Aqeedah3ResultUpdate></RequireAdmin>}></Route>
-        <Route path='meritlist-aqeedah-:batch' element={<MeritList/>}></Route>
-        <Route path='leaderboard-aqeedah1-:batch' element={<Aqeedah1LeaderBoard/>}></Route>
+        <Route path='meritlist-aqeedah-:batch/:sn' element={<MeritList/>}></Route>
+        <Route path='leaderboard-aqeedah1-:batch/:sn' element={<Aqeedah1LeaderBoard/>}></Route>
         <Route path='reviews' element={<AqeedahReviews/>}></Route>
         <Route path='add-review' element={<AddReview/>}></Route>
         <Route path='arabic' element={<Arabic/>}></Route>

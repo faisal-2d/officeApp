@@ -19,10 +19,11 @@ const Header = () => {
         <li><Link to="/">হোম</Link></li>        
         <li><Link to="/courses">কোর্স সমূহ</Link></li>        
         <li><Link to="/schedule">ক্লাসের সময়</Link></li>    
-        <li><Link to="/noticeboard">নোটিশ বোর্ড</Link></li>    
-        <li><Link to="/about-us">আমাদের সম্পর্কে</Link></li>
+        
     </>
-    }        
+    }  
+    <li><Link to="/noticeboard">নোটিশ বোর্ড</Link></li>    
+    <li><Link to="/about-us">আমাদের সম্পর্কে</Link></li>      
     <li><Link to="/registration" className="text-red-500">রেজিস্ট্রেশন</Link></li>        
     </>
     return (  

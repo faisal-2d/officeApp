@@ -7,7 +7,7 @@ const useToken = (user) => {
         const userEmail = user?.user?.email;
         const currentUser = {email : userEmail};
         if(userEmail){            
-            axios.put(`https://flannel-loonie-61461.herokuapp.com/user/${userEmail}`, currentUser)
+            axios.put(`https://alharamanin-backend-web.onrender.com/user/${userEmail}`, currentUser)
             .then(data => {
                 const accessToken = data.data.token;
                 localStorage.setItem("accessToken",accessToken)

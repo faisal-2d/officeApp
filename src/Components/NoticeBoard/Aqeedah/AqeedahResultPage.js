@@ -16,7 +16,7 @@ const AqeedahResultPage = () => {
   const params = useParams();
   let searchName = 'a';
   const getStudentList = async (searchName) => {
-    const {data} = await axios.get(`https://flannel-loonie-61461.herokuapp.com/aqeedah/${params.batch}/${searchName}`)
+    const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/${searchName}`)
     // http://localhost:5000
     // https://flannel-loonie-61461.herokuapp.com
     return data;
@@ -24,90 +24,77 @@ const AqeedahResultPage = () => {
 
 const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
  
-// const exm1update = () => {
-//   axios.get(`LevelOneFinal.json`)
-//   .then(data => data.data.map(stud => {
-    
-//     const data = {
-//       "aqeedah3data" : [
-//         {
-//           "name" : "Exm 1",
-//           "Score" : stud.Score1,
-//           "resultBook" : ""
-//         },{
-//           "name" : "Exm 2",
-//           "Score" : 0,
-//           "resultBook" :""
-//         },{
-//           "name" : "Exm 3",
-//           "Score" : 0,
-//           "resultBook" : ""
-//         }
-//       ]
-//   }
-//       axios.put(`http://localhost:5000/exm2level2/${stud.sn}`, data)
-//     .then(data => console.log(data.data))
-//     // console.log(stud.sn, stud.score, stud.drive);
-//   }))    
-// }
-
-
 const levelTwoUpdate = () => {
-  axios.get(`LevelTwo.json`)
+  axios.get(`Batch17Level1.json`)
   .then(data => data.data.map(stud => {
     
-    // const data = {         
-    //       // "name" : "Exm 1",
-    //       // "Score" : stud.Score1,
-    //       "aqeedah3Total" : 0      
-    //   }
-
     const data = {
-            // "aqeedah3payment" : stud.Payment,
-            "aqeedah3Total" : stud.score1,
-            "aqeedah3data" : [
-               {
-                 "name" : "Exm 1",
-                 "Score" : stud.score1,
-               },{
-                 "name" : "Exm 2",
-               "Score" : 0,
-               },{
-                 "name" : "Exm 3",
-                 "Score" : 0,
-              },{
-                 "name" : "Exm 4",
-                 "Score" : 0,
-              }
-             ]
-         }
-         
-
-           axios.put(`http://localhost:5000/payment/aqeedah/16/${stud.sn}`, data)
-           .then(data => console.log(data.data))
-         
-    // console.log(stud.sn, stud.score1);
+      "name" : "Exm 3",
+      "Score" : stud.Score3
+  }
+      axios.put(`http://localhost:5000/exm2/aqeedah/17/${stud.sn}`, data)
+    .then(data => console.log(data.data))
+    // console.log(stud.sn, stud.score, stud.drive);
   }))    
 }
 
-const checkBefore = () => {
-  const data = {         
-    "name" : "Exm 1",
-    "Score" : 0,
-    "resultBook" : ""      
-}
- for(let i=1; i<415; i++){
-   axios.put(`http://localhost:5000/exm1/aqeedah/17/${i}`, data)
-.then(data => console.log(data.data))
- }
-}
+
+// const levelTwoUpdate = () => {
+//   axios.get(`Certificate.json`)
+//   .then(data => data.data.map(stud => {
+    
+//     const data = {       
+//           "aqeedahCertificate" : stud.DriveLink,
+//       }
+
+//     // const data = {
+//     //         // "aqeedah3payment" : stud.Payment,
+//     //         "aqeedah3Total" : stud.score1,
+//     //         "aqeedah3data" : [
+//     //            {
+//     //              "name" : "Exm 1",
+//     //              "Score" : stud.score1,
+//     //            },{
+//     //              "name" : "Exm 2",
+//     //            "Score" : 0,
+//     //            },{
+//     //              "name" : "Exm 3",
+//     //              "Score" : 0,
+//     //           },{
+//     //              "name" : "Exm 4",
+//     //              "Score" : 0,
+//     //           }
+//     //          ]
+//     //      }
+         
+
+//            axios.put(`http://localhost:5000/certificate/aqeedah15/${stud.sn}`, data)
+//            .then(data => console.log(data.data))
+         
+//     // console.log(stud.sn, stud.score1);
+//   }))    
+// }
+
+// const checkBefore = () => {
+//   const data = {         
+//     "name" : "Exm 1",
+//     "Score" : 0,
+//     "resultBook" : ""      
+// }
+//  for(let i=1; i<415; i++){
+//    axios.put(`http://localhost:5000//exm2/aqeedah/17/${i}`, data)
+// .then(data => console.log(data.data))
+//  }
+// }
 
 if(isLoading){
   return <Loading></Loading>
 }
 
 if(students?.length === 0){
-  return <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
+  return <div className='min-h-screen flex justify-center items-center'>
+            <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
+          </div>
 }
 
 
@@ -141,7 +128,7 @@ const b = digitConverter(params.batch);
 return (
   <div className="my-10">
       <p className="text-center text-2xl">আক্বিদাহ কোর্সের {b} তম ব্যাচে স্বাগতম!</p>
-    { admin && <div className="text-center mx-auto"><button onClick={levelTwoUpdate} className="btn-primary text-center">Result Update</button></div> }
+    {/* { admin && <div className="text-center my-5 mx-auto"><button onClick={levelTwoUpdate} className="btn-primary text-center">Result Update</button></div> } */}
 
       <form onSubmit={searchByName} >
       <div className="form-control my-10">

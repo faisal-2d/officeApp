@@ -13,7 +13,7 @@ const Aqeedah3ResultUpdate = () => {
     const location = useLocation();
     const nevigate = useNavigate();   
 useEffect(()=> {
-  axios.get(`https://flannel-loonie-61461.herokuapp.com/aqeedah/14/sn/${sn.sn}`)
+  axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/14/sn/${sn.sn}`)
 //   http://localhost:5000/
   .then(data => setStudent(data.data))
 },[sn]);
