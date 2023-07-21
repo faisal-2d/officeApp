@@ -2,6 +2,7 @@ import { faFacebookF, faTelegram, faWhatsapp, } from '@fortawesome/free-brands-s
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/blackLogo-01.png'
 
 const Footer = () => {
@@ -17,22 +18,24 @@ const Footer = () => {
 <div>  
 <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
-    <span className="footer-title">Services</span> 
-    <a className="link link-hover">Branding</a> 
-    <a className="link link-hover">Design</a> 
-    <a className="link link-hover">Marketing</a> 
-    <a className="link link-hover">Advertisement</a>
+    <span className="footer-title">কোর্স সমূহ</span>    
+    <Link className="link link-hover" to='/courses/dua'> দোআ ও যিকির {/*<span className="badge badge-error">নতুন</span>*/}</Link>    
+    <Link className="link link-hover" to='/courses/aqeedah'>আক্বিদাহ</Link>
+    <Link className="link link-hover" to='/courses/arabic'>আরবি ভাষা</Link>
+    <Link className="link link-hover" to='/courses'>সকল কোর্স</Link>
   </div> 
   <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a> 
-    <a className="link link-hover">Contact</a>    
+    <span className="footer-title">প্রতিষ্ঠান</span> 
+    <Link className="link link-hover" to='/registration'>রেজিস্ট্রেশন</Link> 
+    <Link className="link link-hover" to='/about-us'>আমাদের সম্পর্কে</Link> 
+   
   </div> 
   <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a> 
-    <a className="link link-hover">Privacy policy</a> 
-    <a className="link link-hover">Cookie policy</a>
+    <span className="footer-title">সাপোর্ট</span> 
+    <Link className="link link-hover" to='/aqeedah-due'>বকেয়া পরিশোধ করুন</Link>
+    <p className="link link-hover">এডমিন</p> 
+    <p className="link link-hover">+966 57 8621278</p> 
+
   </div>
 </footer> 
 <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">

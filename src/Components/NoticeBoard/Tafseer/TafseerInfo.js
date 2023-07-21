@@ -13,7 +13,7 @@ const TafseerInfo = () => {
            {/* Course Descripttion  */}
            <section className='my-10'>
                 <p className='text-xl'>কোর্স পরিচিতিঃ</p>
-                <p>(এই পেইজটি আপডেট এখনও আপডেট করা হয়নি।)</p>
+                <p>(এই পেইজটি এখনও আপডেট করা হয়নি।)</p>
            </section>
         </div>
     );

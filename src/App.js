@@ -32,6 +32,12 @@ import SeeratInfo from './Components/NoticeBoard/Seerat/SeeratInfo';
 import Arabic from './Components/NoticeBoard/Arabic/Arabic';
 import ArabicResultPage from './Components/NoticeBoard/Arabic/ArabicResultPage/ArabicResultPage';
 import ArabicDetails from './Components/NoticeBoard/Arabic/ArabicResultPage/ArabicDetails';
+import AqeedahDue from './Components/CourseRegistration/AqeedahDue';
+import DuaInfo from './Components/NoticeBoard/Dua/DuaInfo';
+import DuaRegistration from './Components/NoticeBoard/Dua/DuaRegistration';
+import NewRegArabic from './Components/NoticeBoard/Arabic/NewRegArabic';
+import ArabicRegistration from './Components/NoticeBoard/Arabic/ArabicRegistration';
+import AqeedahRegistration from './Components/CourseRegistration/AqeedahRegistration';
 
 function App() {
   return (
@@ -42,11 +48,13 @@ function App() {
         <Route path='courses' element={<Courses/>}></Route>
         <Route path='courses/aqeedah' element={<AqeedahInfo/>}></Route>
         <Route path='courses/arabic' element={<ArabicInfo/>}></Route>
+        <Route path='courses/dua' element={<DuaInfo/>}></Route>
         <Route path='courses/fiqh' element={<FiqhInfo/>}></Route>
         <Route path='courses/tafseer' element={<TafseerInfo/>}></Route>
         <Route path='courses/seerat' element={<SeeratInfo/>}></Route>
         <Route path='noticeboard' element={<NoticeBoard/>}></Route>
         <Route path='aqeedah' element={<Aqeedah/>}></Route>
+        <Route path='aqeedah-due' element={<AqeedahDue/>}></Route>
         <Route path='aqeedah-:batch' element={<AqeedahResultPage/>}></Route>
         <Route path='aqeedah-:batch/:sn' element={<AqeedahDetails/>}></Route>
         <Route path='aqeedah-14/:sn/update-result' element={<RequireAdmin><Aqeedah3ResultUpdate></Aqeedah3ResultUpdate></RequireAdmin>}></Route>
@@ -60,7 +68,11 @@ function App() {
         <Route path='about-us' element={<AboutUs/>}></Route>
         <Route path='schedule' element={<Schedule></Schedule>}></Route>
         <Route path='registration' element={<Registration/>}></Route>
-        <Route path='new-registration' element={<ReqiureAuth><RequireAdmin><NewRegAqeedah/></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='new-aqeedah-registration' element={<ReqiureAuth><RequireAdmin><NewRegAqeedah/></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='new-arabic-registration' element={<ReqiureAuth><RequireAdmin><NewRegArabic/></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='registration-aqeedah' element={<AqeedahRegistration/>}></Route>
+        <Route path='registration-arabic' element={<ArabicRegistration/>}></Route>
+        <Route path='registration-dua' element={<DuaRegistration/>}></Route>
         <Route path='login' element={<Login/>}></Route>
         <Route path='signup' element={<SignUp/>}></Route>
         <Route path='forgot-password' element={<ForgotPassword/>}></Route>

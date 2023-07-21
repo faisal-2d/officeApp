@@ -1,4 +1,3 @@
-import { faMoneyBill1 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React from 'react';
@@ -6,15 +5,17 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useParams } from 'react-router-dom';
-import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts';
 import maleProfile from '../../../../assets/male-profile.png';
 import femaleProfile from '../../../../assets/female-profile.png';
+import aq_certi_1 from '../../../../assets/certi_img/aq_certi_1.gif'
+import aq_certi_2 from '../../../../assets/certi_img/aq_certi_2.gif'
+import aq_certi_3 from '../../../../assets/certi_img/aq_certi_3.gif'
 import auth from '../../../../firebase.init';
 import useAdmin from '../../../hooks/useAdmin';
 import Loading from '../../../Loading/Loading';
-import ArabicBarChart from './ArabicBarChart';
 import ArabicPyamentCard from './ArabicPyamentCard';
-import SkillMeter from './SkillMeter';
+import { faFilePdf } from '@fortawesome/fontawesome-free-solid';
+import ArabicLevelComponent from './ArabicLevelComponent';
 
   
  
@@ -27,7 +28,7 @@ const ArabicDetails  = () => {
     const params = useParams();
     useEffect(()=> {
       axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/sn/${params.sn}`)
-
+    //   https://alharamanin-backend-web.onrender.com
       .then(data => setStudent(data.data))
     },[params]);
     
@@ -87,7 +88,7 @@ const ArabicDetails  = () => {
             <div className="flex flex-col md:flex-row p-5 gap-10">                
 
                 {student.arabic1payment && <ArabicPyamentCard
-                payment={student.arabic2payment}
+                payment={student.arabic1payment}
                 level ={1}
                 ></ArabicPyamentCard> }  
 
@@ -106,50 +107,56 @@ const ArabicDetails  = () => {
 
             </div>
 
-            <section className="my-10">
-           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>            
 
-            <div>
-                <div className={`p-5 rounded bg-gradient-to-tl from-green-300`}>
-                <p className='text-xl'>Batch: {params.batch}</p>
-                <p className='text-xl'>Course: Arabic Level 2 </p>            
-                </div>
-            </div>
+{/* Araboic Certificate  */}
+{student.arabicCertificates  &&   <div>
+                <p className="text-2xl mt-12 mb-5">অভিনন্দন! আপনি সার্টিফিকেট পেয়েছেন!</p>
 
-            <div className='grid grid-cols-2 gap-5 px-14'> 
-                {
-                    student.arabic2skill.map((data, index) => <SkillMeter
-                    key={index}
-                    sData={data}
-                    color={(data.value > 50 ? "green" : "brown")}
-                    ></SkillMeter>)
-                }
-            </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-            <div className='mx-auto px-5 py-1 bg-gradient-to-tl from-indigo-200'>
-                <ArabicBarChart
-                data={student.arabic2data}                
-                ></ArabicBarChart>
-            </div>  
-               
-            
-            </div>
-
-           <p className="text-2xl mt-12 mb-5">আপনার লেভেল ২ এর পরীক্ষার রেজাল্টসমূহ</p>
-           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                {
-                    
-                    student.arabic2data.map((exm, index) => <div key={index} className='text-center p-5 rounded bg-indigo-200'>
-                            <p className='text-2xl'>{exm.name}</p>
-                            <p className='text-5xl'>{exm.Score}</p>
-                        </div>
-                    )
-                }
+                {student.arabicCertificates?.level1 && <div className="text-center p-5 rounded bg-sky-100 w-fit">
+                    <img className="rounded" src={aq_certi_1} alt="" />
+                    <a className="bg-blue-400 block mt-2 text-white p-2 rounded shadow" href={student.arabicCertificates?.level1} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-5' icon={faFilePdf}/> Level 1 Certificate</a>
+                </div>}
                 
-            </div>
+                {student.arabicCertificates?.level2 && <div className="text-center p-5 rounded bg-green-100 w-fit">
+                    <img className="rounded" src={aq_certi_2} alt="" />
+                    <a className="bg-green-500 block mt-2 text-white p-2 rounded shadow" href={student.arabicCertificates?.level1} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-5' icon={faFilePdf}/> Level 2 Certificate</a>
+                </div>}
+
+                {student.arabicCertificates?.level3 && <div className="text-center p-5 rounded bg-red-100 w-fit">
+                    <img className="rounded" src={aq_certi_3} alt="" />
+                    <a className="bg-red-400 block mt-2 text-white p-2 rounded shadow" href={student.arabicCertificates?.level1} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-5' icon={faFilePdf}/> Level 3 Certificate</a>
+                </div>}
+               
+
+                </div>
+   </div>             
+ } 
 
 
-            </section>
+{/* Level 3  */}
+            {student.arabic3skill && <ArabicLevelComponent
+            skill={student.arabic3skill}
+            data={student.arabic3data}
+            level ={3}
+            ></ArabicLevelComponent>}
+
+{/* Level 2  */}
+            {student.arabic2skill && <ArabicLevelComponent
+            skill={student.arabic2skill}
+            data={student.arabic2data}
+            level ={2}
+            ></ArabicLevelComponent>}
+
+
+
+{/* Level 1  */}
+            {student.arabic1skill && <ArabicLevelComponent
+            skill={student.arabic1skill}
+            data={student.arabic1data}
+            level ={1}
+            ></ArabicLevelComponent>}
             
             
         </div>

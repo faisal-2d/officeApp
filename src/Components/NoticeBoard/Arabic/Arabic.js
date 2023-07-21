@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Arabic = () => {
-    const batchList = [ 3, 2 ];
+    const batchList = [4, 3, 2, 1];
  
 
     return (

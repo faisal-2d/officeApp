@@ -14,7 +14,14 @@ const Header = () => {
 
     const menu = <>
     {admin 
-    ? <li><Link to="/new-registration">নতুন ভর্তি</Link></li>
+    ? <div className="dropdown dropdown-hover">
+        <label tabIndex="0" className="btn btn-ghost m-1">নতুন ভর্তি</label>
+          <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            {/* <li onClick={() => signOut(auth)}><a>Log Out</a></li> */}
+            <li><Link to="/new-aqeedah-registration">আক্বিদাহ</Link></li>
+            <li><Link to="/new-arabic-registration">আরবি</Link></li>
+          </ul>
+      </div>
     : <>
         <li><Link to="/">হোম</Link></li>        
         <li><Link to="/courses">কোর্স সমূহ</Link></li>        
@@ -52,7 +59,9 @@ const Header = () => {
             <li onClick={() => signOut(auth)}><a>Log Out</a></li>
           </ul>
       </div>
-    :   <Link to="/login"><FontAwesomeIcon icon="fa-solid fa-user" /></Link>
+    :  
+    <p></p> 
+    //<Link to="/login"><FontAwesomeIcon icon="fa-solid fa-user" /></Link>
       }
   </div>
 </div>       

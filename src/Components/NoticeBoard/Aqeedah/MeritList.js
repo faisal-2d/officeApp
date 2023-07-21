@@ -4,12 +4,11 @@ import { useParams } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 import MeritRow from './MeritRow';
 import { useQuery } from 'react-query'
-import { faArrowUpAZ } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 
 const MeritList = () => {
-  const [myPosition, setMyPosition] = useState();
+  const [myPosition, setMyPosition] = useState(0);
     const params = useParams();
   const getStudentList = async () => {
     const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/leaderboard/aqeedah3/${params.batch}`)
@@ -18,18 +17,15 @@ const MeritList = () => {
         return data;
   }
 
-const {isLoading, isFetching, data: students, refetch} = useQuery('leaderBoard', getStudentList)
+const {isLoading, isFetching, data: students, refetch} = useQuery('leaderBoard2', getStudentList)
  
+
 
 if(isLoading){
   return <Loading></Loading>
 }
 
-if(students?.length === 0){
-  return <div className='min-h-screen flex justify-center items-center'>
-          <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
-        </div>
-}
+
 
 const myResult = students.find(student => student.sn == params.sn);
 
@@ -41,7 +37,7 @@ const th = m => {
 }
 
     return (
-        <div>
+        <div className='mb-20'>
           <div className='text-center my-10 text-xl'>
           <p>Welcome to Leaderboard, Batch: Aqeedah - {params.batch} </p>
           <p>Level 2+3</p>
@@ -65,7 +61,7 @@ const th = m => {
       </tr>
     </thead>
     <tbody> 
-    <tr className="">
+     <tr className="">
             <th className='bg-yellow-100 font-bold'>{myPosition} <sup>{th(myPosition)}</sup></th>
             <th className='bg-yellow-100'>{myResult?.sn}</th>
             <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>

@@ -6,7 +6,7 @@ import Loading from "../../../Loading/Loading";
 import Aqeedah1LeaderBoardRow from "./Aqeedah1LeaderBoardRow";
 
 const Aqeedah1LeaderBoard = () => {
-  const [myPosition, setMyPosition] = useState();
+  const [myPosition, setMyPosition] = useState(0);
 
   const params = useParams();
   const getStudentList = async () => {
@@ -23,17 +23,13 @@ const Aqeedah1LeaderBoard = () => {
     isFetching,
     data: students,
     refetch,
-  } = useQuery("leaderBoard", getStudentList);
+  } = useQuery("leaderBoard1", getStudentList);
 
   if (isLoading) {
     return <Loading></Loading>;
   }
 
-  if(students?.length === 0){
-    return <div className='min-h-screen flex justify-center items-center'>
-            <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
-          </div>
-  }
+
 
   
 const myResult = students.find(student => student.sn == params.sn);
@@ -53,7 +49,7 @@ const th = m => {
           </div>
 
       <div>
-        <div className="overflow-x-auto w-10/12 mx-auto">
+        <div className="overflow-x-auto w-10/12 mx-auto mb-20">
           <table className="table w-full">
             <thead>
               <tr>

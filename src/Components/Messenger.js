@@ -9,9 +9,7 @@ const Messenger = () => {
             <MessengerCustomerChat
     pageId="1924132557642598"
     appId="723005729131854"    
-  />,   
-            
-    
+  />
    </div>
     );
 };

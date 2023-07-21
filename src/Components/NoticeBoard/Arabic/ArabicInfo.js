@@ -1,9 +1,11 @@
-import { faHeadphones } from '@fortawesome/fontawesome-free-solid';
+import { faHeadphones, faMousePointer } from '@fortawesome/fontawesome-free-solid';
 import { faTelegramPlane, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faBookOpen, faCircleCheck, faMicrophone, faPenRuler } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import partyFlag from '../../../assets/partyFlag.png'
+import ContactInfo from '../../ContactInfo';
+import { Link } from 'react-router-dom';
 const ArabicInfo = () => {
     return (
         <div className='container mx-auto px-5 my-10'>
@@ -37,6 +39,10 @@ const ArabicInfo = () => {
                 <p>কোর্স ফী এককালীন, তবে বিশেষ প্রয়োজনে কিস্তিতে দিতে পারবেন। এই ব্যাপারে কোর্স টিচারের সাথে যোগাযোগ করে নিবেন।</p>
                 <p>যারা বাংলাদেশে আছেন, তারা বাজারে বা অনলাইন শপে বইগুলো কিনতে পারবেন। কেনার সময় খেয়াল রাখবেন, বইয়ে যেন শুধু আরবি থাকে, অনুবাদ না থাকে। ইংরেজি বা বাংলা অনুবাদযুক্ত বই কিনবেন না।</p>
            </section>
+
+           <section className='my-3 lg:w-1/3 mx-auto'>
+                <Link to="/registration-arabic"><p className='p-3 bg-yellow-200 rounded shadow-md'>বিকাশ নাম্বার এবং গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-orange-600' icon={faMousePointer} fade/></p></Link>
+            </section>
 
            {/* study method  */}
            <section className='my-10'>
@@ -125,30 +131,22 @@ const ArabicInfo = () => {
                 </div>
            </section>
 
-           
 
            {/* FAQs  */}
            <section>
 
            </section>
+           
+           <section className='my-3 lg:w-1/3 mx-auto'>
+                <Link to="/registration-arabic"><p className='p-3 bg-yellow-200 rounded shadow-md'>বিকাশ নাম্বার এবং গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-orange-600' icon={faMousePointer} fade/></p></Link>
+            </section>
 
            {/* Course Teacher  */}
            <section className='my-10'>
                 <p className='text-xl'>কোর্স শিক্ষকঃ</p>
                 <p>এই কোর্সে দারস দিবেন ফাইসাল আব্দুল্লাহ, সৌদি আরবের কিং খালিদ বিশ্ববিদ্যালয়ে আরবি ভাষা ইন্সটিটিউট থেকে ডিপ্লোমা করেছেন, বর্তমানে অত্র বিশ্ববিদ্যালয়ে অনার্সে অধ্যায়নরত। </p>
                 <p>পুরুষ ও মহিলাদের আলাদা ক্লাস, তবে শিক্ষক একজনই। মহিলারা ক্যামেরা অফ রেখে লাইভ ক্লাসে যোগ দিতে পারবেন।</p>
-                <p className='mt-3'>কোর্স শিক্ষকের সাথে সরাসরি যোগাযোগ করতে পারেন-</p>
-                <p>হোয়াটসঅ্যাপে/টেলিগ্রামে-</p>
-                <p className='font-bold'>Faisal</p>
-                <p className='font-bold'>+966 57 862 1278</p>
-                <p className='my-2 text-white'>
-                                <a target="_blank" href='https://wa.me/message/AS7CJBZOLZLFL1' className='rounded p-2 bg-lime-600 mr-3'>
-                                    <FontAwesomeIcon className='pr-2 text-xl' icon={faWhatsapp}/> WhatsApp
-                                </a>
-                                <a target="_blank" href='https://t.me/faisal_335' className='rounded p-2 bg-sky-600'>
-                                    <FontAwesomeIcon className='pr-2 text-xl' icon={faTelegramPlane}/> Telegram
-                                </a>
-                            </p> 
+                <ContactInfo></ContactInfo> 
            </section>
         </div>
     );

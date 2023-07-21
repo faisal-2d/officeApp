@@ -14,7 +14,6 @@ const AqeedahRow = ({student, batch}) => {
   return <Loading></Loading>
 }
 
-   
 
     return (
         <tr onClick={loadDetails } className="hover">
@@ -22,6 +21,13 @@ const AqeedahRow = ({student, batch}) => {
             <td>{student?.name.toUpperCase()}</td>
             <td>{student?.fatherName.toUpperCase()}</td>
             <td>{student?.phone}</td>
+            {/* <td>{student?.aqeedah1payment}</td>
+            <td>{student?.aqeedah1data[0].Score}</td>
+            <td>{student?.aqeedah1data[1].Score}</td>
+            <td>{student?.aqeedah1data[2].Score}</td>
+            <td>{student?.aqeedah1Total}</td> */}
+            
+            
       </tr>
     );
 };

@@ -19,7 +19,7 @@ const ArabicResultPage = () => {
     const getStudentList = async (searchName) => {
       const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/${searchName}`)
       // http://localhost:5000
-      // https://flannel-loonie-61461.herokuapp.com
+      // https://alharamanin-backend-web.onrender.com
       return data;
     }
   
@@ -43,73 +43,115 @@ const ArabicResultPage = () => {
     
 
     
-const levelTwoUpdate = () => {
-  axios.get(`Arabic2.json`)
+const levelOneReg = () => {
+  axios.get(`Arabic3list.json`)
   .then(data => data.data.map(stud => {
     
 
     const data = {
-            // "sn" : stud.sn,
-            // "name" : stud.name,
-            // "fatherName" : stud.fatherName,
-            // "gender" : stud.gender,
-            // "phone" : "1234",
-            "arabic2payment" : [
-              {month: "oct", paymnt: "paid"},
-              {month: "nov", paymnt: "paid"},
+            "sn" : stud.sn,
+            "name" : stud.name,
+            "fatherName" : stud.fatherName,
+            "gender" : stud.gender,
+            "phone" : stud.phone,
+            "arabic1payment" : [              
               {month: "dec", paymnt: "paid"},
-              {month: "jan", paymnt: "due"},
-              {month: "feb", paymnt: "due"},
-              {month: "mar", paymnt: "due"}
+              {month: "jan", paymnt: "paid"},
+              {month: "feb", paymnt: "paid"},
+              {month: "mar", paymnt: "paid"}
              ],
-        //   "arabic2skill" : [
-        //     { name: "Reading", value: 30},
-        //     { name: "Writing", value: 30},
-        //     { name: "Listening", value: 30},
-        //     { name: "Speaking", value: 30}
-        // ],
-        //     "arabic2data" : [
-        //        {
-        //          "name" : "Exm 1",
-        //          "Score" : 0,
-        //        },{
-        //          "name" : "Exm 2",
-        //        "Score" : 0,
-        //        },{
-        //          "name" : "Exm 3",
-        //          "Score" : 0,
-        //       },{
-        //          "name" : "Exm 4",
-        //          "Score" : 0,
-        //       }
-        //      ]
+          "arabic1skill" : [
+            { name: "Reading", value: 30},
+            { name: "Writing", value: 30},
+            { name: "Listening", value: 30},
+            { name: "Speaking", value: 30}
+        ],
+            "arabic1data" : [
+               {
+                 "name" : "Exm 1",
+                 "Score" : 0,
+               },{
+                 "name" : "Exm 2",
+               "Score" : 0,
+               },{
+                 "name" : "Exm 3",
+                 "Score" : 0,
+              },{
+                 "name" : "Exm 4",
+                 "Score" : 0,
+              },{
+                 "name" : "Exm 5",
+                 "Score" : 0,
+               },{
+                 "name" : "Exm 6",
+               "Score" : 0,
+               },{
+                 "name" : "Exm 7",
+                 "Score" : 0,
+              },{
+                 "name" : "Exm 8",
+                 "Score" : 0,
+              }
+             ]
          }
          
+        //  axios.put(`http://localhost:5000/update/arabic/3/${stud.sn}`, data.arabic2payment)
+        //  .then(data => console.log(data.data))
+         axios.post(`https://alharamanin-backend-web.onrender.com/arabic/newregister3`, data)
+         .then(data => console.log(data.data))
 
-           axios.put(`http://localhost:5000/update/arabic/2/${stud.sn}`, data.arabic2payment)
-           .then(data => console.log(data.data))
          
     // console.log(stud.sn, data.arabic2payment);
   }))    
 }
 
-const checkBefore = () => {
-  const data = {         
-    "name" : "Exm 1",
-    "Score" : 0,
-    "resultBook" : ""      
-}
- for(let i=1; i<415; i++){
-   axios.put(`http://localhost:5000/exm1/aqeedah/17/${i}`, data)
-.then(data => console.log(data.data))
- }
-}
+// const checkBefore = () => {
+//   const data = {         
+//     "name" : "Exm 1",
+//     "Score" : 0,
+//     "resultBook" : ""      
+// }
+//  for(let i=1; i<415; i++){
+//    axios.put(`http://localhost:5000/exm1/aqeedah/17/${i}`, data)
+// .then(data => console.log(data.data))
+//  }
+// }
 
+const digitConverter = engDigit => {
+  const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+    const str = engDigit.toString();
+    let bangDigit = '';
+    
+    for(let i=0; i<str.length; i++){
+      for(let j=0; j<engD.length; j++){
+        if(str[i]==engD[j]){
+          bangDigit+=bangD[j];
+        }
+      }           
+  }
+  return bangDigit;
+}    
+const b = digitConverter(params.batch);   
+
+        const th = t => {
+            if(t == 1 || t ==  5 || t ==  7 || t ==  8 || t ==  9 || t ==  10)
+            return "ম";
+            else if(t == 2 || t ==  3)
+            return "য়";
+            else if(t == 4 )
+            return "র্থ";
+            else if(t == 6 )
+            return "ষ্ঠ";
+            else return "তম";
+        }
+        const tt = th(params.batch);
   
     return (
         <div className="my-10">
-      <p className="text-center text-2xl">আরবি ভাষা কোর্সের ২য় ব্যাচে স্বাগতম!</p>
-      {/* { admin && <div className="text-center mx-auto"><button onClick={levelTwoUpdate} className="btn-primary text-center">Result Update</button></div> } */}
+       <p className="text-center text-2xl my-10">আরবি ভাষা কোর্সের {b}{tt} ব্যাচে স্বাগতম!</p>
+      {/* { admin && <div className="text-center mx-auto"><button onClick={levelOneReg} className="btn-primary text-center">Result Update</button></div> } */}
 
       <form onSubmit={searchByName} >
       <div className="form-control my-10">

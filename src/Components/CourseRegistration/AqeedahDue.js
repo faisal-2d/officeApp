@@ -7,6 +7,7 @@ import nagad from '../../assets/nagad.png'
 import rocket from '../../assets/rocket.png'
 import upay from '../../assets/upay.png'
 import { faTelegramPlane, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import ContactInfo from '../ContactInfo';
 
 const AqeedahDue = () => {
     return (
@@ -22,9 +23,9 @@ const AqeedahDue = () => {
             <section className='mb-10' id='send-money'>
                 <div>
                     <h2 className='text-2xl text-green-600'><FontAwesomeIcon className='pr-5' icon={faMoneyBillTransfer}/>কিভাবে বকেয়া টাকা পাঠাবেন?</h2>
-                    <p className=' mt-3'>নিচের যে কোন নাম্বারে আপনার বকেয়া টাকা সেন্ডমানি করুন।</p>
+                    <p className=' mt-3'>নিচের যে কোন নাম্বারে আপনার বকেয়া টাকা <strong className='text-red-600'>সেন্ডমানি</strong> করুন।</p>
                     <p>আপনার যদি মনে না থাকে কতো টাকা বকেয়া আছে, এডমিনকে মেসেজ দিয়ে জেনে নিন। </p>
-                    <p className='mb-3'>দোকান থেকে বিকাশ না করে নিজের নাম্বার থেকে করুন, তাহলে টাকাটা গেল কিনা, ঠিক নাম্বারে গেল কিনা নিশ্চিত হতে পারবেন।</p>
+                    <p className='mb-3'><strong className='text-red-600'>দোকান থেকে বিকাশ না করে </strong>নিজের নাম্বার থেকে করুন, তাহলে টাকাটা গেল কিনা, ঠিক নাম্বারে গেল কিনা নিশ্চিত হতে পারবেন।</p>
                     
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                         <div className='p-5 flex bg-red-200 rounded'>
@@ -68,17 +69,7 @@ const AqeedahDue = () => {
                             <p className='mt-3'>টাকা পাঠানো হয়ে গেলে এডমিনকে জানিয়ে দিন। তিনি আপনার প্রোফাইল আপডেট করে দিবেন।</p>
                             <p className='mb-3'>ভালো হয় যদি আপনি টাকা পাঠানোর স্ক্রিনশট/ডকুমেন্টের ছবি তুলে এডমিনকে পাঠান। যদি তা সম্ভব না হয় তাহলে কবে - কোন নাম্বার থেকে - কতো টাকা পাঠিয়েছেন , তা লিখে এডমিনকে ইনবক্স করুন।</p> 
 
-                            <p className='mt-10'>এডমিনের সাথে হোয়াটসঅ্যাপে বা টেলিগ্রামে যোগাযোগ করতে পারেন -</p>                           
-                            <p className='font-bold'>Faisal</p>                           
-                            <p className='font-bold'>+966 57 862 1278</p>                           
-                            <p className='my-2 text-white'>
-                                <a target="_blank" href='https://wa.me/message/AS7CJBZOLZLFL1' className='rounded p-2 bg-lime-600 mr-3'>
-                                    <FontAwesomeIcon className='pr-2 text-xl' icon={faWhatsapp}/> WhatsApp
-                                </a>
-                                <a target="_blank" href='https://t.me/faisal_335' className='rounded p-2 bg-sky-600'>
-                                    <FontAwesomeIcon className='pr-2 text-xl' icon={faTelegramPlane}/> Telegram
-                                </a>
-                            </p>                           
+                            <ContactInfo></ContactInfo>                         
                                                      
                         </div>
                        

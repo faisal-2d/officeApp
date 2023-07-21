@@ -11,7 +11,7 @@ const NewRegAqeedah = () => {
 
 
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/18`)
+        axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/20`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -49,7 +49,7 @@ const NewRegAqeedah = () => {
 
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
-            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 18</p>
+            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 20</p>
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
             <div className="card-body">
        <form onSubmit={handleSubmit(handleFormSubmit)}> 
@@ -66,7 +66,7 @@ const NewRegAqeedah = () => {
              
             { studSn 
                 ? <input type="text" placeholder="SN" className="input input-bordered w-20" defaultValue={studSn+1}  {...register("sn", { required: true })} />
-                : <button class="btn btn-square loading"></button>
+                : <button className="btn btn-square loading"></button>
             }
             {errors.sn?.type === 'required' && "Serial Number is required"}
         </div>
