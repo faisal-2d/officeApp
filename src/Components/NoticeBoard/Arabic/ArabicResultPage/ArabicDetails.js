@@ -4,7 +4,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import maleProfile from '../../../../assets/male-profile.png';
 import femaleProfile from '../../../../assets/female-profile.png';
 import aq_certi_1 from '../../../../assets/certi_img/aq_certi_1.gif'
@@ -20,22 +20,34 @@ import ArabicLevelComponent from './ArabicLevelComponent';
   
  
 const ArabicDetails  = () => {
-    const [student, setStudent] = useState();
+  const params = useParams();
+  const nev = useLocation();
+
+    const [student, setStudent] = useState(nev.state?.student);
     const [user, loading, error] = useAuthState(auth);
     const [admin] = useAdmin(user);
 
 
-    const params = useParams();
-    useEffect(()=> {
+    // useEffect(()=> {
+    //   axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/sn/${params.sn}`)
+    // //   https://alharamanin-backend-web.onrender.com
+    //   .then(data => setStudent(data.data))
+    // },[params]);
+    
+    const getStudent = () => {
+
       axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/sn/${params.sn}`)
-    //   https://alharamanin-backend-web.onrender.com
-      .then(data => setStudent(data.data))
-    },[params]);
-    
-    
-        if(!student){
-            return <Loading></Loading>
-        }
+      .then(data => { setStudent(data.data)
+          // console.log("i got the student ",data.data);
+      });       
+     
+}
+
+if(!student){
+  getStudent();
+  return <Loading></Loading>
+}
+
    
         const digitConverter = engDigit => {
             const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

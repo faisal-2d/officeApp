@@ -62,7 +62,7 @@ const DuaRegistration = () => {
                             <p className='text-2xl font-bold'>01883 99 80 815</p>
                         </div>
                     </div>
-                    <p className='mt-5'>ভারত থেকে ভর্তি হওয়ার জন্য ৫০০ রুপি পাঠাবেন।</p>
+                    {/* <p className='mt-5'>ভারত থেকে ভর্তি হওয়ার জন্য ৫০০ রুপি পাঠাবেন।</p>
                     <div className='flex gap-5 mt-5'>
                         <div className='w-16'>
                             <img className='rounded' src={india} alt="" />
@@ -71,7 +71,7 @@ const DuaRegistration = () => {
                             <p className='text-xl '> Upi  :  +91 96816 23868</p>
                             <p className='text-xl mb-5'> Upi Id: 9681623868@ybl</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 

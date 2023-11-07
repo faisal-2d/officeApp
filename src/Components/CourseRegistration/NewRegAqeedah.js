@@ -11,7 +11,7 @@ const NewRegAqeedah = () => {
 
 
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/20`)
+        axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/21`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -27,29 +27,26 @@ const NewRegAqeedah = () => {
             "aqeedah1payment" : data.payment,
             "aqeedah1data" : [{
                 "name" : "Exm 1",
-                "Score" : 0,
-                "resultBook" : ""
+                "Score" : 0
               },{
                 "name" : "Exm 2",
-                "Score" : 0,
-                "resultBook" : ""
+                "Score" : 0
               },{
                 "name" : "Exm 3",
-                "Score" : 0,
-                "resultBook" : ""
+                "Score" : 0
               }
             ]            
             
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/newAqeedahregister`, insertData)
+        axios.post(`https://alharamanin-backend-web.onrender.com/register/aqeedah/21}`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 
 
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
-            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 20</p>
+            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 21</p>
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
             <div className="card-body">
        <form onSubmit={handleSubmit(handleFormSubmit)}> 
@@ -95,8 +92,7 @@ const NewRegAqeedah = () => {
           <span className="label-text">Father's Name</span>
         </label>
         <div className="mb-3">
-            <input type="text" placeholder="Father's Name" className="input input-bordered w-full max-w-xs"  {...register("fatherName", { required: true })} />
-            {errors.fatherName?.type === 'required' && "Father's name is required"}
+            <input type="text" placeholder="Father's Name" className="input input-bordered w-full max-w-xs"  {...register("fatherName")} />
         </div>
       </div>
       

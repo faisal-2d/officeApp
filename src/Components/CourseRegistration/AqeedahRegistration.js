@@ -2,9 +2,9 @@ import { faHandPointer } from '@fortawesome/fontawesome-free-regular';
 import { faFileInvoice, faMoneyBillTransfer, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import registration_form_qr from '../../assets/aqeedah_20/batch_20_qr.png'
-import batch_20_female_qr from '../../assets/aqeedah_20/aqeedah_20_female.jpg'
-import batch_20_male_qr from '../../assets/aqeedah_20/aqeedah_20_male.jpg'
+import registration_form_qr from '../../assets/admission_form.png'
+import female_group_qr from '../../assets/aqeedah_21/aqeedah_21_female.jpg'
+import male_group_qr from '../../assets/aqeedah_21/aqeedah_21_male.jpg'
 import male_group_logo from '../../assets/group logo/aqeedah 1 male.jpg'
 import female_group_logo from '../../assets/group logo/aqeedah 1 female.jpg'
 import india from '../../assets/india.png'
@@ -13,13 +13,20 @@ import nagad from '../../assets/nagad.png'
 import rocket from '../../assets/rocket.png'
 import upay from '../../assets/upay.png'
 import paypal from '../../assets/paypal.png'
+import islamiBank from '../../assets/islamic bank..png'
+import stcPay from '../../assets/stc_pay.png'
 import { Link } from 'react-router-dom';
 import { faMousePointer } from '@fortawesome/fontawesome-free-solid';
 import ContactInfo from '../ContactInfo';
+import NextBatchReg from './NextBatchReg';
 
 
 const AqeedahRegistration = () => {
+    const Level_0_Male_link ="https://t.me/+1eenPK1I1_VhYWY8";
+    const Level_0_Female_link ="https://t.me/+00Diz2CJWtY4ZmY0";
+
     return (
+        <section className='min-h-screen container mx-auto my-10 px-5'>
         <div className='min-h-screen container mx-auto my-10 px-5'>
             <p className='text-center text-2xl'>আক্বিদাহ কোর্সে রেজিস্ট্রেশন চলছে!</p>
             <div className='mx-auto my-5 text-center '>
@@ -30,7 +37,7 @@ const AqeedahRegistration = () => {
         </section> 
 
             <ul className="steps steps-vertical">
-                <li className="step step-primary"><a href='#send-money'>১৫০০ টাকা পাঠান/সেন্ডমানি করুন</a></li>
+                <li className="step step-primary"><a href='#send-money'>১৫০০ টাকা সেন্ডমানি করুন</a></li>
                 <li className="step step-primary"><a href='#form'>ভর্তি ফর্ম পূরন করুন</a></li>
                 <li className="step step-primary"><a href='#group-link'>টেলিগ্রাম গ্রুপে জয়েন করুন</a></li>
             </ul>
@@ -40,7 +47,9 @@ const AqeedahRegistration = () => {
                 <div>
                     <h2 className='text-2xl text-green-600'><FontAwesomeIcon className='pr-5' icon={faMoneyBillTransfer}/>কিভাবে কোর্স ফী পাঠাবেন?</h2>
                     <p className=' mt-3'>নিচের যে কোন নাম্বারে <span className="text-red-500 font-bold">১৫০০ টাকা সেন্ডমানি </span> করুন।</p>
-                    <p className='mb-3'>দোকান থেকে বিকাশ না করে নিজের নাম্বার থেকে করুন, তাহলে টাকাটা গেল কিনা, ঠিক নাম্বারে গেল কিনা নিশ্চিত হতে পারবেন।</p>
+                    <p className=''><strong className='text-red-600'>দোকান থেকে টাকা না পাঠিয়ে </strong> নিজের/বাড়ির কারো নাম্বার থেকে পাঠান, তাহলে টাকাটা গেল কিনা, ঠিক নাম্বারে গেল কিনা নিশ্চিত হতে পারবেন।</p>
+                    <p className='mt-1'><FontAwesomeIcon className='text-blue-500' icon={'image'}/> সম্ভব হলে টাকা পাঠানোর পর <strong className='text-blue-600'>স্ক্রিনশট/মানি রিসিটের ছবি</strong> তুলুন। </p>
+                    <p className='mb-5'><FontAwesomeIcon className='text-red-500' icon={'ban'}/> টাকা পাঠানোর এই নাম্বারগুলোতে <strong className='text-red-600'>কল করবেন না</strong> । যে কোন প্রয়োজনে <a target="_blank" href='https://m.me/alharamain.ac' className='bg-sky-300 px-1 rounded-sm'>মেসেঞ্জারে</a>/<a target="_blank" href='https://wa.me/+966578621278' className='bg-lime-400 px-1 rounded-sm'>হোয়াটসঅ্যাপে</a>/<a target="_blank" href='https://t.me/+966578621278' className='bg-blue-400 px-1 rounded-sm'>টেলিগ্রামে</a> যোগাযোগ করুন।</p>
                     
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                         <div className='p-5 flex bg-red-200 rounded'>
@@ -63,8 +72,16 @@ const AqeedahRegistration = () => {
                             <img className='w-8 mr-5' src={rocket} alt="" />
                             <p className='text-2xl font-bold'>01883 99 80 815</p>
                         </div>
+                        <div className='p-5 flex bg-sky-200 rounded'>
+                            <img className='w-8 mr-2' src={paypal} alt="" />
+                            <p className='md:pr-3'><span className='font-bold'>faisal42abdullah</span>@gmail.com</p>
+                        </div>
+                        <div className='p-5 flex bg-sky-200 rounded'>
+                            <img className='w-8 mr-3' src={stcPay} alt="" />
+                            <p className='text-2xl font-bold'>+966 5350 17346</p>
+                        </div>
                     </div>
-                    <p className='mt-5'>ভারত থেকে ভর্তি হওয়ার জন্য ১৫০০ রুপি পাঠাবেন।</p>
+                    {/* <p className='mt-5'>ভারত থেকে ভর্তি হওয়ার জন্য ১৫০০ রুপি পাঠাবেন।</p>
                     <div className='flex gap-5 mt-5'>
                         <div className='w-16'>
                             <img className='rounded' src={india} alt="" />
@@ -72,6 +89,19 @@ const AqeedahRegistration = () => {
                         <div>
                             <p className='text-xl '> Upi  :  +91 96816 23868</p>
                             <p className='text-xl mb-5'> Upi Id: 9681623868@ybl</p>
+                        </div>
+                    </div> */}
+                    <p className='mt-5'>সরাসরি ব্যাংকে পাঠাতে পারেন</p>
+                    <div className='flex gap-5 mt-5'>
+                        <div className='w-16'>
+                            <img className='rounded' src={islamiBank} alt="" />
+                        </div>
+                        <div>
+                            <p className=''> A/C Name: <span className='text-green-600'><strong>Abdullah Al Baki</strong></span></p>
+                            <p className=' '> A/C No: <span className='text-green-600'><strong>20501 1702 0073 9805</strong></span></p>
+                            <p className=' '> Branch: <span className='text-green-600'><strong>Rangpur</strong></span></p>
+                            <p className=' '> Branch Code: <span className='text-green-600'><strong>IBBLBDDH117</strong></span></p>
+                            <p className=' mb-5'> Islami Bank Bangladesh Ltd</p>
                         </div>
                     </div>
                 </div>
@@ -82,12 +112,15 @@ const AqeedahRegistration = () => {
                     <div className='grid grid-cols-1 md:grid-cols-3'>
                         <div className='md:col-span-2'>
                             <p className='mt-3'>টাকা পাঠানো হয়ে গেলে ভর্তি ফর্ম পূরন করুন।</p>
-                            <p className='mb-3'>ভর্তি ফর্মে আপনার টেলিগ্রাম নাম্বারটি দিতে হবে। নাম্বারটি ভুল করবেন না, নাহলে আপনার সাথে আমরা যোগাযোগ করতে পারব না।</p>
+                            <p className='mt-1'><FontAwesomeIcon className='text-blue-500' icon={'image'}/> সম্ভব হলে টাকা পাঠানোর <strong className='text-blue-600'>স্ক্রিনশট/মানি রিসিটের ছবি</strong> ভর্তি ফর্মে এড করুন অথবা এডমিনকে ইনবক্সে পাঠান। </p>
+                            <p className='mb-3'>ভর্তি ফর্মে আপনার টেলিগ্রাম নাম্বার দিতে হবে। নাম্বারটি ভুল করবেন না, নাহলে আপনার সাথে আমরা যোগাযোগ করতে পারব না।</p>
                             
                             <a className='btn-primary rounded py-1 px-3' href="https://docs.google.com/forms/d/e/1FAIpQLSd3rIi6hmJH3X0tW8_qyj1c3JemI4so59BhoIr_Tg0aDY9vsQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-3' icon="fa-solid fa-link" />ভর্তি ফর্ম</a>
                         </div>
                         <div className='mx-auto text-center my-5'>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3rIi6hmJH3X0tW8_qyj1c3JemI4so59BhoIr_Tg0aDY9vsQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
                             <img className='w-32' src={registration_form_qr} alt="" />
+                            </a>
                             <p className='p-1 rounded bg-blue-100'>ভর্তি ফর্ম</p>
                         </div>
                     </div>
@@ -101,8 +134,8 @@ const AqeedahRegistration = () => {
 
                     <div className='flex gap-10 flex-col md:flex-row'>
                         <div className='flex flex-col items-center my-5'>
-                            <a href="https://t.me/+TiZYTgSvLYUxYzg0" target="_blank" rel="noopener noreferrer">                            
-                            <img className='w-44 mx-auto mb-3'  src={batch_20_male_qr} alt="" />
+                            <a href={Level_0_Male_link} target="_blank" rel="noopener noreferrer">                            
+                            <img className='w-44 mx-auto mb-3'  src={male_group_qr} alt="" />
                                 <div className='flex rounded bg-orange-300'>
                                     <p className='p-3  text-xl'><FontAwesomeIcon className='pr-3' icon="fa-solid fa-link" />পুরুষদের গ্রুপ</p>
                                     <img className='w-14' src={male_group_logo} alt="" />
@@ -110,8 +143,8 @@ const AqeedahRegistration = () => {
                             </a>
                         </div>
                         <div className='flex flex-col items-center my-5'>
-                            <a href="https://t.me/+y6IptpP6eMVkNjFk" target="_blank" rel="noopener noreferrer">                            
-                            <img className='w-44 mx-auto mb-3'  src={batch_20_female_qr} alt="" />
+                            <a href={Level_0_Female_link} target="_blank" rel="noopener noreferrer">                            
+                            <img className='w-44 mx-auto mb-3'  src={female_group_qr} alt="" />
                                 <div className='flex rounded bg-blue-300'>
                                     <p className='p-3  text-xl'><FontAwesomeIcon className='pr-3' icon="fa-solid fa-link" />মহিলাদের গ্রুপ</p>
                                     <img className='w-14' src={female_group_logo} alt="" />
@@ -127,6 +160,13 @@ const AqeedahRegistration = () => {
             <ContactInfo></ContactInfo>
 
             </div>
+
+        {/* <div className='h-screen'>            
+            <NextBatchReg></NextBatchReg>
+            <ContactInfo></ContactInfo>
+        </div> */}
+
+        </section>
     );
 };
 

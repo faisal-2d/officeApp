@@ -6,7 +6,7 @@ const ArabicResultPageRow = ({student, batch}) => {
 
     const navigate = useNavigate();
     const loadDetails = e => {    
-        navigate(`${student?.sn}`, {state:{id:1, batch: batch}});
+        navigate(`${student?.sn}`, {state:{id:1, batch: batch, student: student}});
     }
     
     if(!student){

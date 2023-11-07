@@ -6,6 +6,7 @@ const NoticeBoard = () => {
         <div className='min-h-screen container mx-auto my-10'>
             <p className='text-center text-2xl'>নোটিশ বোর্ডে স্বাগতম!</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-3 md:mx-10">
+
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">আক্বিদাহ</h2>
@@ -18,6 +19,20 @@ const NoticeBoard = () => {
           </div>
         </div>
       </div>
+
+      <div className="card bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">তাফসীর</h2>
+          <p>
+          তাফসীর কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
+            প্রবেশ করুন।
+          </p>
+          <div className="card-actions justify-end">
+            <Link to='/tafseer'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
+          </div>
+        </div>
+      </div>
+
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">আরবি ভাষা</h2>
@@ -30,6 +45,35 @@ const NoticeBoard = () => {
           </div>
         </div>
       </div>
+
+      <div className="card bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">ফিকহ</h2>
+          <p>
+            ফিকহ কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
+            প্রবেশ করুন।
+          </p>
+          <div className="card-actions justify-end">
+            <Link to='/fiqh'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="card bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">সীরাত</h2>
+          <p>
+           সীরাত কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
+            প্রবেশ করুন।
+          </p>
+          <div className="card-actions justify-end">
+            <Link to='/seerat'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
+          </div>
+        </div>
+      </div>
+
+      
+
     </div>
         </div>
     );

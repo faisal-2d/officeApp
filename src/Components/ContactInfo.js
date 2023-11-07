@@ -13,7 +13,7 @@ const ContactInfo = () => {
                                 <a target="_blank" href='https://t.me/+966578621278' className='rounded p-2 bg-sky-600'>
                                     <FontAwesomeIcon className='pr-2 text-xl' icon={faTelegramPlane} beatFade/> Telegram
                                 </a>
-                                <a target="_blank" href='https://wa.me/message/AS7CJBZOLZLFL1' className='rounded p-2 bg-lime-600 ml-3'>
+                                <a target="_blank" href='https://wa.me/+966578621278' className='rounded p-2 bg-lime-600 ml-3'>
                                     <FontAwesomeIcon className='pr-2 text-xl' icon={faWhatsapp} beatFade/> WhatsApp
                                 </a>
                             </p> 

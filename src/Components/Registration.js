@@ -13,8 +13,8 @@ import CardArabicNextBatch from './NoticeBoard/Arabic/CardArabicNextBatch';
 const Registration = () => {
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
-        <CardArabicNextBatch/>
          <NextBatchReg/>
+        <CardArabicNextBatch/>
         {/* <AqeedahRegistration></AqeedahRegistration> */}
         {/* <DuaRegistration></DuaRegistration> */}
         <ContactInfo></ContactInfo> 

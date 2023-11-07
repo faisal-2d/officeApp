@@ -34,7 +34,7 @@ const Footer = () => {
     <span className="footer-title">সাপোর্ট</span> 
     <Link className="link link-hover" to='/aqeedah-due'>বকেয়া পরিশোধ করুন</Link>
     <p className="link link-hover">এডমিন</p> 
-    <p className="link link-hover">+966 57 8621278</p> 
+    <p className="link link-hover">+966 57 862 1278</p> 
 
   </div>
 </footer> 

@@ -42,9 +42,9 @@ const AqeedahInfo = () => {
                     <p>ক্লাসে পিডিএফ দেওয়া হবে, শিক্ষার্থীদেরকে প্রিন্ট করে নিতে হবে।</p>
 
             {/* register now  */}
-            <section className='mx-auto my-10 lg:w-1/3'>
+            {/* <section className='mx-auto my-10 lg:w-1/3'>
                     <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>বিকাশ নাম্বার ও গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
-            </section>
+            </section> */}
                     <div className='mt-10'>
                         <p className='text-xl'>লেভেল ১ এর বিষয়বস্তুঃ</p>
                         <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> তাওহীদের পরিচয় ও সূত্রাবলি</p>
@@ -92,7 +92,7 @@ const AqeedahInfo = () => {
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-10 my-5'>
                     <div className='text-center rounded shadow-lg px-5 py-12 bg-gradient-to-tl from-sky-300 to-red-100'>
                         <p className='text-2xl'>লেভেল ১</p>
-                        <p className='text-3xl my-3 text-rose-600'>১৫৩০ ৳</p>
+                        <p className='text-3xl my-3 text-rose-600'>১৫০০ ৳</p>
                         <div className='text-left px-5'>
                             <p className='mb-5'><FontAwesomeIcon className='text-yellow-400 pr-2' icon={faWarning} /> কোর্স করার শর্ত/যোগ্যতাঃ নেই। ১৫ বছরের বেশি বয়সী যে কেউ এই কোর্সে ভর্তি হতে পারবে।</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৩ মাসের কোর্স</p> 
@@ -110,7 +110,7 @@ const AqeedahInfo = () => {
                     </div>
                     <div className='text-center rounded shadow-lg px-5 py-12 bg-gradient-to-tl from-sky-300 to-red-100'>
                         <p className='text-2xl'>লেভেল ২</p>
-                        <p className='text-3xl my-3 text-rose-600'>১৫৩০ ৳</p>
+                        <p className='text-3xl my-3 text-rose-600'>১৫০০ ৳</p>
                         <div className='text-left px-5'>
                             <p className='mb-5'><FontAwesomeIcon className='text-yellow-400 pr-2' icon={faWarning} /> কোর্স করার শর্ত/যোগ্যতাঃ লেভেল ১ শেষ করতে হবে।</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৩ মাসের কোর্স</p> 
@@ -219,9 +219,9 @@ const AqeedahInfo = () => {
 
             
            {/* register now  */}
-            <section className='mx-auto my-10 lg:w-1/3'>
+            {/* <section className='mx-auto my-10 lg:w-1/3'>
                 <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>বিকাশ নাম্বার ও গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
-            </section>
+            </section> */}
 
 
            {/* course teacher  */}

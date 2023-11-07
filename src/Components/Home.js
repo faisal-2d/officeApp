@@ -12,7 +12,6 @@ const Home = () => {
     return (
         <div className='container mx-auto'>
             <Banner></Banner>
-            <CardArabicNextBatch/>
             <NextBatchReg></NextBatchReg>
 
             <section className='px-5'>

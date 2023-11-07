@@ -24,70 +24,7 @@ const AqeedahResultPage = () => {
 
 const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
  
-const levelOneTwoUpdate = () => {
-  axios.get(`Batch16Level3.json`)
-  .then(data => data.data.map(stud => {
-    
-    const data = {
-      "name" : "Exm 4",
-      "Score" : stud.Score4
-  }
-      axios.put(`http://localhost:5000/exm3/aqeedah/17/${stud.sn}`, data)
-    .then(data => console.log(data.data))
-    console.log(stud.sn);
-  }))    
-}
 
-
-const certificateUpload = () => {
-  axios.get(`Certificate.json`)
-  .then(data => data.data.map(stud => {
-    
-    const data =  {       
-          // "aqeedahCertificate" : stud.link,
-          // "aqeedahCourseCertificates" : {
-            "level3" : stud.link,
-          // }
-      }
-
-    // const data = {
-    //         // "aqeedah3payment" : stud.Payment,
-    //         "aqeedah3Total" : stud.score1,
-    //         "aqeedah3data" : [
-    //            {
-    //              "name" : "Exm 1",
-    //              "Score" : stud.score1,
-    //            },{
-    //              "name" : "Exm 2",
-    //            "Score" : 0,
-    //            },{
-    //              "name" : "Exm 3",
-    //              "Score" : 0,
-    //           },{
-    //              "name" : "Exm 4",
-    //              "Score" : 0,
-    //           }
-    //          ]
-    //      }
-
-           axios.put(`http://localhost:5000/certificate2/aqeedah17/${stud.sn}`, data)
-           .then(data => console.log(data.data))
-         
-    // console.log(stud.sn, stud.score1);
-  }))    
-}
-
-// const checkBefore = () => {
-//   const data = {         
-//     "name" : "Exm 1",
-//     "Score" : 0,
-//     "resultBook" : ""      
-// }
-//  for(let i=1; i<415; i++){
-//    axios.put(`http://localhost:5000//exm2/aqeedah/17/${i}`, data)
-// .then(data => console.log(data.data))
-//  }
-// }
 
 if(isLoading){
   return <Loading></Loading>
@@ -130,7 +67,6 @@ const b = digitConverter(params.batch);
 return (
   <div className="my-10">
       <p className="text-center text-2xl">আক্বিদাহ কোর্সের {b} তম ব্যাচে স্বাগতম!</p>
-    { admin && <div className="text-center my-5 mx-auto"><button onClick={certificateUpload} className="btn-primary text-center p-2 rounded">Update All</button></div> }
 
       <form onSubmit={searchByName} >
       <div className="form-control my-10">

@@ -1,11 +1,12 @@
 import { faHeadphones, faMousePointer } from '@fortawesome/fontawesome-free-solid';
 import { faTelegramPlane, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faBookOpen, faCircleCheck, faMicrophone, faPenRuler } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faCircleCheck, faMicrophone, faMoneyBill1, faPenRuler } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import partyFlag from '../../../assets/partyFlag.png'
 import ContactInfo from '../../ContactInfo';
 import { Link } from 'react-router-dom';
+import CardArabicNextBatch from './CardArabicNextBatch';
 const ArabicInfo = () => {
     return (
         <div className='container mx-auto px-5 my-10'>
@@ -40,9 +41,11 @@ const ArabicInfo = () => {
                 <p>যারা বাংলাদেশে আছেন, তারা বাজারে বা অনলাইন শপে বইগুলো কিনতে পারবেন। কেনার সময় খেয়াল রাখবেন, বইয়ে যেন শুধু আরবি থাকে, অনুবাদ না থাকে। ইংরেজি বা বাংলা অনুবাদযুক্ত বই কিনবেন না।</p>
            </section>
 
-           <section className='my-3 lg:w-1/3 mx-auto'>
+           {/* <section className='my-3 lg:w-1/3 mx-auto'>
                 <Link to="/registration-arabic"><p className='p-3 bg-yellow-200 rounded shadow-md'>বিকাশ নাম্বার এবং গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-orange-600' icon={faMousePointer} fade/></p></Link>
-            </section>
+            </section> */}
+
+            <CardArabicNextBatch/>
 
            {/* study method  */}
            <section className='my-10'>
@@ -81,10 +84,10 @@ const ArabicInfo = () => {
                 <p className='text-xl'>লেভেল সমূহঃ</p>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-10 my-5'>
                     <div className='text-center rounded shadow-lg px-5 py-12 bg-gradient-to-tl from-sky-300 to-orange-200'>
-                        <p className='text-2xl'>লেভেল ১</p>
-                        <p className='text-3xl my-3 text-rose-600'>২,০০০ ৳</p>
+                        <p className='text-2xl pb-6'>লেভেল ১</p>
+                        {/* <p className='text-3xl my-3 text-rose-600'>প্রতিমাসে ১,০০০ ৳</p> */}
                         <div className='text-left px-5'>
-                            <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৪ মাসের কোর্স</p> 
+                            <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৫ মাসের কোর্স</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> মদিনা বুক ১ম খন্ড সম্পূর্ণ (১২৩ পৃষ্ঠা)</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> প্রতি ক্লাসে প্রি-রেকর্ডেড লেকচার</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> জুমে লাইভ ক্লাস ও প্রশ্নত্তোর</p> 
@@ -97,8 +100,8 @@ const ArabicInfo = () => {
                         </div>                      
                     </div>
                     <div className='text-center rounded shadow-lg px-5 py-12 bg-gradient-to-tl from-sky-300 to-orange-200'>
-                        <p className='text-2xl'>লেভেল ২</p>
-                        <p className='text-3xl my-3 text-rose-600'>৩,০০০ ৳</p>
+                        <p className='text-2xl pb-6'>লেভেল ২</p>
+                        {/* <p className='text-3xl my-3 text-rose-600'>প্রতিমাসে ১,০০০ ৳</p> */}
                         <div className='text-left px-5'>
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৬ মাসের কোর্স</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> মদিনা বুক ২য় খন্ড সম্পূর্ণ (২২০ পৃষ্ঠা)</p> 
@@ -113,10 +116,10 @@ const ArabicInfo = () => {
                         </div>                      
                     </div>
                     <div className='text-center rounded shadow-lg px-5 py-12 bg-gradient-to-tl from-sky-300 to-orange-200'>
-                        <p className='text-2xl'>লেভেল ৩</p>
-                        <p className='text-3xl my-3 text-rose-600'>৪,০০০ ৳</p>
+                        <p className='text-2xl pb-6'>লেভেল ৩</p>
+                        {/* <p className='text-3xl my-3 text-rose-600'>প্রতিমাসে ১,০০০ ৳</p> */}
                         <div className='text-left px-5'>
-                            <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৮ মাসের কোর্স</p> 
+                            <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> ৬ মাসের কোর্স</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> মদিনা বুক ৩য় খন্ড সম্পূর্ণ (৩০২ পৃষ্ঠা)</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> প্রতি ক্লাসে প্রি-রেকর্ডেড লেকচার</p> 
                             <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> জুমে লাইভ ক্লাস ও প্রশ্নত্তোর</p> 
@@ -132,14 +135,60 @@ const ArabicInfo = () => {
            </section>
 
 
+           <section className='my-20'>
+                <p className='text-xl my-10'>কোর্স ফীঃ</p>
+                <div className='grid grid-cols-1 md:grid-cols-4'>
+
+                <div className="relative overflow-hidden md:order-2 w-56 h-28 rounded py-2 px-5 mx-auto my-3 md:my-0 bg-gradient-to-tl from-cyan-200 to-cyan-100">
+                <div className="flex justify-between">                
+                <div className="mr-10">
+                    <p>ভর্তি ফী</p>                
+                </div>
+                <FontAwesomeIcon className={`text-2xl text-cyan-600 `} icon={faMoneyBill1} />
+                </div>
+                <FontAwesomeIcon className="text-8xl absolute -ml-16 mt-2 opacity-10 text-inherit" icon="fa-regular fa-circle" />
+                <p className={`text-center font-bold text-xl my-2 text-cyan-600 `}>
+                <span className="font-bold text-xl">৳ ১৫০০</span>
+                {/* <p className="font-bold text-xl">মাসিক ফী = ৳১,০০০</p> */}
+                </p>                
+                </div>
+                <div className="relative overflow-hidden md:order-2 w-56 h-28 rounded py-2 px-5 mx-auto my-3 md:my-0 bg-gradient-to-tl from-green-300 to-green-100">
+                <div className="flex justify-between">                
+                <div className="mr-10">
+                    <p>মাসিক ফী</p>                
+                </div>
+                <FontAwesomeIcon className={`text-2xl text-green-600 `} icon={faMoneyBill1} />
+                </div>
+                <FontAwesomeIcon className="text-8xl absolute -ml-16 mt-2 opacity-10 text-inherit" icon="fa-regular fa-circle" />
+                <p className={`text-center font-bold text-xl my-2 text-green-600 `}>
+                {/* <p className="font-bold text-xl">ভর্তি ফী = ৳৫০০</p> */}
+                <span className="font-bold text-xl">৳ ১০০০</span>
+                </p>                
+                </div>
+
+                {/* <div className='md:col-span-2'>
+                    <p>কোর্স ফী পাঠাতে হবে। তারপর টেলিগ্রাম গ্রুপে জয়েন করতে হবে।</p>
+                    <p>কোর্স ফী ৫০০ টাকা। ভর্তির পর আর কোন খরচ নেই।</p>                   
+                    
+             <section className='my-3 lg:w-2/3'>
+                <Link to="/dua-registration"><p className='p-3 bg-orange-100 rounded shadow-md'>বিকাশ নাম্বার এবং গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-orange-600' icon={faMousePointer} fade/></p></Link>
+            </section>
+                </div> */}
+                
+
+                </div>
+
+           </section>
+
+
            {/* FAQs  */}
            <section>
 
            </section>
            
-           <section className='my-3 lg:w-1/3 mx-auto'>
+           {/* <section className='my-3 lg:w-1/3 mx-auto'>
                 <Link to="/registration-arabic"><p className='p-3 bg-yellow-200 rounded shadow-md'>বিকাশ নাম্বার এবং গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-orange-600' icon={faMousePointer} fade/></p></Link>
-            </section>
+            </section> */}
 
            {/* Course Teacher  */}
            <section className='my-10'>

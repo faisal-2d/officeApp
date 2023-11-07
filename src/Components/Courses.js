@@ -73,7 +73,7 @@ const Courses = () => {
         <div className="card-body">          
           <h2 className="card-title">ইসলামী ফিহক</h2>
           <p >কোর্সের মেয়াদ: ৬ মাস</p>            
-          <p >কোর্স টিচার: শায়খ আব্দুল্লাহ আল কাফী (হাফি.)</p>          
+          <p >কোর্স টিচার: শায়খ আব্দুল্লাহ আল কাফী (রহি.)</p>          
             <Link className="btn btn-success mt-3 outline-none" to='fiqh'>বিস্তারিত দেখুন</Link>
           <div className="card-actions">
           </div>
@@ -90,8 +90,8 @@ const Courses = () => {
         <div className="card-body">          
           <h2 className="card-title">সংক্ষিপ্ত তাফসীর</h2>
           <p >কোর্সের মেয়াদ: ৩ মাস</p>            
-          <p >কোর্স টিচার: শায়খ আব্দুল্লাহ আল কাফী (হাফি.)</p>          
-            <Link className="btn btn-success mt-3 outline-none" to='seerat'>বিস্তারিত দেখুন</Link>
+          <p >কোর্স টিচার: শায়খ আব্দুল্লাহ আল কাফী (রহি.)</p>          
+            <Link className="btn btn-success mt-3 outline-none" to='tafseer'>বিস্তারিত দেখুন</Link>
           <div className="card-actions">
           </div>
         </div>
@@ -106,8 +106,8 @@ const Courses = () => {
         <div className="card-body">          
           <h2 className="card-title">সীরাতে নববী (সাঃ)</h2>
           <p >কোর্সের মেয়াদ: ৩ মাস</p>            
-          <p >কোর্স টিচার: শায়খ আব্দুল্লাহ আল কাফী (হাফি.)</p>          
-            <Link className="btn btn-success mt-3 outline-none" to='tafseer'>বিস্তারিত দেখুন</Link>
+          <p >কোর্স টিচার: শায়খ আব্দুল্লাহ আল কাফী (রহি.)</p>          
+            <Link className="btn btn-success mt-3 outline-none" to='seerat'>বিস্তারিত দেখুন</Link>
           <div className="card-actions">
           </div>
         </div>
