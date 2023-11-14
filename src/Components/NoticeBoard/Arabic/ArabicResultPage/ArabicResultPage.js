@@ -23,7 +23,7 @@ const ArabicResultPage = () => {
       return data;
     }
   
-  const {isLoading, isFetching, data: students, refetch} = useQuery('arabicList', () => getStudentList(searchName))
+  const {isLoading, isFetching, data: students, refetch} = useQuery('arabic_studentList', () => getStudentList(searchName))
    
 
   if(isLoading){
@@ -95,7 +95,7 @@ const levelOneReg = () => {
              ]
          }
          
-        //  axios.put(`http://localhost:5000/update/arabic/3/${stud.sn}`, data.arabic2payment)
+        //  axios.put(`https://alharamanin-backend-web.onrender.com/update/arabic/3/${stud.sn}`, data.arabic2payment)
         //  .then(data => console.log(data.data))
          axios.post(`https://alharamanin-backend-web.onrender.com/arabic/newregister3`, data)
          .then(data => console.log(data.data))
@@ -112,7 +112,7 @@ const levelOneReg = () => {
 //     "resultBook" : ""      
 // }
 //  for(let i=1; i<415; i++){
-//    axios.put(`http://localhost:5000/exm1/aqeedah/17/${i}`, data)
+//    axios.put(`https://alharamanin-backend-web.onrender.com/exm1/aqeedah/17/${i}`, data)
 // .then(data => console.log(data.data))
 //  }
 // }

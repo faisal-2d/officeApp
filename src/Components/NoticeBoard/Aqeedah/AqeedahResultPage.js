@@ -22,7 +22,7 @@ const AqeedahResultPage = () => {
     return data;
   }
 
-const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
+const {isLoading, isFetching, data: students, refetch} = useQuery('aqeedah_studentList', () => getStudentList(searchName))
  
 
 

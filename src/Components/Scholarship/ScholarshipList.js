@@ -1,72 +1,57 @@
 import React from 'react';
-import Loading from '../../../Loading/Loading';
+import Loading from '../Loading/Loading';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../../firebase.init';
-import useAdmin from '../../../hooks/useAdmin';
-import TafseerRow from './TafseerRow';
+import auth from '../../firebase.init';
+import useAdmin from '../hooks/useAdmin';
+import ScholarshipRow from './ScholarshipRow';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import useModerator from '../hooks/useModerator';
+import Verifying from '../Loading/Verifying';
 
-const TafseerResultPage = () => {
+const ScholarshipList = () => {
     const [user, loading, error] = useAuthState(auth);
     const [admin, isLoadingAdmin] = useAdmin(user);
-  
+    const [moderator, isLoadingModerator] = useModerator(user);
+    // const [totoalStud, setTotalStud] = useState(150);
     const params = useParams();
-    let searchName = 'a';
-    const getStudentList = async (searchName) => {
-      const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/tafseer/${params.batch}/${searchName}`)
-      // http://localhost:5000
-      // https://flannel-loonie-61461.herokuapp.com
-      return data;
-    }
   
-  const {isLoading, isFetching, data: students, refetch} = useQuery('tafseer_studentList', () => getStudentList(searchName))
-   
-  
+  let searchName ='';
+  const {isLoading, isFetching, data: students, refetch} = useQuery('scholarship_studentList', () => axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/${params.course}`))
+//   const {isLoading, isFetching, data: students, refetch} = useQuery('scholarship_studentList', () => axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/${params.course}/${params.batch}`))
+
+// const studentCount = async () => await axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/21`).then(data=>setTotalStud(data));
+//     console.log(studentCount);
+    // console.log(totoalStud);
   
   if(isLoading){
     return <Loading></Loading>
   }
+
+  if(!moderator){
+    return <Verifying></Verifying>
+}
   
   if(students?.length === 0){
     return <div className='min-h-screen flex justify-center items-center'>
               <p className="text-center text-2xl my-5">কোন রেজাল্ট পাওয়া যায়নি</p>
             </div>
   }
-  
-  
-  const searchByName = e => {
+
+   const searchByName = e => {
     e.preventDefault();
     const name = e.target.name.value;  
     searchName = name;
     refetch();
   }
-  
-  
-  const digitConverter = engDigit => {
-    const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-  
-      const str = engDigit.toString();
-      let bangDigit = '';
-      
-      for(let i=0; i<str.length; i++){
-        for(let j=0; j<engD.length; j++){
-          if(str[i]==engD[j]){
-            bangDigit+=bangD[j];
-          }
-        }           
-    }
-    return bangDigit;
-  }    
-  const b = digitConverter(params.batch);
-  
-      return (
-          <div className="my-10">
-        <p className="text-center text-2xl">তাফসীর কোর্সের {b} তম ব্যাচে স্বাগতম!</p>
-  
-        <form onSubmit={searchByName} >
+
+    return (
+        <div className="my-10">
+        <p className="text-center text-2xl my-10">আক্বিদাহ স্কলারশিপ পেইজে স্বাগতম!</p>
+        {/* <form onSubmit={searchByName} >
         <div className="form-control my-10">
     <div className="input-group justify-center">
       <input name="name" type="text" placeholder="আপনার নাম লিখে সার্চ করুন" className="input input-bordered w-4/5" />
@@ -79,31 +64,26 @@ const TafseerResultPage = () => {
       </button>}
     </div>
   </div>
-        </form>
+        </form> */}
   
   <div className="overflow-x-auto w-10/12 mx-auto">
     <table className="table w-full">
       
       <thead>
         <tr>
-          <th>SN</th>
+          <th>No</th>
           <th>Name</th>
           <th>Father's Name</th>
           <th>Phone</th>
-          {/* <th>Payment</th>
-          <th>Exm 1</th>
-          <th>Exm 2</th>
-          <th>Exm 3</th>
-          <th>Total</th> */}
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
   
-        {students?.map(student => <TafseerRow
-        key={student.sn}
+        {students.data?.map(student => <ScholarshipRow
+        key={student?.sn}
         student={student}
-        batch={params.batch}
-        ></TafseerRow> ) }     
+        ></ScholarshipRow> ) }     
   
         
       </tbody>
@@ -111,7 +91,7 @@ const TafseerResultPage = () => {
   </div>
   
       </div>
-      );
-  };
+    );
+};
 
-export default TafseerResultPage;
+export default ScholarshipList;

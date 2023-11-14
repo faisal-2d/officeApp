@@ -15,7 +15,6 @@ module.exports = {
           success: "#86efac",
           warning: "#fef08a",
           error: "#E58B8B",
-          "orange": "#f68c3b",
         },
       },
     ],

@@ -21,7 +21,7 @@ const FiqhResultPage = () => {
     return data;
   }
 
-const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
+const {isLoading, isFetching, data: students, refetch} = useQuery('fiqh_studentList', () => getStudentList(searchName))
  
 
 

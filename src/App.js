@@ -56,6 +56,10 @@ import Office from './Components/Office';
 import FiqhResultUpdater from './Components/NoticeBoard/Fiqh/Updater/FiqhResultUpdater';
 import SeeratResultUpdater from './Components/NoticeBoard/Seerat/Updater/SeeratResultUpdater';
 import TafseerResultUpdater from './Components/NoticeBoard/Tafseer/Updater/TafseerResultUpdater';
+import ScholarshipBoard from './Components/Scholarship/ScholarshipBoard';
+import ScholarshipList from './Components/Scholarship/ScholarshipList';
+import ScholarshipDetails from './Components/Scholarship/ScholarshipDetails';
+import ScholarshipUpdater from './Components/Scholarship/Updater/ScholarshipUpdater';
 
 function App() {
   return (
@@ -114,6 +118,11 @@ function App() {
         <Route path='result-update-seerat' element={<ReqiureAuth><RequireAdmin><SeeratResultUpdater></SeeratResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
         <Route path='result-update-tafseer' element={<ReqiureAuth><RequireAdmin><TafseerResultUpdater></TafseerResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
         <Route path='office' element={<ReqiureAuth><RequireAdmin><Office></Office></RequireAdmin></ReqiureAuth>}></Route>
+        
+        <Route path='scholarship/' element={<ReqiureAuth><RequireAdmin><ScholarshipBoard></ScholarshipBoard></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='scholarship/:course' element={<ReqiureAuth><RequireAdmin><ScholarshipList></ScholarshipList></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='scholarship/:course/:sn' element={<ReqiureAuth><RequireAdmin><ScholarshipDetails></ScholarshipDetails></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='scholarship/updater' element={<ReqiureAuth><RequireAdmin><ScholarshipUpdater></ScholarshipUpdater></RequireAdmin></ReqiureAuth>}></Route>
 
         <Route path='registration-aqeedah' element={<AqeedahRegistration/>}></Route>
         <Route path='registration-arabic' element={<ArabicRegistration/>}></Route>

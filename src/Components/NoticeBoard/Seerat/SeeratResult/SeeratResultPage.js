@@ -21,7 +21,7 @@ const SeeratResultPage = () => {
     return data;
   }
 
-const {isLoading, isFetching, data: students, refetch} = useQuery('studentList', () => getStudentList(searchName))
+const {isLoading, isFetching, data: students, refetch} = useQuery('seerat_studentList', () => getStudentList(searchName))
  
 
 

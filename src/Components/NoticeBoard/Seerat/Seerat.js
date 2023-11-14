@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Seerat = () => {
-    const batchList = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    const batchList = [4];
     return (
         <div className="my-10">
       <p className="text-center text-2xl">সীরাত কোর্সের ব্যাচসমূহ</p>

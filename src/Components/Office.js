@@ -46,6 +46,18 @@ const Office = () => {
 
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
+                    <h2 className="card-title">স্কলারশীপ</h2>
+                    <p>
+                        আবেদনকারীদের নাম, ফোন নাম্বার ও মন্তব্য
+                    </p>
+                    <div className="card-actions justify-end">
+                        <Link to='/scholarship'><button className="btn btn-error">প্রবেশ করুন</button></Link>
+                    </div>
+                    </div>
+                </div>
+
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body">
                     <h2 className="card-title">তাফসীর রেজাল্ট আপডেট</h2>
                     <p>
                         রেজাল্ট, লিডারবোর্ড ও সার্টিফিকেট আপডেট করুন
@@ -91,6 +103,9 @@ const Office = () => {
                     </div>
                     </div>
                 </div>
+
+
+                
 
                 
 

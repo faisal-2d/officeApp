@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const JsonUpdater = () => {
-    const [level3optHide, setLevel3optHide] = useState(false);
     const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
 
     const handleJsonUpdate = data => { 
@@ -52,18 +51,11 @@ const JsonUpdater = () => {
                             "Score" : data.score             
                         }                    
                         
-                    }else if(exmNo === 4){
-                        resultData =  {   
-                            "name" : "Exm 4",
-                            "Score" : data.score             
-                        }                    
-                        
                     }
                     axios.put(`https://alharamanin-backend-web.onrender.com/fiqh${batchNo}/${level}/exm${exmNo}/${data.sn}`, resultData)
                     .then(data => console.log(data.data))
                     
                 })
-                    // console.log(`resultdate: https://alharamanin-backend-web.onrender.com/fiqh${batchNo}/${level}/exm${exmNo}/${data.sn}`);
                 }
 
                 else if(dateType ==="leaderboard"){
@@ -76,38 +68,69 @@ const JsonUpdater = () => {
                         .then(data => console.log(data.data))                      
                         
                     })
-                    // console.log(`leadData: https://alharamanin-backend-web.onrender.com/fiqh${batchNo}/${level}/leaderboard/${data.sn}`);
                 }
                 else if(dateType ==="register"){
                     console.log("I'm registering new students!");
-                    jsonData.map(data => {
+                    if(level === 'level1'){
+                        jsonData.map(data => {
                         
-                    const insertData = {
-                        "sn" : parseInt(data.sn),
-                        "name" : data.name.toLowerCase(),
-                        "fatherName" : data.fatherName.toLowerCase(),
-                        "phone" : data.phone,
-                        "gender" : data.gender,
-                        "fiqh1payment" : data.fiqh1payment,
-                        "fiqh1data" : [{
-                            "name" : "Exm 1",
-                            "Score" : 0
-                        },{
-                            "name" : "Exm 2",
-                            "Score" : 0
-                        },{
-                            "name" : "Exm 3",
-                            "Score" : 0
-                        }
-                    ]            
-                    
-                }
-                
-                        axios.post(`https://alharamanin-backend-web.onrender.com/register/fiqh/${batchNo}`, insertData)
-                        .then(data => {
-                            console.log("Registration Successfull ! Student " + insertData?.sn);
-                        })
-                    })
+                            const insertData = {
+                                "sn" : parseInt(data.sn),
+                                "name" : data.name.toLowerCase(),
+                                "fatherName" : data.fatherName.toLowerCase(),
+                                "phone" : data.phone,
+                                "gender" : data.gender,
+                                "fiqh1payment" : data.fiqh1payment,
+                                "fiqh1data" : [{
+                                    "name" : "Exm 1",
+                                    "Score" : 0
+                                },{
+                                    "name" : "Exm 2",
+                                    "Score" : 0
+                                },{
+                                    "name" : "Exm 3",
+                                    "Score" : 0
+                                }
+                            ]            
+                            
+                        } 
+                        
+                                axios.post(`https://alharamanin-backend-web.onrender.com/register/fiqh/${batchNo}`, insertData)
+                                .then(data => {
+                                    console.log("Successfull ! Student " + insertData?.sn +" created in " + level);
+                                })
+                            })
+                    } else if(level === 'level2'){
+                        jsonData.map(data => {
+                        
+                            const insertData = {
+                                "sn" : parseInt(data.sn),
+                                "name" : data.name.toLowerCase(),
+                                "fatherName" : data.fatherName.toLowerCase(),
+                                "phone" : data.phone,
+                                "gender" : data.gender,
+                                "fiqh2payment" : data.fiqh2payment,
+                                "fiqh2data" : [{
+                                    "name" : "Exm 1",
+                                    "Score" : 0
+                                },{
+                                    "name" : "Exm 2",
+                                    "Score" : 0
+                                },{
+                                    "name" : "Exm 3",
+                                    "Score" : 0
+                                }
+                            ]            
+                            
+                        }                         
+                                axios.post(`https://alharamanin-backend-web.onrender.com/register/fiqh/${batchNo}`, insertData)
+                                .then(data => {
+                                    console.log("Successfull ! Student " + insertData?.sn +" created in " + level);
+                                })
+                            })
+                    }
+
+
                 }
                 else {
                     console.log("i cann't update, Data type is unknown!");
@@ -165,7 +188,6 @@ const JsonUpdater = () => {
                             value="result"
                             id="field-result"
                             className='radio mr-3 checked:bg-sky-500'
-                            onChange={()=> setLevel3optHide(true)}
                         />
                         <span>Result</span>
                     </label>
@@ -177,7 +199,6 @@ const JsonUpdater = () => {
                             value="leaderboard"
                             id="field-leaderboard"
                             className='radio mr-3 checked:bg-orange-600'
-                            onChange={()=> setLevel3optHide(true)}
                         />
                         <span>Leaderboard</span>
                     </label>                
@@ -189,7 +210,6 @@ const JsonUpdater = () => {
                             value="certificate"
                             id="field-certificate"
                             className='radio mr-3 checked:bg-lime-500'
-                            onChange={()=> setLevel3optHide(false)}
                         />
                         <span>Certificate</span>
                     </label>                
@@ -201,7 +221,6 @@ const JsonUpdater = () => {
                             value="register"
                             id="field-register"
                             className='radio mr-3 checked:bg-green-500'
-                            onChange={()=> setLevel3optHide(false)}
                         />
                         <span>Register</span>
                     </label>                
@@ -232,19 +251,8 @@ const JsonUpdater = () => {
                             className='radio mr-3 checked:bg-fuchsia-700'
                         />
                         <span>Level 2</span>
-                    </label>                
-                    <label htmlFor="field-level3" className='flex align-center mb-1'>
-                        <input
-                            {...register("level")}
-                            type="radio"
-                            name="level"
-                            value=  "level3"
-                            id="field-level3"
-                            className={`radio mr-3 checked:bg-emerald-600`}
-                            disabled={level3optHide === true ? "disabled" : ""}
-                        />
-                        <span>Level 3</span>
-                    </label>               
+                    </label>              
+                                  
                 </div>
                 
 
@@ -262,7 +270,7 @@ const JsonUpdater = () => {
                     <label className="label">
                         <span className="label-text">Exm</span>                    
                     </label>
-                    <input type="text" placeholder="1" className="input input-bordered w-full max-w-xs"  {...register("exm")} disabled={level3optHide === true ? "" : "disabled"}/>
+                    <input type="text" placeholder="1" className="input input-bordered w-full max-w-xs"  {...register("exm")} />
                        
                     </div>
                     <button type='submit' className='btn btn-primary'>Upload</button>

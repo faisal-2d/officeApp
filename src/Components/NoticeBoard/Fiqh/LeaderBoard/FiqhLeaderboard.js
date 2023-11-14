@@ -5,24 +5,27 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import FiqhLB_Row from './FiqhLB_Row';
+import { eventWrapper } from '@testing-library/user-event/dist/utils';
 
 const FiqhLeaderboard = () => {
   const [myPosition, setMyPosition] = useState(0);
 
   const params = useParams();
+  const level = params.level;
+  const batch = params.batch;
+
   const getStudentList = async () => {
     const { data } = await axios.get(
-      `https://alharamanin-backend-web.onrender.com/leaderboard/fiqh1/${params.batch}`
+      `https://alharamanin-backend-web.onrender.com/leaderboard/fiqh${level}/${batch}`
     );
     // http://localhost:5000
     // https://alharamanin-backend-web.onrender.com/
     return data;
   };
 
-  const level = params.level;
-  const batch = params.batch;
   const sn = params.sn;
   const queryName = "fiqh_leaderBoard"+level;
+  
   const {
     isLoading,
     isFetching,

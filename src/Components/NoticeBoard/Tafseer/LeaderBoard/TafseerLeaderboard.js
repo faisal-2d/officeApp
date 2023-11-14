@@ -10,17 +10,18 @@ const TafseerLeaderboard = () => {
     const [myPosition, setMyPosition] = useState(0);
 
     const params = useParams();
+    const level = params.level;
+  const batch = params.batch;
+
     const getStudentList = async () => {
       const { data } = await axios.get(
-        `https://alharamanin-backend-web.onrender.com/leaderboard/tafseer1/${params.batch}`
+        `https://alharamanin-backend-web.onrender.com/leaderboard/tafseer${level}/${params.batch}`
       );
       // http://localhost:5000
       // https://alharamanin-backend-web.onrender.com/
       return data;
     };
   
-    const level = params.level;
-    const batch = params.batch;
     const sn = params.sn;
     const queryName = "tafseer_leaderBoard"+level;
     const {

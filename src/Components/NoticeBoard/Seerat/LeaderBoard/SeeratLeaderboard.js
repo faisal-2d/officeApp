@@ -10,17 +10,19 @@ const SeeratLeaderboard = () => {
     const [myPosition, setMyPosition] = useState(0);
 
   const params = useParams();
+  const level = params.level;
+  const batch = params.batch;
+
   const getStudentList = async () => {
     const { data } = await axios.get(
-      `https://alharamanin-backend-web.onrender.com/leaderboard/seerat1/${params.batch}`
+      `https://alharamanin-backend-web.onrender.com/leaderboard/seerat${level}/${params.batch}`
     );
     // http://localhost:5000
     // https://alharamanin-backend-web.onrender.com/
     return data;
   };
 
-  const level = params.level;
-  const batch = params.batch;
+  
   const sn = params.sn;
   const queryName = "seerat_leaderBoard"+level;
   const {

@@ -38,7 +38,7 @@ const TafseerDetails = () => {
     // setStudent()
 // useEffect(()=> {
 //   axios.get(`https://alharamanin-backend-web.onrender.com/tafseer/${params.batch}/sn/${params.sn}`)
-// //   http://localhost:5000/
+// //   https://alharamanin-backend-web.onrender.com/
 //   .then(data => setStudent(data.data))
 // },[params]);
 
@@ -139,7 +139,7 @@ if(!student){
             getStudent();
             // console.log(data.data);
         })
-        //http://localhost:5000/
+        //https://alharamanin-backend-web.onrender.com/
         //https://alharamanin-backend-web.onrender.com
     }
     const payment2Update = (level) => {
@@ -153,7 +153,7 @@ if(!student){
             getStudent();
             // console.log(data.data);
         })
-        //http://localhost:5000/
+        //https://alharamanin-backend-web.onrender.com/
         //https://alharamanin-backend-web.onrender.com
     }
     const payment3Update = (level) => {
@@ -167,7 +167,7 @@ if(!student){
             getStudent();
             // console.log(data.data);
         })
-        //http://localhost:5000/
+        //https://alharamanin-backend-web.onrender.com/
         //https://alharamanin-backend-web.onrender.com
     }
 
