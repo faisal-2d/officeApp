@@ -60,6 +60,7 @@ import ScholarshipBoard from './Components/Scholarship/ScholarshipBoard';
 import ScholarshipList from './Components/Scholarship/ScholarshipList';
 import ScholarshipDetails from './Components/Scholarship/ScholarshipDetails';
 import ScholarshipUpdater from './Components/Scholarship/Updater/ScholarshipUpdater';
+import RequireModerator from './Components/Login/RequireModerator';
 
 function App() {
   return (
@@ -119,10 +120,10 @@ function App() {
         <Route path='result-update-tafseer' element={<ReqiureAuth><RequireAdmin><TafseerResultUpdater></TafseerResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
         <Route path='office' element={<ReqiureAuth><RequireAdmin><Office></Office></RequireAdmin></ReqiureAuth>}></Route>
         
-        <Route path='scholarship/' element={<ReqiureAuth><RequireAdmin><ScholarshipBoard></ScholarshipBoard></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='scholarship/:course' element={<ReqiureAuth><RequireAdmin><ScholarshipList></ScholarshipList></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='scholarship/:course/:sn' element={<ReqiureAuth><RequireAdmin><ScholarshipDetails></ScholarshipDetails></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='scholarship/updater' element={<ReqiureAuth><RequireAdmin><ScholarshipUpdater></ScholarshipUpdater></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='scholarship/' element={<ReqiureAuth><RequireModerator><ScholarshipBoard></ScholarshipBoard></RequireModerator></ReqiureAuth>}></Route>
+        <Route path='scholarship/:course' element={<ReqiureAuth><RequireModerator><ScholarshipList></ScholarshipList></RequireModerator></ReqiureAuth>}></Route>
+        <Route path='scholarship/:course/:sn' element={<ReqiureAuth><RequireModerator><ScholarshipDetails></ScholarshipDetails></RequireModerator></ReqiureAuth>}></Route>
+        <Route path='scholarship/updater' element={<ReqiureAuth><RequireModerator><ScholarshipUpdater></ScholarshipUpdater></RequireModerator></ReqiureAuth>}></Route>
 
         <Route path='registration-aqeedah' element={<AqeedahRegistration/>}></Route>
         <Route path='registration-arabic' element={<ArabicRegistration/>}></Route>

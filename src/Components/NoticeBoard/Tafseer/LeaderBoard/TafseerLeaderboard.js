@@ -70,15 +70,15 @@ const TafseerLeaderboard = () => {
                     <th className='bg-yellow-100'>{myResult?.sn}</th>
                     <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>
                     {level === '2' && <>
-                      <th className='bg-yellow-100'>{myResult?.tafseer2data[0].Score}</th>
-                      <th className='bg-yellow-100'>{myResult?.tafseer2data[1].Score}</th>
-                      <th className='bg-yellow-100'>{myResult?.tafseer2data[2].Score}</th>
+                      <th className='bg-yellow-100'>{myResult?.tafseer2data[0]?.Score}</th>
+                      <th className='bg-yellow-100'>{myResult?.tafseer2data[1]?.Score}</th>
+                      <th className='bg-yellow-100'>{myResult?.tafseer2data[2]?.Score}</th>
                       <th className='bg-yellow-100 text-red-600'>{myResult?.tafseer2Total}</th>
                     </>}            
                     {level === '1' && <>
-                      <th className='bg-yellow-100'>{myResult?.tafseer1data[0].Score}</th>
-                      <th className='bg-yellow-100'>{myResult?.tafseer1data[1].Score}</th>
-                      <th className='bg-yellow-100'>{myResult?.tafseer1data[2].Score}</th>
+                      <th className='bg-yellow-100'>{myResult?.tafseer1data[0]?.Score}</th>
+                      <th className='bg-yellow-100'>{myResult?.tafseer1data[1]?.Score}</th>
+                      <th className='bg-yellow-100'>{myResult?.tafseer1data[2]?.Score}</th>
                       <th className='bg-yellow-100 text-red-600'>{myResult?.tafseer1Total}</th>
                     </>}            
                 </tr>

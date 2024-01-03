@@ -14,7 +14,7 @@ const Registration = () => {
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
          <NextBatchReg/>
-        <CardArabicNextBatch/>
+        {/* <CardArabicNextBatch/> */}
         {/* <AqeedahRegistration></AqeedahRegistration> */}
         {/* <DuaRegistration></DuaRegistration> */}
         <ContactInfo></ContactInfo> 

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const NextBatchReg = () => {
     const oneDay = 24 * 60 * 60 * 1000;
     const today = new Date();
-    const addmissionStartDate = new Date("24 Oct 2023");    //months start from 0
+    const addmissionStartDate = new Date("15 Mar 2024");    //months start from 0
     const totalDays = Math.round(Math.abs((addmissionStartDate - today) / oneDay));
     const remainingMonths = Math.floor(totalDays/30);
     const remainingDays = totalDays%30;
@@ -51,12 +51,12 @@ const NextBatchReg = () => {
                 
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 text-black text-xl'>
-                    {/* <p className='p-3 bg-green-300 rounded'>ভর্তি শুরু হবে ১ অক্টবর </p> */}
-                    <p className='p-3 bg-orange-300 rounded'>ভর্তি শেষ হবে ২৯ নভেম্বর </p>
-                    <p className='p-3 bg-blue-300 rounded'>অরিয়েন্টেশন ক্লাস ৩ ডিসেম্বর</p>
-                    {/* <p className='p-3 bg-red-300 rounded'>ক্লাস শুরু হবে ২৯ অক্টবর</p> */}
+                    <p className='p-3 bg-green-300 rounded'>ভর্তি শুরু হবে ১৫ মার্চ </p>
+                    <p className='p-3 bg-orange-300 rounded'>ভর্তি শেষ হবে ১৫ এপ্রিল </p>
+                    {/* <p className='p-3 bg-blue-300 rounded'>অরিয়েন্টেশন ক্লাস ৩ ডিসেম্বর</p> */}
+                    <p className='p-3 bg-red-300 rounded'>ক্লাস শুরু হবে ১৮ এপ্রিল</p>
                     <Link to="/courses/aqeedah"><p className='p-3 bg-pink-300 rounded shadow-md'>কোর্স সম্পর্কে বিস্তারিত জানুন <FontAwesomeIcon className='text-pink-600' icon={faMousePointer} fade/></p></Link>
-                    <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>এখনি রেজিস্ট্রেশন করুন <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
+                    {/* <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>এখনি রেজিস্ট্রেশন করুন <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link> */}
                     
                 </div>
             </div>

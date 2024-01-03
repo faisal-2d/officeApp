@@ -71,15 +71,15 @@ const th = m => {
                   <th className='bg-yellow-100'>{myResult?.sn}</th>
                   <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>
                   {level === '2' && <>
-                    <th className='bg-yellow-100'>{myResult?.seerat2data[0].Score}</th>
-                    <th className='bg-yellow-100'>{myResult?.seerat2data[1].Score}</th>
-                    <th className='bg-yellow-100'>{myResult?.seerat2data[2].Score}</th>
+                    <th className='bg-yellow-100'>{myResult?.seerat2data[0]?.Score}</th>
+                    <th className='bg-yellow-100'>{myResult?.seerat2data[1]?.Score}</th>
+                    <th className='bg-yellow-100'>{myResult?.seerat2data[2]?.Score}</th>
                     <th className='bg-yellow-100 text-red-600'>{myResult?.seerat2Total}</th>
                   </>}            
                   {level === '1' && <>
-                    <th className='bg-yellow-100'>{myResult?.seerat1data[0].Score}</th>
-                    <th className='bg-yellow-100'>{myResult?.seerat1data[1].Score}</th>
-                    <th className='bg-yellow-100'>{myResult?.seerat1data[2].Score}</th>
+                    <th className='bg-yellow-100'>{myResult?.seerat1data[0]?.Score}</th>
+                    <th className='bg-yellow-100'>{myResult?.seerat1data[1]?.Score}</th>
+                    <th className='bg-yellow-100'>{myResult?.seerat1data[2]?.Score}</th>
                     <th className='bg-yellow-100 text-red-600'>{myResult?.seerat1Total}</th>
                   </>}            
               </tr>

@@ -39,7 +39,7 @@ const NewRegAqeedah = () => {
             
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/register/aqeedah/21}`, insertData)
+        axios.post(`https://alharamanin-backend-web.onrender.com/register/aqeedah/21`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 

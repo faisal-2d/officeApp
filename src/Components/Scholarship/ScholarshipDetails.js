@@ -20,16 +20,16 @@ const ScholarshipDetails = () => {
 
     const [student, setStudent] = useState(nev.state?.student);
     const [user, loading, error] = useAuthState(auth);
-    const [admin] = useAdmin(user);
+    const [moderator, isLoadingModerator] = useModerator(user);
     const [adminDesk, setAdminDesk] = useState(false);
     const [count, setCount] = useState();
-    const [moderator, isLoadingModerator] = useModerator(user);
   
 const getStudent = () => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/aqeedah/${student.sn}`)
+        axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/aqeedah/${params.sn}`)
         .then(data => { setStudent(data.data)
         });        
 }
+
 
 if(!student){
     getStudent();
@@ -42,7 +42,7 @@ if(!moderator){
 const updateData = sn => {
     const data = {
             "isAccepted" : true, 
-            "accepted_by" : "Admin"         
+            "accepted_by" : user.displayName         
         }        
         console.log(data);
     axios.put(`https://alharamanin-backend-web.onrender.com/update/scholarship/aqeedah/${sn}`, data)
@@ -76,7 +76,7 @@ const acceptScholarship = async () => {
     }
     
         {count && axios.post(`https://alharamanin-backend-web.onrender.com/register/aqeedah/21`, insertData)
-        .then(data => {updateData(student.sn)})
+        .then(data => {updateData(params.sn)})
         
     }
 }
@@ -84,10 +84,28 @@ const acceptScholarship = async () => {
 
 const hello = () => 0;
 
+const digitConverter = engDigit => {
+    const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+      const str = engDigit.toString();
+      let bangDigit = '';
+      
+      for(let i=0; i<str.length; i++){
+        for(let j=0; j<engD.length; j++){
+          if(str[i]==engD[j]){
+            bangDigit+=bangD[j];
+          }
+        }           
+    }
+    return bangDigit;
+  }    
+const b = digitConverter(params.sn);
+
 
     return (
         <div className='container mx-auto mb-40 px-5'>
-            <p className="text-center text-2xl my-10">আক্বীদাহ স্কলারশিপের জন্য আবেদন : {params.sn}</p>
+            <p className="text-center text-2xl my-10">আবেদন : {b}</p>
             <div className="rounded bg-gradient-to-tl from-sky-200 flex flex-col md:flex-row justify-center md:justify-between">
             <div className='flex items-center p-5'>
                 <div className='mr-5'>                   

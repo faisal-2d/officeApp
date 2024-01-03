@@ -45,7 +45,7 @@ const ArabicInfo = () => {
                 <Link to="/registration-arabic"><p className='p-3 bg-yellow-200 rounded shadow-md'>বিকাশ নাম্বার এবং গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-orange-600' icon={faMousePointer} fade/></p></Link>
             </section> */}
 
-            <CardArabicNextBatch/>
+            {/* <CardArabicNextBatch/> */}
 
            {/* study method  */}
            <section className='my-10'>

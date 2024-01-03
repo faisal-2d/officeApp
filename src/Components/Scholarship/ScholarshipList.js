@@ -14,7 +14,6 @@ import Verifying from '../Loading/Verifying';
 
 const ScholarshipList = () => {
     const [user, loading, error] = useAuthState(auth);
-    const [admin, isLoadingAdmin] = useAdmin(user);
     const [moderator, isLoadingModerator] = useModerator(user);
     // const [totoalStud, setTotalStud] = useState(150);
     const params = useParams();

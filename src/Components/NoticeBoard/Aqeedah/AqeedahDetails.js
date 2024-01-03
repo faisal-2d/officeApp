@@ -23,6 +23,7 @@ import Level_2_Female from '../../../assets/group logo/Level_2_Female.png'
 import Level_1_Channel from '../../../assets/group logo/Level_1_Channel.png'
 import Level_2_Channel from '../../../assets/group logo/Level_2_Channel.png'
 import { faHand, faHandFist, faMoneyBill1 } from "@fortawesome/free-solid-svg-icons";
+import useModerator from "../../hooks/useModerator";
 
 
 
@@ -34,6 +35,7 @@ const AqeedahDetails = () => {
     const [student, setStudent] = useState(nev.state?.student);
     const [user, loading, error] = useAuthState(auth);
     const [admin] = useAdmin(user);
+    const [moderator] = useModerator(user);
     const [adminDesk, setAdminDesk] = useState(false);
     // setStudent()
 // useEffect(()=> {
@@ -509,7 +511,7 @@ if(!student){
              
             
             {
-                admin && <div className="text-center mt-40">
+                (admin || moderator) && <div className="text-center mt-40">
                     <div className="my-5  mx-auto">
 
                         <div className="p-10 bg-slate-200 rounded-sm">
@@ -519,7 +521,7 @@ if(!student){
                             </div>
 
                             {adminDesk && <div className="my-10">
-                                {!student.aqeedah3data && <button onClick={accessLevelTwo} className="p-2 px-4 m-2 btn-secondary rounded-md"> Access Level 2</button>}
+                                {(!student.aqeedah3data && admin) && <button onClick={accessLevelTwo} className="p-2 px-4 m-2 btn-secondary rounded-md"> Access Level 2</button>}
                                 <button onClick={payment1Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 1</button>
                                 <button onClick={payment2Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 2</button>
                                 <button onClick={payment3Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 3</button>

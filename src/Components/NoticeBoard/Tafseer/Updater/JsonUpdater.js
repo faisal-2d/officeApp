@@ -93,13 +93,14 @@ const JsonUpdater = () => {
                                 "tafseer1data" : [{
                                     "name" : "Exm 1",
                                     "Score" : 0
-                                },{
-                                    "name" : "Exm 2",
-                                    "Score" : 0
-                                },{
-                                    "name" : "Exm 3",
-                                    "Score" : 0
                                 }
+                                // ,{
+                                //     "name" : "Exm 2",
+                                //     "Score" : 0
+                                // },{
+                                //     "name" : "Exm 3",
+                                //     "Score" : 0
+                                // }
                             ]            
                             
                         }
