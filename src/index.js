@@ -10,6 +10,7 @@ import ScrollToTop from './ScrollToTop';
 const queryClient = new QueryClient();
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

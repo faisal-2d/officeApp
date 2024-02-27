@@ -16,6 +16,8 @@ import Loading from '../../../Loading/Loading';
 import ArabicPyamentCard from './ArabicPyamentCard';
 import { faFilePdf } from '@fortawesome/fontawesome-free-solid';
 import ArabicLevelComponent from './ArabicLevelComponent';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
   
  
@@ -47,41 +49,11 @@ if(!student){
   getStudent();
   return <Loading></Loading>
 }
-
    
-        const digitConverter = engDigit => {
-            const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-            const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-        
-              const str = engDigit.toString();
-              let bangDigit = '';
-              
-              for(let i=0; i<str.length; i++){
-                for(let j=0; j<engD.length; j++){
-                  if(str[i]==engD[j]){
-                    bangDigit+=bangD[j];
-                  }
-                }           
-            }
-            return bangDigit;
-          }    
-          const b = digitConverter(params.batch);   
-
-        const th = t => {
-            if(t == 1 || t ==  5 || t ==  7 || t ==  8 || t ==  9 || t ==  10)
-            return "ম";
-            else if(t == 2 || t ==  3)
-            return "য়";
-            else if(t == 4 )
-            return "র্থ";
-            else if(t == 6 )
-            return "ষ্ঠ";
-            else return "তম";
-        }
-        const tt = th(params.batch);
-    return (
+ 
+return (
         <div className='container mx-auto px-5'>
-            <p className="text-center text-2xl my-10">আরবি ভাষা কোর্সের {b}{tt} ব্যাচে স্বাগতম!</p>
+            <p className="text-center text-2xl my-10">আরবি ভাষা কোর্সের {digitConverter(params.batch)}{thConverter(params.batch)} ব্যাচে স্বাগতম!</p>
 
             <div className="rounded bg-gradient-to-tl from-sky-200 flex flex-col md:flex-row justify-center md:justify-between">
             <div className='flex items-center p-5'>

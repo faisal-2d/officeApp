@@ -34,12 +34,12 @@ const Office = () => {
 
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
-                    <h2 className="card-title">আক্বিদাহ রেজাল্ট আপডেট</h2>
+                    <h2 className="card-title">রেজাল্ট আপডেট</h2>
                     <p>
                         রেজাল্ট, লিডারবোর্ড ও সার্টিফিকেট আপডেট করুন
                     </p>
                     <div className="card-actions justify-end">
-                        <Link to='/result-update-aqeedah'><button className="btn btn-success">প্রবেশ করুন</button></Link>
+                        <Link to='/result-update'><button className="btn btn-success">প্রবেশ করুন</button></Link>
                     </div>
                     </div>
                 </div>
@@ -56,41 +56,7 @@ const Office = () => {
                     </div>
                 </div>
 
-                <div className="card bg-base-100 shadow-xl">
-                    <div className="card-body">
-                    <h2 className="card-title">তাফসীর রেজাল্ট আপডেট</h2>
-                    <p>
-                        রেজাল্ট, লিডারবোর্ড ও সার্টিফিকেট আপডেট করুন
-                    </p>
-                    <div className="card-actions justify-end">
-                        <Link to='/result-update-tafseer'><button className="btn btn-success">প্রবেশ করুন</button></Link>
-                    </div>
-                    </div>
-                </div>
-
-                <div className="card bg-base-100 shadow-xl">
-                    <div className="card-body">
-                    <h2 className="card-title">ফিকহ রেজাল্ট আপডেট</h2>
-                    <p>
-                        রেজাল্ট, লিডারবোর্ড ও সার্টিফিকেট আপডেট করুন
-                    </p>
-                    <div className="card-actions justify-end">
-                        <Link to='/result-update-fiqh'><button className="btn btn-success">প্রবেশ করুন</button></Link>
-                    </div>
-                    </div>
-                </div>
-
-                <div className="card bg-base-100 shadow-xl">
-                    <div className="card-body">
-                    <h2 className="card-title">সীরাত রেজাল্ট আপডেট</h2>
-                    <p>
-                        রেজাল্ট, লিডারবোর্ড ও সার্টিফিকেট আপডেট করুন
-                    </p>
-                    <div className="card-actions justify-end">
-                        <Link to='/result-update-seerat'><button className="btn btn-success">প্রবেশ করুন</button></Link>
-                    </div>
-                    </div>
-                </div>
+                
 
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
@@ -100,6 +66,17 @@ const Office = () => {
                     </p>
                     <div className="card-actions justify-end">
                         <Link to='/new-arabic-registration'><button className="btn btn-success">প্রবেশ করুন</button></Link>
+                    </div>
+                    </div>
+                </div>
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body">
+                    <h2 className="card-title">দোআ ও যিকির নতুন ভর্তি</h2>
+                    <p>
+                    দোআ ও যিকির কোর্সের নতুন ব্যাচে ভর্তি করুন
+                    </p>
+                    <div className="card-actions justify-end">
+                        <Link to='/new-dua-registration'><button className="btn btn-success">প্রবেশ করুন</button></Link>
                     </div>
                     </div>
                 </div>

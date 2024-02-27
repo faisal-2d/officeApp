@@ -12,7 +12,6 @@ import AboutUs from './Components/AboutUs';
 import NoticeBoard from './Components/NoticeBoard/NoticeBoard';
 import Login from './Components/Login/Login';
 import Aqeedah from './Components/NoticeBoard/Aqeedah/Aqeedah';
-import AqeedahRasultUpdater from './Components/NoticeBoard/Aqeedah/Updater/AqeedahResultUpdater';
 import AqeedahResultPage from './Components/NoticeBoard/Aqeedah/AqeedahResultPage';
 import AqeedahDetails from './Components/NoticeBoard/Aqeedah/AqeedahDetails';
 import MeritList from './Components/NoticeBoard/Aqeedah/MeritList';
@@ -53,14 +52,17 @@ import TafseerResultPage from './Components/NoticeBoard/Tafseer/TafseerResult/Ta
 import TafseerDetails from './Components/NoticeBoard/Tafseer/TafseerResult/TafseerDetails';
 import TafseerLeaderboard from './Components/NoticeBoard/Tafseer/LeaderBoard/TafseerLeaderboard';
 import Office from './Components/Office';
-import FiqhResultUpdater from './Components/NoticeBoard/Fiqh/Updater/FiqhResultUpdater';
-import SeeratResultUpdater from './Components/NoticeBoard/Seerat/Updater/SeeratResultUpdater';
-import TafseerResultUpdater from './Components/NoticeBoard/Tafseer/Updater/TafseerResultUpdater';
+
 import ScholarshipBoard from './Components/Scholarship/ScholarshipBoard';
 import ScholarshipList from './Components/Scholarship/ScholarshipList';
 import ScholarshipDetails from './Components/Scholarship/ScholarshipDetails';
 import ScholarshipUpdater from './Components/Scholarship/Updater/ScholarshipUpdater';
 import RequireModerator from './Components/Login/RequireModerator';
+import Dua from './Components/NoticeBoard/Dua/Dua';
+import DuaResultPage from './Components/NoticeBoard/Dua/DuaResultPage/DuaResultPage';
+import DuaDetails from './Components/NoticeBoard/Dua/DuaResultPage/DuaDetails';
+import ResultUpdater from './Components/Updater/ResultUpdater';
+import NewRegDua from './Components/NoticeBoard/Dua/NewRegDua';
 
 function App() {
   return (
@@ -100,6 +102,12 @@ function App() {
         <Route path='tafseer-:batch' element={<TafseerResultPage/>}></Route>
         <Route path='tafseer-:batch/:sn' element={<TafseerDetails/>}></Route>
         <Route path='leaderboard:level-tafseer-:batch/:sn' element={<TafseerLeaderboard/>}></Route>
+        
+        <Route path='dua' element={<Dua/>}></Route>
+        <Route path='dua-due' element={<AqeedahDue/>}></Route>
+        <Route path='dua-:batch' element={<DuaResultPage/>}></Route>
+        <Route path='dua-:batch/:sn' element={<DuaDetails/>}></Route>
+        <Route path='new-dua-registration' element={<ReqiureAuth><RequireAdmin><NewRegDua/></RequireAdmin></ReqiureAuth>}></Route>
 
         
         {/* <Route path='aqeedah-14/:sn/update-result' element={<RequireAdmin><Aqeedah3ResultUpdate></Aqeedah3ResultUpdate></RequireAdmin>}></Route> */}
@@ -114,10 +122,7 @@ function App() {
 
         <Route path='new-aqeedah-registration' element={<ReqiureAuth><RequireAdmin><NewRegAqeedah/></RequireAdmin></ReqiureAuth>}></Route>
         <Route path='new-arabic-registration' element={<ReqiureAuth><RequireAdmin><NewRegArabic/></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='result-update-aqeedah' element={<ReqiureAuth><RequireAdmin><AqeedahRasultUpdater></AqeedahRasultUpdater></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='result-update-fiqh' element={<ReqiureAuth><RequireAdmin><FiqhResultUpdater></FiqhResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='result-update-seerat' element={<ReqiureAuth><RequireAdmin><SeeratResultUpdater></SeeratResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
-        <Route path='result-update-tafseer' element={<ReqiureAuth><RequireAdmin><TafseerResultUpdater></TafseerResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
+        <Route path='result-update' element={<ReqiureAuth><RequireAdmin><ResultUpdater></ResultUpdater></RequireAdmin></ReqiureAuth>}></Route>
         <Route path='office' element={<ReqiureAuth><RequireAdmin><Office></Office></RequireAdmin></ReqiureAuth>}></Route>
         
         <Route path='scholarship/' element={<ReqiureAuth><RequireModerator><ScholarshipBoard></ScholarshipBoard></RequireModerator></ReqiureAuth>}></Route>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import digitConverter from '../../tools/digitConverter';
 
 const Arabic = () => {
     const batchList = [4, 3, 2, 1];
@@ -15,7 +16,7 @@ const Arabic = () => {
         key={index}        
         >
         <div className="card-body mx-auto">
-          <h2 className="text-center text-3xl">ব্যাচ {batch}</h2>          
+          <h2 className="text-center text-3xl">ব্যাচ {digitConverter(batch)}</h2>          
           <div className="card-actions">
           <Link className="btn btn-primary btn-wide mt-5" to={`/arabic-${batch}`}>প্রবেশ করুন</Link>
           </div>

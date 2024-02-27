@@ -5,13 +5,15 @@ import Loading from '../../Loading/Loading';
 import MeritRow from './MeritRow';
 import { useQuery } from 'react-query'
 import { useState } from 'react';
+import digitConverter from '../../tools/digitConverter';
+import thConverter from '../../tools/thConverter';
 
 
 const MeritList = () => {
   const [myPosition, setMyPosition] = useState(0);
     const params = useParams();
   const getStudentList = async () => {
-    const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/leaderboard/aqeedah3/${params.batch}`)
+    const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/leaderboard/get/${params.batch}/3`)
     // http://localhost:5000
     // https://alharamanin-backend-web.onrender.com
         return data;
@@ -27,7 +29,7 @@ if(isLoading){
 
 
 
-const myResult = students.find(student => student.sn == params.sn);
+const myResult = (students?.result).find(student => student.sn == params.sn);
 
 const th = m => {
   if (m==1) return 'st';
@@ -62,7 +64,7 @@ const th = m => {
     </thead>
     <tbody> 
      <tr className="">
-            <th className='bg-yellow-100 font-bold'>{myPosition} <sup>{th(myPosition)}</sup></th>
+            <th className='bg-yellow-100 font-bold'>{digitConverter(myPosition)} <sup>{thConverter(myPosition)}</sup></th>
             <th className='bg-yellow-100'>{myResult?.sn}</th>
             <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>
             <th className='bg-yellow-100'>{myResult?.aqeedah3data[0].Score}</th>
@@ -75,12 +77,12 @@ const th = m => {
         <td></td>
       </tr>
 
-            {students?.map((student, index) => <MeritRow
+            {(students?.result)?.map((student, index) => <MeritRow
                 key={index}
                 merit={index}
                 student={student}               
                 setMyPosition={setMyPosition}
-                mySn={myResult.sn}
+                mySn={myResult?.sn}
         ></MeritRow>) }        
       
     </tbody>

@@ -24,6 +24,8 @@ import Level_2_Channel from '../../../../assets/group logo/Level_2_Channel.png'
 import { faHand, faHandFist, faMoneyBill1 } from "@fortawesome/free-solid-svg-icons";
 import FiqhPaymentCard from './FiqhPaymentCard';
 import FiqhLevelComponents from './FiqhLevelComponents';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const FiqhDetails = () => {
     const params = useParams();
@@ -98,11 +100,9 @@ if(!student){
     };
 
     const accessLevelTwo = () => {
-        console.log(params.batch);
         const data = {
                         "fiqh2payment" : "due",
-                        "fiqh3payment" : "due",
-                        "fiqh3Total" : 0,
+                        "fiqh2Total" : 0,
                         "fiqh2data" : [
                            {
                              "name" : "Exm 1",
@@ -113,15 +113,12 @@ if(!student){
                            },{
                              "name" : "Exm 3",
                              "Score" : 0,
-                          },{
-                             "name" : "Exm 4",
-                             "Score" : 0,
                           }
                          ]
                      }
 
 
-            axios.put(`https://alharamanin-backend-web.onrender.com/accessLevelTwo/fiqh${params.batch}/${params.sn}`, data)
+            axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/accessLevelTwo/${params.batch}/${params.sn}`, data)
            .then(data => console.log(data.data))
     }
 
@@ -132,7 +129,7 @@ if(!student){
                 "fiqh1payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/payment/fiqh/${params.batch}/${params.sn}`, data)
+        axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
             // console.log(data.data);
@@ -146,7 +143,7 @@ if(!student){
                 "fiqh2payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/payment/fiqh/${params.batch}/${params.sn}`, data)
+        axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
             // console.log(data.data);
@@ -160,7 +157,7 @@ if(!student){
                 "fiqh3payment" : "paid",           
             }     
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/payment/fiqh/${params.batch}/${params.sn}`, data)
+        axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
             // console.log(data.data);
@@ -170,27 +167,9 @@ if(!student){
     }
 
 
-    const digitConverter = engDigit => {
-        const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-    
-          const str = engDigit.toString();
-          let bangDigit = '';
-          
-          for(let i=0; i<str.length; i++){
-            for(let j=0; j<engD.length; j++){
-              if(str[i]==engD[j]){
-                bangDigit+=bangD[j];
-              }
-            }           
-        }
-        return bangDigit;
-      }    
-    const b = digitConverter(params.batch);
-
     return (
         <div className='container mx-auto mb-40 px-5'>
-            <p className="text-center text-2xl my-10">ফিকহ কোর্সের {b} তম ব্যাচে স্বাগতম!</p>
+            <p className="text-center text-2xl my-10">ফিকহ কোর্সের {digitConverter(params.batch)}{thConverter(params.batch)} ব্যাচে স্বাগতম!</p>
             <div className="rounded bg-gradient-to-tl from-sky-200 flex flex-col md:flex-row justify-center md:justify-between">
             <div className='flex items-center p-5'>
                 <div className='mr-5'>                   

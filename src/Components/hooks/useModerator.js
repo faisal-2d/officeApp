@@ -8,7 +8,7 @@ const useModerator = (user) => {
     useEffect(()=> {
         const userEmail = user?.email;        
         if(userEmail){                       
-            axios.get(`https://alharamanin-backend-web.onrender.com/ismoderator/${userEmail}`)
+            axios.get(`https://alharamanin-backend-web.onrender.com/users/ismoderator/${userEmail}`)
             .then(data => {
                 setModerator(data.data.isModerator);
                 setIsLoading(false);                

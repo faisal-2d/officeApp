@@ -11,7 +11,7 @@ const NewRegAqeedah = () => {
 
 
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/21`)
+        axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/count/get/22`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -39,7 +39,7 @@ const NewRegAqeedah = () => {
             
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/register/aqeedah/21`, insertData)
+        axios.post(`https://alharamanin-backend-web.onrender.com/aqeedah/22/register`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 

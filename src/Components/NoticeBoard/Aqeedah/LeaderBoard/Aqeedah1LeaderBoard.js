@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import Loading from "../../../Loading/Loading";
 import Aqeedah1LeaderBoardRow from "./Aqeedah1LeaderBoardRow";
+import digitConverter from "../../../tools/digitConverter";
+import thConverter from "../../../tools/thConverter";
 
 const Aqeedah1LeaderBoard = () => {
   const [myPosition, setMyPosition] = useState(0);
@@ -11,7 +13,7 @@ const Aqeedah1LeaderBoard = () => {
   const params = useParams();
   const getStudentList = async () => {
     const { data } = await axios.get(
-      `https://alharamanin-backend-web.onrender.com/leaderboard/aqeedah1/${params.batch}`
+      `https://alharamanin-backend-web.onrender.com/aqeedah/leaderboard/get/${params.batch}/1/`
     );
     // http://localhost:5000
     // https://alharamanin-backend-web.onrender.com/
@@ -31,8 +33,7 @@ const Aqeedah1LeaderBoard = () => {
 
 
 
-  
-const myResult = students.find(student => student.sn == params.sn);
+const myResult = (students?.result).find(student => student.sn == params.sn);
 
 const th = m => {
   if (m==1) return 'st';
@@ -64,7 +65,7 @@ const th = m => {
             </thead>
             <tbody>
             <tr className="">
-                <th className='bg-yellow-100 font-bold'>{myPosition} <sup>{th(myPosition)}</sup></th>
+                <th className='bg-yellow-100 font-bold'>{digitConverter(myPosition)} <sup>{thConverter(myPosition)}</sup></th>
                 <th className='bg-yellow-100'>{myResult?.sn}</th>
                 <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>
                 <th className='bg-yellow-100'>{myResult?.aqeedah1data[0].Score}</th>
@@ -76,13 +77,13 @@ const th = m => {
               <td></td>
             </tr>
 
-              {students?.map((student, index) => (
+              {(students.result)?.map((student, index) => (
                 <Aqeedah1LeaderBoardRow
                   key={index}
                   merit={index}
                   student={student}
                   setMyPosition={setMyPosition}
-                  mySn={myResult.sn}
+                  mySn={myResult?.sn}
                 ></Aqeedah1LeaderBoardRow>
               ))}
             </tbody>

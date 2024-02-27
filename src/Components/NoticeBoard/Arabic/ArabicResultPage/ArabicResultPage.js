@@ -7,6 +7,8 @@ import auth from '../../../../firebase.init';
 import useAdmin from '../../../hooks/useAdmin';
 import Loading from '../../../Loading/Loading';
 import ArabicResultPageRow from './ArabicResultPageRow';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const ArabicResultPage = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -15,7 +17,7 @@ const ArabicResultPage = () => {
 
 
     const params = useParams();
-    let searchName = 'a';
+    let searchName = '';
     const getStudentList = async (searchName) => {
       const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/${searchName}`)
       // http://localhost:5000
@@ -105,52 +107,10 @@ const levelOneReg = () => {
   }))    
 }
 
-// const checkBefore = () => {
-//   const data = {         
-//     "name" : "Exm 1",
-//     "Score" : 0,
-//     "resultBook" : ""      
-// }
-//  for(let i=1; i<415; i++){
-//    axios.put(`https://alharamanin-backend-web.onrender.com/exm1/aqeedah/17/${i}`, data)
-// .then(data => console.log(data.data))
-//  }
-// }
-
-const digitConverter = engDigit => {
-  const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-
-    const str = engDigit.toString();
-    let bangDigit = '';
-    
-    for(let i=0; i<str.length; i++){
-      for(let j=0; j<engD.length; j++){
-        if(str[i]==engD[j]){
-          bangDigit+=bangD[j];
-        }
-      }           
-  }
-  return bangDigit;
-}    
-const b = digitConverter(params.batch);   
-
-        const th = t => {
-            if(t == 1 || t ==  5 || t ==  7 || t ==  8 || t ==  9 || t ==  10)
-            return "ম";
-            else if(t == 2 || t ==  3)
-            return "য়";
-            else if(t == 4 )
-            return "র্থ";
-            else if(t == 6 )
-            return "ষ্ঠ";
-            else return "তম";
-        }
-        const tt = th(params.batch);
   
     return (
         <div className="my-10">
-       <p className="text-center text-2xl my-10">আরবি ভাষা কোর্সের {b}{tt} ব্যাচে স্বাগতম!</p>
+       <p className="text-center text-2xl my-10">আরবি ভাষা কোর্সের {digitConverter(params.batch)}{thConverter(params.batch)} ব্যাচে স্বাগতম!</p>
       {/* { admin && <div className="text-center mx-auto"><button onClick={levelOneReg} className="btn-primary text-center">Result Update</button></div> } */}
 
       <form onSubmit={searchByName} >

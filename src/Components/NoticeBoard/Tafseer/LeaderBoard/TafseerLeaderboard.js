@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import TafseerLB_Row from './TafseerLB_Row';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const TafseerLeaderboard = () => {
     const [myPosition, setMyPosition] = useState(0);
@@ -15,7 +17,7 @@ const TafseerLeaderboard = () => {
 
     const getStudentList = async () => {
       const { data } = await axios.get(
-        `https://alharamanin-backend-web.onrender.com/leaderboard/tafseer${level}/${params.batch}`
+        `https://alharamanin-backend-web.onrender.com/tafseer/leaderboard/get/${params.batch}/${level}`
       );
       // http://localhost:5000
       // https://alharamanin-backend-web.onrender.com/
@@ -35,14 +37,9 @@ const TafseerLeaderboard = () => {
       return <Loading></Loading>;
     }
     
-  const myResult = students.find(student => student.sn == params.sn);
+  const myResult = (students?.result).find(student => student.sn == params.sn);
   
-  const th = m => {
-    if (m==1) return 'st';
-    if (m==2) return 'nd';
-    if (m==3) return 'rd';
-    return 'th';
-  }
+  
       return (
           <div>
           <div className='text-center my-10 text-xl'>
@@ -66,7 +63,7 @@ const TafseerLeaderboard = () => {
                 </thead>
                 <tbody>
                 <tr className="">
-                    <th className='bg-yellow-100 font-bold'>{myPosition} <sup>{th(myPosition)}</sup></th>
+                    <th className='bg-yellow-100 font-bold'>{digitConverter(myPosition)} <sup>{thConverter(myPosition)}</sup></th>
                     <th className='bg-yellow-100'>{myResult?.sn}</th>
                     <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>
                     {level === '2' && <>
@@ -86,13 +83,13 @@ const TafseerLeaderboard = () => {
                   <td></td>
                 </tr>
     
-                  {students?.map((student, index) => ( <TafseerLB_Row
+                  {(students?.result)?.map((student, index) => ( <TafseerLB_Row
                       key={index}
                       merit={index}
                       student={student}
                       setMyPosition={setMyPosition}
                       level = {level}
-                      mySn={myResult.sn}
+                      mySn={myResult?.sn}
                     ></TafseerLB_Row>
                   ))}
                 </tbody>

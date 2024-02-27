@@ -7,13 +7,15 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import useAdmin from '../../../hooks/useAdmin';
 import TafseerRow from './TafseerRow';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const TafseerResultPage = () => {
     const [user, loading, error] = useAuthState(auth);
     const [admin, isLoadingAdmin] = useAdmin(user);
   
     const params = useParams();
-    let searchName = 'a';
+    let searchName = '';
     const getStudentList = async (searchName) => {
       const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/tafseer/${params.batch}/${searchName}`)
       // http://localhost:5000
@@ -44,27 +46,9 @@ const TafseerResultPage = () => {
   }
   
   
-  const digitConverter = engDigit => {
-    const engD = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const bangD = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-  
-      const str = engDigit.toString();
-      let bangDigit = '';
-      
-      for(let i=0; i<str.length; i++){
-        for(let j=0; j<engD.length; j++){
-          if(str[i]==engD[j]){
-            bangDigit+=bangD[j];
-          }
-        }           
-    }
-    return bangDigit;
-  }    
-  const b = digitConverter(params.batch);
-  
       return (
           <div className="my-10">
-        <p className="text-center text-2xl">তাফসীর কোর্সের {b} তম ব্যাচে স্বাগতম!</p>
+        <p className="text-center text-2xl">তাফসীর কোর্সের {digitConverter(params.batch)}{thConverter(params.batch)} ব্যাচে স্বাগতম!</p>
   
         <form onSubmit={searchByName} >
         <div className="form-control my-10">

@@ -44,7 +44,6 @@ const updateData = sn => {
             "isAccepted" : true, 
             "accepted_by" : user.displayName         
         }        
-        console.log(data);
     axios.put(`https://alharamanin-backend-web.onrender.com/update/scholarship/aqeedah/${sn}`, data)
     .then(data => {
         getStudent();
@@ -53,7 +52,7 @@ const updateData = sn => {
 
 const acceptScholarship = async () => {
    
-    await axios.get(`https://alharamanin-backend-web.onrender.com/count/aqeedah/21`).then(data=>setCount(data.data.result+1));
+    await axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/aqeedah/22`).then(data=>setCount(data.data.result+1));
     
     const insertData = {
         "sn" : count,

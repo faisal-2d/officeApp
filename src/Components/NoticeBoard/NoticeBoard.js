@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NoticeBoradCard from './NoticeBoradCard';
 
 const NoticeBoard = () => {
     return (
@@ -7,70 +7,36 @@ const NoticeBoard = () => {
             <p className='text-center text-2xl'>নোটিশ বোর্ডে স্বাগতম!</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-3 md:mx-10">
 
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">আক্বিদাহ</h2>
-          <p>
-            আক্বিদাহ কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
-            প্রবেশ করুন।
-          </p>
-          <div className="card-actions justify-end">
-            <Link to='/aqeedah'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
-          </div>
-        </div>
-      </div>
+      <NoticeBoradCard
+      course="আক্বিদাহ"
+      courseLink="/aqeedah"
+      ></NoticeBoradCard>
 
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">তাফসীর</h2>
-          <p>
-          তাফসীর কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
-            প্রবেশ করুন।
-          </p>
-          <div className="card-actions justify-end">
-            <Link to='/tafseer'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
-          </div>
-        </div>
-      </div>
+      <NoticeBoradCard
+      course="তাফসীর"
+      courseLink="/tafseer"
+      ></NoticeBoradCard>
 
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">আরবি ভাষা</h2>
-          <p>
-          আরবি ভাষা কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
-            প্রবেশ করুন।
-          </p>
-          <div className="card-actions justify-end">
-            <Link to='/arabic'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
-          </div>
-        </div>
-      </div>
+      <NoticeBoradCard
+      course="আরবি ভাষা"
+      courseLink="/arabic"
+      ></NoticeBoradCard>
 
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">ফিকহ</h2>
-          <p>
-            ফিকহ কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
-            প্রবেশ করুন।
-          </p>
-          <div className="card-actions justify-end">
-            <Link to='/fiqh'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
-          </div>
-        </div>
-      </div>
+      <NoticeBoradCard
+      course="ফিকহ"
+      courseLink="/fiqh"
+      ></NoticeBoradCard>
 
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">সীরাত</h2>
-          <p>
-           সীরাত কোর্সের শিক্ষার্থীদের লিস্ট, পরীক্ষার রেজাল্ট পেতে এখানে
-            প্রবেশ করুন।
-          </p>
-          <div className="card-actions justify-end">
-            <Link to='/seerat'><button className="btn btn-primary">প্রবেশ করুন</button></Link>
-          </div>
-        </div>
-      </div>
+
+      <NoticeBoradCard
+      course="সীরাত"
+      courseLink="/seerat"
+      ></NoticeBoradCard>
+
+      <NoticeBoradCard
+      course="দোআ ও যিকির"
+      courseLink="/dua"
+      ></NoticeBoradCard>
 
       
 

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import digitConverter from '../../tools/digitConverter';
+import thConverter from '../../tools/thConverter';
 
 const MeritRow = ({merit, student, setMyPosition, mySn}) => {  
  
@@ -8,18 +10,11 @@ const MeritRow = ({merit, student, setMyPosition, mySn}) => {
         setMyPosition(merit+1);
     }
     
-    const th = m => {
-        if (m===0) return 'st';
-        if (m===1) return 'nd';
-        if (m===2) return 'rd';
-        return 'th';
-    }
-
    
    
     return (
         <tr className=" ">
-            <th className='bg-green-100 font-bold'>{merit+1} <sup>{th(merit)}</sup> </th>
+            <th className='bg-green-100 font-bold'>{digitConverter(merit+1)} <sup>{thConverter(merit+1)}</sup> </th>
             <th>{student?.sn}</th>
             {/* <td>{student?.name.toUpperCase()} {student?.gender === "male" ? "BIN" : "BINTE"} {student?.fatherName.toUpperCase()}</td> */}
             <td>{student?.name.toUpperCase()}</td>

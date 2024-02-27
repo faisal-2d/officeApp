@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import digitConverter from '../../tools/digitConverter';
 
 const Fiqh = () => {
     const batchList = [8, 7];
@@ -12,7 +13,7 @@ const Fiqh = () => {
         batchList.map((batch, index) => <div className="card bg-base-100 shadow-xl"
         key={index}>
         <div className="card-body mx-auto">
-          <h2 className="text-center text-3xl">ব্যাচ {batch}</h2>          
+          <h2 className="text-center text-3xl">ব্যাচ {digitConverter(batch)}</h2>          
           <div className="card-actions">
           <Link className="btn btn-primary btn-wide mt-5" to={`/fiqh-${batch}`}>প্রবেশ করুন</Link>
           </div>

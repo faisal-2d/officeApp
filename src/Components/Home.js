@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Banner from './Banner';
 import NextBatchReg from './CourseRegistration/NextBatchReg';
 import CardArabicNextBatch from './NoticeBoard/Arabic/CardArabicNextBatch';
+import CardDuaNextBatch from './NoticeBoard/Dua/CardDuaNextBatch';
 
 const Home = () => {
 
@@ -12,6 +13,7 @@ const Home = () => {
     return (
         <div className='container mx-auto'>
             <Banner></Banner>
+            <CardDuaNextBatch></CardDuaNextBatch>
             <NextBatchReg></NextBatchReg>
 
             <section className='px-5'>

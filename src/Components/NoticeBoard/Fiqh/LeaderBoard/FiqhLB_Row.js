@@ -1,19 +1,15 @@
 import React from 'react';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const FiqhLB_Row = ({merit, student, setMyPosition, mySn, level}) => {
     if(student.sn == mySn){
         setMyPosition(merit+1);
     }
     
-    const th = m => {
-        if (m===0) return 'st';
-        if (m===1) return 'nd';
-        if (m===2) return 'rd';
-        return 'th';
-    }
     return (
         <tr className=" ">
-            <th className='bg-green-100 font-bold'>{merit+1} <sup>{th(merit)}</sup></th>
+            <th className='bg-green-100 font-bold'>{digitConverter(merit+1)} <sup>{thConverter(merit+1)}</sup></th>
             <th>{student?.sn}</th>
             <td>{student?.name.toUpperCase()}</td> 
             {level ==='2' && <>

@@ -9,10 +9,12 @@ import AqeedahRegistration from './CourseRegistration/AqeedahRegistration';
 import NextBatchReg from './CourseRegistration/NextBatchReg';
 import DuaRegistration from './NoticeBoard/Dua/DuaRegistration';
 import CardArabicNextBatch from './NoticeBoard/Arabic/CardArabicNextBatch';
+import CardDuaNextBatch from './NoticeBoard/Dua/CardDuaNextBatch';
 
 const Registration = () => {
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
+        <CardDuaNextBatch></CardDuaNextBatch>
          <NextBatchReg/>
         {/* <CardArabicNextBatch/> */}
         {/* <AqeedahRegistration></AqeedahRegistration> */}

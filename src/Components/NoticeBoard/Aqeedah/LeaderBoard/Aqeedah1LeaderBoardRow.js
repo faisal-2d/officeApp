@@ -1,4 +1,6 @@
 import React from 'react';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const Aqeedah1LeaderBoardRow = ({merit, student, setMyPosition, mySn}) => {
 
@@ -6,18 +8,12 @@ const Aqeedah1LeaderBoardRow = ({merit, student, setMyPosition, mySn}) => {
         setMyPosition(merit+1);
     }
     
-    const th = m => {
-        if (m===0) return 'st';
-        if (m===1) return 'nd';
-        if (m===2) return 'rd';
-        return 'th';
-    }
 
 
 //    console.log(student);
     return (
         <tr className=" ">
-            <th className='bg-green-100 font-bold'>{merit+1} <sup>{th(merit)}</sup>            
+            <th className='bg-green-100 font-bold'>{digitConverter(merit+1)} <sup>{thConverter(merit+1)}</sup>            
             </th>
             <th>{student?.sn}</th>
             {/* <td>{student?.name.toUpperCase()} {student?.gender === "male" ? "BIN" : "BINTE"} {student?.fatherName.toUpperCase()}</td> */}

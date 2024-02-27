@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import SeeratLB_Row from './SeeratLB_Row';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 const SeeratLeaderboard = () => {
     const [myPosition, setMyPosition] = useState(0);
@@ -15,7 +17,7 @@ const SeeratLeaderboard = () => {
 
   const getStudentList = async () => {
     const { data } = await axios.get(
-      `https://alharamanin-backend-web.onrender.com/leaderboard/seerat${level}/${params.batch}`
+      `https://alharamanin-backend-web.onrender.com/seerat/leaderboard/get/${params.batch}/${level}`
     );
     // http://localhost:5000
     // https://alharamanin-backend-web.onrender.com/
@@ -36,7 +38,7 @@ const SeeratLeaderboard = () => {
     return <Loading></Loading>;
   }
   
-const myResult = students.find(student => student.sn == params.sn);
+const myResult = (students?.result).find(student => student.sn == params.sn);
 
 const th = m => {
   if (m==1) return 'st';
@@ -67,7 +69,7 @@ const th = m => {
               </thead>
               <tbody>
               <tr className="">
-                  <th className='bg-yellow-100 font-bold'>{myPosition} <sup>{th(myPosition)}</sup></th>
+                  <th className='bg-yellow-100 font-bold'>{digitConverter(myPosition)} <sup>{thConverter(myPosition)}</sup></th>
                   <th className='bg-yellow-100'>{myResult?.sn}</th>
                   <td className='bg-yellow-100'>{myResult?.name.toUpperCase()}</td>
                   {level === '2' && <>
@@ -87,13 +89,13 @@ const th = m => {
                 <td></td>
               </tr>
   
-                {students?.map((student, index) => ( <SeeratLB_Row
+                {(students?.result)?.map((student, index) => ( <SeeratLB_Row
                     key={index}
                     merit={index}
                     student={student}
                     setMyPosition={setMyPosition}
                     level = {level}
-                    mySn={myResult.sn}
+                    mySn={myResult?.sn}
                   ></SeeratLB_Row>
                 ))}
               </tbody>
