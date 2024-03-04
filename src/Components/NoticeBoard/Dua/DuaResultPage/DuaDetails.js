@@ -105,7 +105,7 @@ if(admin || assistant){
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row p-5 gap-10">   
+            <div className="flex flex-col md:flex-row items-center p-5 gap-10">   
 
             <div className='mx-auto items-center'>
                 <DuaDiamond
@@ -113,7 +113,7 @@ if(admin || assistant){
                 ></DuaDiamond>
             </div>             
 
-            {student.dua1payment && <DuaPaymentCard
+            {student?.dua1payment && <DuaPaymentCard
                 payment={student.dua1payment}
                 level ={1}
                 ></DuaPaymentCard> }

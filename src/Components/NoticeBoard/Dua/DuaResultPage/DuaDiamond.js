@@ -6,7 +6,7 @@ const DuaDiamond = ({gems}) => {
         <div>
             <div className='flex items-center align-center'>
                 <p className='text-7xl mr-2 text-blue-500'>{gems}</p>
-                <img className='mt-4 w-10 animate-bounce' src={diamond}/>
+                <img className={`w-10 ${gems ? 'mt-4 animate-bounce' : ''}`} src={diamond}/>
             </div>
         </div>
     );

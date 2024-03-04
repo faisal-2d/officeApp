@@ -23,7 +23,7 @@ const NewRegDua = () => {
             "phone" : data.phone,
             "gender" : data.gender,
             "gems" : 0,
-            "todaysinto" : {
+            "todaysinfo" : {
                 "dua" : 0,
                 "date" : "",
                 "teaching" : 0

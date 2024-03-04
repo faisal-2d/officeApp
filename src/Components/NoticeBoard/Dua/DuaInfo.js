@@ -8,6 +8,7 @@ import { faViadeo, faViadeoSquare } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import dua_img from '../../../assets/dua_image.jpg'
 import trophy_img from '../../../assets/trophy/trophy_top3.png'
+import DuaIntro from './DuaResultPage/DuaIntro';
 const DuaInfo = () => {
     return (
         <div className='container mx-auto px-5 my-10'>
@@ -87,6 +88,8 @@ const DuaInfo = () => {
 
            </section>
 
+           <DuaIntro></DuaIntro>
+
            {/* admission system  */}
            <section className='my-20'>
                 <p className='text-xl my-4'>কিভাবে ভর্তি হবেন?</p>
@@ -119,6 +122,8 @@ const DuaInfo = () => {
                 </div>
 
            </section>
+
+           
 
             {/* Course Module  */}
             <section className='my-10'>

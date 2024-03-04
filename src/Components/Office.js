@@ -80,6 +80,17 @@ const Office = () => {
                     </div>
                     </div>
                 </div>
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body">
+                    <h2 className="card-title">Certificate Name Query</h2>
+                    <p>
+                    সব কোর্সের স্টুডেন্টদের নাম
+                    </p>
+                    <div className="card-actions justify-end">
+                        <Link to='/all-student-names'><button className="btn btn-warning">প্রবেশ করুন</button></Link>
+                    </div>
+                    </div>
+                </div>
 
 
                 

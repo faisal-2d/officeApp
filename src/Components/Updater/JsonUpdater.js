@@ -34,7 +34,7 @@ const JsonUpdater = () => {
                             "name" : `Exm ${exmNo}`,
                             "Score" : data.score            
                             }
-
+                    console.log(course, batchNo, level, exmNo, data.sn)
                     axios.put(`https://alharamanin-backend-web.onrender.com/${course}/${batchNo}/${level}/${exmNo}/${data.sn}`, resultData)
                     .then(data => console.log(data.data))
                     
@@ -47,7 +47,7 @@ const JsonUpdater = () => {
                         
                         let leadData = {};
                         
-                        axios.put(`https://alharamanin-backend-web.onrender.com/${course}/${batchNo}/leaderboard/update/${batchNo}/${level}/${data.sn}`, leadData)
+                        axios.put(`https://alharamanin-backend-web.onrender.com/${course}/leaderboard/update/${batchNo}/${level}/${data.sn}`, leadData)
                         .then(data => console.log(data.data))                      
                         
                     })
@@ -246,7 +246,7 @@ const JsonUpdater = () => {
                             {...register("level")}
                             type="radio"
                             name="level"
-                            value="level1"
+                            value="1"
                             id="field-level1"
                             className='radio mr-3 checked:bg-pink-600'
                         />
@@ -257,7 +257,7 @@ const JsonUpdater = () => {
                             {...register("level")}
                             type="radio"
                             name="level"
-                            value="level2"
+                            value="2"
                             id="field-level2"
                             className='radio mr-3 checked:bg-fuchsia-700'
                         />
@@ -268,7 +268,7 @@ const JsonUpdater = () => {
                             {...register("level")}
                             type="radio"
                             name="level"
-                            value=  "level3"
+                            value=  "3"
                             id="field-level3"
                             className={`radio mr-3 checked:bg-emerald-600`}
                         />

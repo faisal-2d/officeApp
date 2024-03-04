@@ -63,6 +63,7 @@ import DuaResultPage from './Components/NoticeBoard/Dua/DuaResultPage/DuaResultP
 import DuaDetails from './Components/NoticeBoard/Dua/DuaResultPage/DuaDetails';
 import ResultUpdater from './Components/Updater/ResultUpdater';
 import NewRegDua from './Components/NoticeBoard/Dua/NewRegDua';
+import CertificateNameQuery from './Components/CertificateNameQuery/CertificateNameQuery';
 
 function App() {
   return (
@@ -133,6 +134,7 @@ function App() {
         <Route path='registration-aqeedah' element={<AqeedahRegistration/>}></Route>
         <Route path='registration-arabic' element={<ArabicRegistration/>}></Route>
         <Route path='registration-dua' element={<DuaRegistration/>}></Route>
+        <Route path='all-student-names' element={<CertificateNameQuery/>}></Route>
 
         <Route path='login' element={<Login/>}></Route>
         <Route path='signup' element={<SignUp/>}></Route>
