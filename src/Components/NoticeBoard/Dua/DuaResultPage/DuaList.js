@@ -10,6 +10,11 @@ import duaCompletion from './Functions/duaCompletion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faCheckCircle, faChevronLeft, faChevronRight } from '@fortawesome/fontawesome-free-solid';
 import Loading from '../../../Loading/Loading';
+import digitConverter from '../../../tools/digitConverter';
+import JemsBlooping from '../../../Loading/JemsBlooping';
+import JemsRotating from '../../../Loading/JemsRotating';
+import diamond from '../../../../assets/trophy/gem_red.png'
+import getReportUpdate from './Functions/getReportUpdate';
 
 const DuaList = ({student, update_profile}) => {
     const [user, loading, error] = useAuthState(auth);
@@ -17,7 +22,9 @@ const DuaList = ({student, update_profile}) => {
     const [assistant] = useAssistant(user);
     const [currentPage, setCurrentPage] = useState(1);
     const [duaData, setduaData] = useState([]);
-    
+    const [bloop, setBloop] = useState(false);
+    const [clickCount, setClickCount] = useState(0);
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -34,6 +41,7 @@ const DuaList = ({student, update_profile}) => {
 
     const params = useParams();   
     
+    
     const dua_index = student?.dua;
     const result = duaData.map((dua, index) => {
       return {
@@ -43,24 +51,34 @@ const DuaList = ({student, update_profile}) => {
       };
     });
 
-    const update_dua_list = (dua) => {
+    const update_dua_list = async (dua) => {
         if(!admin && !assistant)
         return;
-        if(dua.value == 1)
+        if(dua.value === 1)
         return;
+        if(bloop)
+        return;
+        console.log(clickCount);
+        setClickCount(clickCount+1);
 
-        if((student?.todaysinfo?.dua)==0){
-            duaGemsUpdater(student?.gems, params.batch, params.sn);
+        if(clickCount === 0){
+            if((student?.todaysinfo?.dua)===0){
+             await setBloop(true);
+             await getReportUpdate('dua', params.batch, params.sn);
+             await duaGemsUpdater(student?.gems, params.batch, params.sn);
+            }
         }
         const data = {
             "index" : dua.dua_index,
         }     
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/dua/dua_update/${params.batch}/${params.sn}`, data)
+        await axios.put(`https://alharamanin-backend-web.onrender.com/dua/dua_update/${params.batch}/${params.sn}`, data)
         .then(data => {
             duaCompletion(params?.batch, params?.sn);
             update_profile(true);
         })
+        await setBloop(false);
+        console.log("dua list Completed");
         }
 
     const itemsPerPage = 21;
@@ -72,18 +90,26 @@ const DuaList = ({student, update_profile}) => {
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
     };
-    if(!currentItems){
-        return <Loading></Loading>
+       
+    if(!result || !currentItems){
+        return <JemsRotating></JemsRotating>
     }
+    if(bloop){
+        return <JemsBlooping></JemsBlooping>
+    }
+
+    
     return (
         <section className='my'>
             <div className="divider text-4xl text-slate-500 my-20">দোআ সমূহ</div>
+            {/* {bloop && <JemsBlooping></JemsBlooping>} */}
             <div className='grid grid-cols-1 md:grid-cols-3 '>
                 {currentItems.map((dua, index) => {
                     return <div key={index} className="">            
-                        <div className={` flex justify-between p-3 m-2 rounded-md bg-${dua.value == true ? 'green-300' : 'yellow-200'}`} key={index}>
-                            {((admin || assistant) && (!dua.value)) && <div onClick={() => update_dua_list(dua)} className=''> <FontAwesomeIcon className='text-2xl text-green-600 cursor-pointer' icon={faCheckCircle}></FontAwesomeIcon> </div>}
-                            <p className="ml-auto text-right">{dua.dua}</p>
+                        <div className={` flex justify-between p-3 m-2 rounded-md bg-${dua.value === true ? 'green-300' : 'yellow-200'}`} key={index}>
+                            {((admin || assistant) && (!dua.value)) && <div onClick={() => update_dua_list(dua)} className={``}> <FontAwesomeIcon className='text-2xl text-blue-600 cursor-pointer' icon={faCheckCircle}></FontAwesomeIcon> </div>}
+                            <p className="ml-auto text-right">{dua.dua.length<=65 ? dua.dua : `...${(dua.dua).substring(0, 65)}`}</p>
+                            <div className='flex items-center content-center'><p className={`w-8 h-8 ml-2 p-1 ${dua.value === true ? 'bg-green-400' : 'bg-orange-300'} rounded-full text-center`}>{digitConverter(dua.dua_index+1)}</p></div>
                             </div>
                     </div>;
                 })}

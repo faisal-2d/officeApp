@@ -7,7 +7,7 @@ const duaGemsUpdater = (gems, batch, sn) => {
     }     
     axios.put(`https://alharamanin-backend-web.onrender.com/dua/gems/update/${batch}/${sn}`, data)
     .then(data => {
-        console.log(data.data);
+        console.log(data);
     })
     return;
 };

@@ -13,7 +13,6 @@ const Home = () => {
     return (
         <div className='container mx-auto'>
             <Banner></Banner>
-            <CardDuaNextBatch></CardDuaNextBatch>
             <NextBatchReg></NextBatchReg>
 
             <section className='px-5'>

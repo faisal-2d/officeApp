@@ -25,9 +25,11 @@ import useAssistant from '../../../hooks/useAssistant';
 import getDate from '../../../tools/getDate';
 
 
+
 const DuaDetails = () => {
     const params = useParams();
     const nev = useLocation();
+
 
     const [student, setStudent] = useState(nev.state?.student);
     const [user, loading, error] = useAuthState(auth);
@@ -37,14 +39,14 @@ const DuaDetails = () => {
     const [adminDesk, setAdminDesk] = useState(false);
 
 
-
 const getStudent = () => {
 
         axios.get(`https://alharamanin-backend-web.onrender.com/dua/${params.batch}/sn/${params.sn}`)
-        .then(data => { setStudent(data.data)
+        .then(data => { setStudent(data.data);
         });       
        
 }
+let totalGems = student?.gems;
 
 if(!student){
     getStudent();
@@ -81,11 +83,10 @@ if(admin || assistant){
     const update_profile = e => {
         if(e){
             getStudent();
-            console.log('profile is updating, event',e);
         }
     }
 
-
+    
     
 
     return (
@@ -109,7 +110,7 @@ if(admin || assistant){
 
             <div className='mx-auto items-center'>
                 <DuaDiamond
-                gems = {student?.gems}
+                gems = {totalGems}
                 ></DuaDiamond>
             </div>             
 
@@ -158,7 +159,7 @@ if(admin || assistant){
             
             <DuaList
             student = {student}
-            update_profile = {update_profile}
+            update_profile = {update_profile} 
             ></DuaList>
 
             <DuaReport

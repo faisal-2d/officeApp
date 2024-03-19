@@ -14,8 +14,8 @@ import CardDuaNextBatch from './NoticeBoard/Dua/CardDuaNextBatch';
 const Registration = () => {
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
-        <CardDuaNextBatch></CardDuaNextBatch>
          <NextBatchReg/>
+        <CardDuaNextBatch></CardDuaNextBatch>
         {/* <CardArabicNextBatch/> */}
         {/* <AqeedahRegistration></AqeedahRegistration> */}
         {/* <DuaRegistration></DuaRegistration> */}
