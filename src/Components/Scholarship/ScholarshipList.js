@@ -50,20 +50,24 @@ const ScholarshipList = () => {
     return (
         <div className="my-10">
         <p className="text-center text-2xl my-10">আক্বিদাহ স্কলারশিপ পেইজে স্বাগতম!</p>
-        {/* <form onSubmit={searchByName} >
-        <div className="form-control my-10">
-    <div className="input-group justify-center">
-      <input name="name" type="text" placeholder="আপনার নাম লিখে সার্চ করুন" className="input input-bordered w-4/5" />
-      {isFetching 
-      ?
-      <button className="btn btn-primary btn-square loading"></button>
-      :
-      <button type="submit" className="btn btn-primary btn-square">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-      </button>}
-    </div>
-  </div>
-        </form> */}
+        {/* <div className='text-center'>
+        <form onSubmit={searchByName} >
+          <div className="form-control my-10">
+            <div className="input-group flex justify-center">
+            <input name="name" type="text" placeholder="আপনার নাম লিখে সার্চ করুন" className="input input-bordered mr-2 w-4/5" />
+            {isFetching 
+            ?
+            <button className="btn btn-primary btn-circle">
+              <span className="loading loading-spinner text-white"></span>
+            </button>
+            :
+            <button type="submit" className="btn btn-primary btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </button>}
+            </div>
+          </div>
+        </form>
+        </div> */}
   
   <div className="overflow-x-auto w-10/12 mx-auto">
     <table className="table w-full">

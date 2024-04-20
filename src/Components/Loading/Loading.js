@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Loading = () => {
-    // <div>
-    //     <div className="loading loading-dots loading-lg"></div>
-    // </div>
+const Loading = () => {     
+
+    const colors = ['blue', 'red', 'orange', 'green', '']
     return (
-        <div className='min-h-screen flex justify-center items-center'>
-            <button className="btn btn-primary loading">loading</button> 
-        </div>
+    <div className='min-h-screen flex justify-center items-center'>
+        <div className={`loading loading-dots text-or loading-lg text-blue-500`}></div>
+    </div>
     );
 };
 

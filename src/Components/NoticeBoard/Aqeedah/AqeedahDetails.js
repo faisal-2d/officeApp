@@ -26,6 +26,8 @@ import { faHand, faHandFist, faMoneyBill1 } from "@fortawesome/free-solid-svg-ic
 import useModerator from "../../hooks/useModerator";
 import digitConverter from "../../tools/digitConverter";
 import thConverter from "../../tools/thConverter";
+import AqeedahPaymentCard from "./AqeedahPaymentCard";
+import LevelUp from "./LevelUp";
 
 
 
@@ -62,21 +64,21 @@ if(!student){
 }
 
 
-    const upcomingLevel1 = 21;
+    const upcomingLevel1 = 22;
     const currentLevel1 = upcomingLevel1-1;
     const currentLevel2 = currentLevel1-1;
 
-    const Level_0_Male_link ="https://t.me/+1eenPK1I1_VhYWY8";
-    const Level_0_Female_link ="https://t.me/+00Diz2CJWtY4ZmY0";
-    const Level_0_Channel_link ="https://t.me/+Vug6OU6mdRs1OWRk";
+    const Level_0_Male_link ="https://t.me/+g4lSTnM5Fjk4NTU8";
+    const Level_0_Female_link ="https://t.me/+xvumye3q8hdkZGI0";
+    const Level_0_Channel_link ="https://t.me/+baC6EWJojCE5OTg0";
 
-    const Level_1_Male_link ="https://t.me/+TiZYTgSvLYUxYzg0";
-    const Level_1_Female_link ="https://t.me/+y6IptpP6eMVkNjFk";
-    const Level_1_Channel_link ="https://t.me/+YrJ7oZUWyug4NzQ0";
+    const Level_1_Male_link ="https://t.me/+1eenPK1I1_VhYWY8";
+    const Level_1_Female_link ="https://t.me/+00Diz2CJWtY4ZmY0";
+    const Level_1_Channel_link ="https://t.me/+Vug6OU6mdRs1OWRk";
 
-    const Level_2_Male_link ="https://t.me/+LdWx9XHJjRcwYWVk";
-    const Level_2_Female_link ="https://t.me/+9p7ObVUYgxQxYzhk";
-    const Level_2_Channel_link ="https://t.me/+Jr2W1XuU3JJlOWU8";
+    const Level_2_Male_link ="https://t.me/+5e9IQqrXcR1iZDVk";
+    const Level_2_Female_link ="https://t.me/+s5_mreoGYLViNjBk";
+    const Level_2_Channel_link ="https://t.me/+VkXlFePK53NiYTQ0";
 
     const today = new Date();
     const exmDate = new Date(2023, 9, 1); 
@@ -86,25 +88,24 @@ if(!student){
 
     const level1ExmDates = exmNo => {
         if(exmNo===0)
-            return <p className=''>১০ অক্টবর, মঙ্গলবার</p>;
+            return <p className=''></p>;
         else if(exmNo===1)
-            return <p className=''>১২ নভেম্বর, রবিবার</p>;
+            return <p className=''></p>;
         else if(exmNo===2)
-            return <p className=''>২২ নভেম্বর, বুধবার</p>;
+            return <p className=''></p>;
     };
     const level2ExmDates = exmNo => {
         if(exmNo===0)
-            return <p className=''>২৮ সেপ্টেম্বর, বৃহস্পতিবার</p>;
+            return <p className=''></p>;
         else if(exmNo===1)
-            return <p className=''>১৩ নভেম্বর, সোমবার</p>;
+            return <p className=''></p>;
         else if(exmNo===2)
-            return <p className=''>২০ নভেম্বর, সোমবার</p>;
+            return <p className=''></p>;
         else
-            return <p className=''>৩ জানুয়ারি, বুধবার</p>;
+            return <p className=''></p>;
     };
 
     const accessLevelTwo = () => {
-        console.log(params.batch);
         const data = {
                         "aqeedah2payment" : "due",
                         "aqeedah3payment" : "due",
@@ -128,7 +129,9 @@ if(!student){
 
 
             axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/accessLevelTwo/${params.batch}/${params.sn}`, data)
-           .then(data => console.log(data.data))
+            .then(data => {
+                getStudent();
+            })
     }
 
    
@@ -194,50 +197,20 @@ if(!student){
 
             <div className="flex flex-col md:flex-row p-5 gap-10">                
 
-                {student.aqeedah1payment && <div className={`relative overflow-hidden rounded py-2 px-5 bg-gradient-to-tl ${ student.aqeedah1payment === 'due' ? 'from-red-200 to-red-100' : 'from-green-300 to-green-200'} `}>
-                <div className="w-auto  flex justify-between">                
-                <div className="mr-16">
-                    <p>Payment</p>
-                    <p>Level 1</p>
-                </div>
-                <FontAwesomeIcon className={`text-2xl ${ student.aqeedah1payment === 'due' ? 'text-red-600' : 'text-green-600'} `} icon={faMoneyBill1} />
-                </div>
-                <FontAwesomeIcon className="text-8xl absolute -ml-16 mt-2 opacity-10 text-inherit" icon="fa-regular fa-circle" />
-                <p className={`text-center font-bold text-xl my-2 ${ student.aqeedah1payment === 'due' ? 'text-red-600' : 'text-green-600'} `}>
-                <span className="uppercase font-bold ">{student.aqeedah1payment}</span>                
-                </p>
-                {student.aqeedah1payment === 'due' && <p className="text-red-600 text-center text-sm link -mt-2"><Link to='/aqeedah-due'>বকেয়া পরিশোধ করুন</Link></p> }                
-                </div>}
+                {student.aqeedah1payment && <AqeedahPaymentCard
+                payment={student.aqeedah1payment}
+                level={1}
+                ></AqeedahPaymentCard>}
 
-                {student.aqeedah2payment && <div className={`relative overflow-hidden rounded py-2 px-5 bg-gradient-to-tl ${ student.aqeedah2payment === 'due' ? 'from-red-200 to-red-100' : 'from-green-300 to-green-200'} `}>
-                <div className="flex justify-between">                
-                <div className="mr-10">
-                    <p>Payment</p>
-                    <p>Level 2</p>
-                </div>
-                <FontAwesomeIcon className={`text-2xl ${ student.aqeedah2payment === 'due' ? 'text-red-600' : 'text-green-600'} `} icon={faMoneyBill1} />
-                </div>
-                <FontAwesomeIcon className="text-8xl absolute -ml-16 mt-2 opacity-10 text-inherit" icon="fa-regular fa-circle" />
-                <p className={`text-center font-bold text-xl my-2 ${ student.aqeedah2payment === 'due' ? 'text-red-600' : 'text-green-600'} `}>
-                <span className="uppercase font-bold">{student.aqeedah2payment}</span>
-                </p>
-                {student.aqeedah2payment === 'due' && <p className="text-red-600 text-center text-sm link -mt-2"><Link to='/aqeedah-due'>বকেয়া পরিশোধ করুন</Link></p> }
-                </div>}
+                {student.aqeedah2payment && <AqeedahPaymentCard
+                payment={student.aqeedah2payment}
+                level={2}
+                ></AqeedahPaymentCard>}
 
-                {student.aqeedah3payment && <div className={`relative overflow-hidden rounded py-2 px-5 bg-gradient-to-tl ${ student.aqeedah3payment === 'due' ? 'from-red-200 to-red-100' : 'from-green-300 to-green-200'} `}>
-                <div className="flex justify-between">                
-                <div className="mr-10">
-                    <p>Payment</p>
-                    <p>Level 3</p>
-                </div>
-                <FontAwesomeIcon className={`text-2xl ${ student.aqeedah3payment === 'due' ? 'text-red-600' : 'text-green-600'} `} icon={faMoneyBill1} />
-                </div>
-                <FontAwesomeIcon className="text-8xl absolute -ml-16 mt-2 opacity-10 text-inherit" icon="fa-regular fa-circle" />
-                <p className={`text-center font-bold text-xl my-2 ${ student.aqeedah3payment === 'due' ? 'text-red-600' : 'text-green-600'} `}>
-                <span className="uppercase font-bold">{student.aqeedah3payment}</span>
-                </p>
-                {student.aqeedah3payment === 'due' && <p className="text-red-600 text-center text-sm link -mt-2"><Link to='/aqeedah-due'>বকেয়া পরিশোধ করুন</Link></p> }
-                </div>}
+                {student.aqeedah3payment && <AqeedahPaymentCard
+                payment={student.aqeedah3payment}
+                level={3}
+                ></AqeedahPaymentCard>}              
 
                 
             </div>
@@ -288,14 +261,16 @@ if(!student){
                 </div>
    </div>             
 }
-
+{(!student.aqeedah3data && currentLevel1 == params.batch) && <LevelUp
+        accessLevelTwo={accessLevelTwo
+        }></LevelUp>}
             
 {/* Level 2+3 */}
 {student.aqeedah3data && <section className="my-10">
             <div className="divider text-4xl text-slate-500 my-20">লেভেল ২ + ৩</div>
            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>            
 
-           {params.batch==currentLevel2 && <div className='p-5 rounded bg-gradient-to-tl from-sky-300'>
+           {params.batch==currentLevel1 && <div className='p-5 rounded bg-gradient-to-tl from-sky-300'>
             <p><span className='text-xl'>Join </span><FontAwesomeIcon className='text-blue-600' icon={faHand} fade/></p>
 
             <div className="mt-4 flex justify-around">
@@ -504,7 +479,6 @@ if(!student){
                             </div>
 
                             {adminDesk && <div className="my-10">
-                                {(!student.aqeedah3data && admin) && <button onClick={accessLevelTwo} className="p-2 px-4 m-2 btn-secondary rounded-md"> Access Level 2</button>}
                                 <button onClick={payment1Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 1</button>
                                 <button onClick={payment2Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 2</button>
                                 <button onClick={payment3Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 3</button>

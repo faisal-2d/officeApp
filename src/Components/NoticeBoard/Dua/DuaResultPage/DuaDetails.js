@@ -53,7 +53,6 @@ if(!student){
     return <Loading></Loading>
 }  
 
-if(admin || assistant){
     const date = getDate(new Date());
     if((student?.todaysinfo?.date)<date){
         const data = {
@@ -64,7 +63,7 @@ if(admin || assistant){
                 update_profile(true);
             })
     }
-}
+
    
     const payment1Update = () => {
 
@@ -168,6 +167,7 @@ if(admin || assistant){
             ></DuaReport>
              
             
+            
             {
                 admin && <div className="text-center mt-40">
                     <div className="my-5  mx-auto">
@@ -179,7 +179,7 @@ if(admin || assistant){
                             </div>
 
                             {adminDesk && <div className="my-10">
-                                <button onClick={payment1Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 1</button>
+                                <button onClick={payment1Update} className="p-2 px-4 m-2 btn btn-accent rounded-md"> Payement : Level 1</button>
                             </div>} 
                         </div>
                     

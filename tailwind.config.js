@@ -1,4 +1,3 @@
-
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
@@ -8,16 +7,16 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#3b82f6",
-          secondary: "#463AA1",
-          accent: "#ca8a04",
-          "base-100": "#FFFFFF",
-          info: "#93E6FB",
-          success: "#86efac",
-          warning: "#fef08a",
-          error: "#E58B8B",
-        },
-      },
+          "primary": "#0b6cdb",
+          "secondary": "#7a11bf",
+          "accent": "#37cdbe",
+          "neutral": "#3d4451",
+          "base-100": "#ffffff",
+          "success" : "#36c769",
+          "error" : "#f04366",
+          "warning" : "#dbba14",
+         },
+      },   
     ],
   },
   plugins: [

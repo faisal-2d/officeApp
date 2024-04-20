@@ -44,12 +44,11 @@ const DuaReport = ({student,  update_profile}) => {
     await update_profile(true);        
     await update_profile(true);        
     await setBloop(false);
-    console.log("report call completed")
     }
     if(bloop){
         return <JemsBlooping></JemsBlooping>
     }
-
+    const r_day = getRamadanDate();
     
     const report = student?.report; 
     return (
@@ -62,14 +61,14 @@ const DuaReport = ({student,  update_profile}) => {
                     <p className='md:ml-8'>১) অন্তত ১টি দোআ মুখস্থ করতে হবে।</p>
                     <p className='md:ml-8'>২) পরিচিত কাউকে ১টি নতুন (সে জানেনা এমন) দোআ মুখস্থ করাতে হবে।</p>
                 </div>
-                {(!teaching_status && clickCount === 0) && <div className='my-8 mx-auto bg-yellow-200 rounded-md p-5'>
+                {/* {((r_day) && (!teaching_status) && (!clickCount)) && <div className='my-8 mx-auto bg-yellow-200 rounded-md p-5'>
+                    <p>💠 {digitConverter(r_day)} রমাদান</p>
                     <p>আপনি কি আজ কাউকে দোআ শিখিয়েছেন?</p>
                     <div className='flex gap-3 justify-center mt-3'>
-                        <label onClick={() => update_report_list()} htmlFor="attendance_yes" className="btn btn-success">হ্যা, শিখিয়েছি</label>
-                        <label htmlFor="attendance_no" className="btn btn-error">না, শেখাইনি</label>
-                        
+                        <label onClick={() => update_report_list()} htmlFor="attendance_yes" className="btn btn-success text-white">হ্যা, শিখিয়েছি</label>
+                        <label htmlFor="attendance_no" className="btn btn-error text-white">না, শেখাইনি</label>                        
                     </div>
-                </div>}
+                </div>} */}
                 <div>
                                         
 
@@ -102,7 +101,7 @@ const DuaReport = ({student,  update_profile}) => {
             </div>
             <div className={`grid  grid-cols-2 md:grid-cols-5 text-let`}>
                 {report.map((r, index) => {
-                    return <p className={`p-3 m-2 rounded-md `} key={index}>রমাদান {digitConverter(index+1)} : <span className='mr-3'></span> {r.dua ? complete : incomplete} {r.teaching ? complete : incomplete}</p>;
+                    return <p className={`p-3 m-2 rounded-md `} key={index}>রমাদান {digitConverter(index+1)} :<span className='mr-1'></span> {r.dua ? complete : incomplete} {r.teaching ? complete : incomplete}</p>;
                 })}
             </div>
 

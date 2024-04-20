@@ -9,9 +9,9 @@ const NewRegAqeedah = () => {
     const [studSn, setStudSn] = useState();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-
+    const batch = 22;
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/count/get/22`)
+        axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/count/get/${batch}`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -39,14 +39,14 @@ const NewRegAqeedah = () => {
             
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/aqeedah/22/register`, insertData)
+        axios.post(`https://alharamanin-backend-web.onrender.com/aqeedah/${batch}/register`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 
 
     return (
         <div className='min-h-screen container mx-auto my-10 px-5'>
-            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah 21</p>
+            <p className='text-center text-2xl text-primary'>Register New Student : Aqeedah {batch}</p>
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
             <div className="card-body">
        <form onSubmit={handleSubmit(handleFormSubmit)}> 

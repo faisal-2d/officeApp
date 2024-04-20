@@ -42,9 +42,10 @@ const AqeedahInfo = () => {
                     <p>ক্লাসে পিডিএফ দেওয়া হবে, শিক্ষার্থীদেরকে প্রিন্ট করে নিতে হবে।</p>
 
             {/* register now  */}
-            {/* <section className='mx-auto my-10 lg:w-1/3'>
-                    <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>বিকাশ নাম্বার ও গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
-            </section> */}
+            <section className='mx-auto my-20 lg:w-1/2 text-center'>
+                <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>টাকা পাঠানোর নাম্বার ও গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
+            </section>
+
                     <div className='mt-10'>
                         <p className='text-xl'>লেভেল ১ এর বিষয়বস্তুঃ</p>
                         <p><FontAwesomeIcon className='text-green-700 pr-2' icon={faCircleCheck} /> তাওহীদের পরিচয় ও সূত্রাবলি</p>
@@ -83,7 +84,7 @@ const AqeedahInfo = () => {
 
            {/* next batch  */}
            <section>
-           <NextBatchReg></NextBatchReg>
+           {/* <NextBatchReg></NextBatchReg> */}
            </section>
 
            {/* Levels  */}
@@ -219,9 +220,9 @@ const AqeedahInfo = () => {
 
             
            {/* register now  */}
-            {/* <section className='mx-auto my-10 lg:w-1/3'>
-                <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>বিকাশ নাম্বার ও গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
-            </section> */}
+           <section className='mx-auto my-20 lg:w-1/2 text-center'>
+                <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>টাকা পাঠানোর নাম্বার ও গ্রুপ লিংক এখানে <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
+            </section>
 
 
            {/* course teacher  */}
