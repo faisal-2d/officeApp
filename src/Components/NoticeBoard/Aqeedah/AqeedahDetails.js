@@ -15,19 +15,13 @@ import graduation from '../../../assets/certi_img/graduation.gif'
 import aq_certi_1 from '../../../assets/certi_img/aq_certi_2.gif'
 import aq_certi_2 from '../../../assets/certi_img/aq_certi_1.gif'
 import aq_certi_3 from '../../../assets/certi_img/aq_certi_3.gif'
-import Level_1_Male from '../../../assets/group logo/Level_1_Male.png'
-import Level_1_Female from '../../../assets/group logo/Level_1_Female.png'
-import Level_2_Male from '../../../assets/group logo/Level_2_Male.png'
-import Level_2_Female from '../../../assets/group logo/Level_2_Female.png'
 
-import Level_1_Channel from '../../../assets/group logo/Level_1_Channel.png'
-import Level_2_Channel from '../../../assets/group logo/Level_2_Channel.png'
-import { faHand, faHandFist, faMoneyBill1 } from "@fortawesome/free-solid-svg-icons";
 import useModerator from "../../hooks/useModerator";
 import digitConverter from "../../tools/digitConverter";
 import thConverter from "../../tools/thConverter";
 import AqeedahPaymentCard from "./AqeedahPaymentCard";
 import LevelUp from "./LevelUp";
+import AqeedahGroupCard from "./AqeedahGroupCard";
 
 
 
@@ -41,19 +35,12 @@ const AqeedahDetails = () => {
     const [admin] = useAdmin(user);
     const [moderator] = useModerator(user);
     const [adminDesk, setAdminDesk] = useState(false);
-    // setStudent()
-// useEffect(()=> {
-//   axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/sn/${params.sn}`)
-// //   https://alharamanin-backend-web.onrender.com/
-//   .then(data => setStudent(data.data))
-// },[params]);
 
 
 const getStudent = () => {
 
         axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/sn/${params.sn}`)
         .then(data => { setStudent(data.data)
-            // console.log("i got the student ",data.data);
         });       
        
 }
@@ -64,46 +51,18 @@ if(!student){
 }
 
 
-    const upcomingLevel1 = 22;
+    const upcomingLevel1 = 23;
     const currentLevel1 = upcomingLevel1-1;
     const currentLevel2 = currentLevel1-1;
 
-    const Level_0_Male_link ="https://t.me/+g4lSTnM5Fjk4NTU8";
-    const Level_0_Female_link ="https://t.me/+xvumye3q8hdkZGI0";
-    const Level_0_Channel_link ="https://t.me/+baC6EWJojCE5OTg0";
+    const level1ExmDates = e => {
+        return '';
+    }
+    const level2ExmDates = e => {
+        return '';
+    }
 
-    const Level_1_Male_link ="https://t.me/+1eenPK1I1_VhYWY8";
-    const Level_1_Female_link ="https://t.me/+00Diz2CJWtY4ZmY0";
-    const Level_1_Channel_link ="https://t.me/+Vug6OU6mdRs1OWRk";
-
-    const Level_2_Male_link ="https://t.me/+5e9IQqrXcR1iZDVk";
-    const Level_2_Female_link ="https://t.me/+s5_mreoGYLViNjBk";
-    const Level_2_Channel_link ="https://t.me/+VkXlFePK53NiYTQ0";
-
-    const today = new Date();
-    const exmDate = new Date(2023, 9, 1); 
-    const d1 = new Date("25 Mar 2015");
-    // console.log(exmDate);
-    // (new Date("10 Aug 2023")).toDateString();
-
-    const level1ExmDates = exmNo => {
-        if(exmNo===0)
-            return <p className=''></p>;
-        else if(exmNo===1)
-            return <p className=''></p>;
-        else if(exmNo===2)
-            return <p className=''></p>;
-    };
-    const level2ExmDates = exmNo => {
-        if(exmNo===0)
-            return <p className=''></p>;
-        else if(exmNo===1)
-            return <p className=''></p>;
-        else if(exmNo===2)
-            return <p className=''></p>;
-        else
-            return <p className=''></p>;
-    };
+    
 
     const accessLevelTwo = () => {
         const data = {
@@ -144,10 +103,8 @@ if(!student){
         axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
-            // console.log(data.data);
         })
-        //https://alharamanin-backend-web.onrender.com/
-        //https://alharamanin-backend-web.onrender.com
+        
     }
     const payment2Update = (level) => {
 
@@ -157,11 +114,9 @@ if(!student){
 
         axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
-            getStudent();
-            // console.log(data.data);
+            getStudent();            
         })
-        //https://alharamanin-backend-web.onrender.com/
-        //https://alharamanin-backend-web.onrender.com
+        
     }
     const payment3Update = (level) => {
 
@@ -171,11 +126,9 @@ if(!student){
 
         axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
-            getStudent();
-            // console.log(data.data);
+            getStudent();           
         })
-        //https://alharamanin-backend-web.onrender.com/
-        //https://alharamanin-backend-web.onrender.com
+        
     }
         
     return (
@@ -270,36 +223,11 @@ if(!student){
             <div className="divider text-4xl text-slate-500 my-20">লেভেল ২ + ৩</div>
            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>            
 
-           {params.batch==currentLevel1 && <div className='p-5 rounded bg-gradient-to-tl from-sky-300'>
-            <p><span className='text-xl'>Join </span><FontAwesomeIcon className='text-blue-600' icon={faHand} fade/></p>
-
-            <div className="mt-4 flex justify-around">
-            { student.gender==="female" ?  <a href={Level_2_Female_link} target="_blank" rel="noopener noreferrer"><div>
-                    <div>
-                        <img className='w-20' src={Level_2_Female} alt="" />
-                    </div>
-                    <p className="text-center">Class Group</p>
-                </div>
-            </a>
-            :   <a href={Level_2_Male_link} target="_blank" rel="noopener noreferrer"><div>
-            <div>
-                <img className='w-20' src={Level_2_Male} alt="" />
-            </div>
-            <p className="text-center">Class Group</p>
-        </div>
-    </a>
-            }  
-            <a href={Level_2_Channel_link} target="_blank" rel="noopener noreferrer"><div>    
-                    <div>
-                        <img className='w-20' src={Level_2_Channel} alt="" />
-                    </div>   
-                    <p className="text-center">Lecture Notes</p>
-                    
-                </div> 
-                </a>
-
-            </div>
-            </div>}
+           <AqeedahGroupCard
+                batch={params.batch}
+                gender={student.gender}
+                level={3}
+            ></AqeedahGroupCard>
 
 
             <div className={`p-5 rounded bg-gradient-to-tl from-green-300`}>
@@ -354,73 +282,19 @@ if(!student){
 {student.aqeedah1data && <section className="my-10">
             <div className="divider text-4xl text-slate-500 my-20">লেভেল ১</div>
             
-           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>  
+           <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>             
 
-           {params.batch== upcomingLevel1 && <div className='p-5 rounded bg-gradient-to-tl from-sky-300'>
-            <p><span className='text-xl'>Join </span><FontAwesomeIcon className='text-blue-600' icon={faHand} fade/></p>
-
-            <div className="mt-4 flex justify-around">
-            { student.gender==="female" ?  <a href={Level_0_Female_link} target="_blank" rel="noopener noreferrer"><div>
-                    <div>
-                        <img className='w-20' src={Level_1_Female} alt="" />
-                    </div>
-                    <p className="text-center">Class Group</p>
-                </div>
-            </a>
-            :   <a href={Level_0_Male_link} target="_blank" rel="noopener noreferrer"><div>
-            <div>
-                <img className='w-20' src={Level_1_Male} alt="" />
-            </div>
-            <p className="text-center">Class Group</p>
-        </div>
-    </a>
-            }  
-            <a href={Level_0_Channel_link} target="_blank" rel="noopener noreferrer"><div>    
-                    <div>
-                        <img className='w-20' src={Level_1_Channel} alt="" />
-                    </div>   
-                    <p className="text-center">Lecture Notes</p>
-                    
-                </div> 
-                </a>
-
-            </div>
-            </div>}
-           {params.batch==currentLevel1 && <div className='p-5 rounded bg-gradient-to-tl from-sky-300'>
-            <p><span className='text-xl'>Join </span><FontAwesomeIcon className='text-blue-600' icon={faHand} fade/></p>
-
-            <div className="mt-4 flex justify-around">
-            { student.gender==="female" ?  <a href={Level_1_Female_link} target="_blank" rel="noopener noreferrer"><div>
-                    <div>
-                        <img className='w-20' src={Level_1_Female} alt="" />
-                    </div>
-                    <p className="text-center">Class Group</p>
-                </div>
-            </a>
-            :   <a href={Level_1_Male_link} target="_blank" rel="noopener noreferrer"><div>
-            <div>
-                <img className='w-20' src={Level_1_Male} alt="" />
-            </div>
-            <p className="text-center">Class Group</p>
-        </div>
-    </a>
-            }  
-            <a href={Level_1_Channel_link} target="_blank" rel="noopener noreferrer"><div>    
-                    <div>
-                        <img className='w-20' src={Level_1_Channel} alt="" />
-                    </div>   
-                    <p className="text-center">Lecture Notes</p>
-                    
-                </div> 
-                </a>
-
-            </div>
-            </div>}
+            <AqeedahGroupCard
+                batch={params.batch}
+                gender={student.gender}
+                level={1}
+            ></AqeedahGroupCard>
+           
 
             <div className='p-5 rounded bg-gradient-to-tl from-green-300'>
             <p className='text-xl'>Batch: {params.batch}</p>
             <p className='text-xl'>Course: Aqeedah  
-           <span> Level 1</span>
+                <span> Level 1</span>
             </p>
            
             <br />
@@ -479,9 +353,9 @@ if(!student){
                             </div>
 
                             {adminDesk && <div className="my-10">
-                                <button onClick={payment1Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 1</button>
-                                <button onClick={payment2Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 2</button>
-                                <button onClick={payment3Update} className="p-2 px-4 m-2 btn-success rounded-md"> Payement : Level 3</button>
+                                <button onClick={payment1Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 1</button>
+                                <button onClick={payment2Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 2</button>
+                                <button onClick={payment3Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 3</button>
                             </div>} 
                         </div>
                     

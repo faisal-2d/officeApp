@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Loading from '../../Loading/Loading';
+import Loading from '../../../Loading/Loading';
 import MeritRow from './MeritRow';
 import { useQuery } from 'react-query'
 import { useState } from 'react';
-import digitConverter from '../../tools/digitConverter';
-import thConverter from '../../tools/thConverter';
+import digitConverter from '../../../tools/digitConverter';
+import thConverter from '../../../tools/thConverter';
 
 
 const MeritList = () => {
@@ -31,11 +31,20 @@ if(isLoading){
 
 const myResult = (students?.result).find(student => student.sn == params.sn);
 
-const th = m => {
-  if (m==1) return 'st';
-  if (m==2) return 'nd';
-  if (m==3) return 'rd';
-  return 'th';
+
+
+// dynamic merit position
+let p = 500;
+let i = -1;
+const getPosition = score => {
+  if(!score)
+    return;
+
+  if(score<p){
+    p=score;
+    i=i+1;    
+  }  
+  return i;
 }
 
     return (
@@ -79,7 +88,7 @@ const th = m => {
 
             {(students?.result)?.map((student, index) => <MeritRow
                 key={index}
-                merit={index}
+                merit={getPosition(student.aqeedah3Total)}
                 student={student}               
                 setMyPosition={setMyPosition}
                 mySn={myResult?.sn}

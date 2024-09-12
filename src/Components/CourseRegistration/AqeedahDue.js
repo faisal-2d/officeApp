@@ -113,7 +113,7 @@ const AqeedahDue = () => {
                             <p className='mb-3'><FontAwesomeIcon className='text-blue-500' icon={'image'}/> সম্ভব হলে টাকা পাঠানোর <strong className='text-blue-600'>স্ক্রিনশট/মানি রিসিটের ছবি</strong> ফর্মে এড করুন অথবা এডমিনকে ইনবক্সে পাঠান। </p>
                             {/* <p className='mb-3'>আপনি চাইলে টাকা পাঠানোর পর স্ক্রিনশট/মেসেজ ফর্মে যুক্ত করে দিতে পারেন অথবা এডমিনকে ইনবক্সে দিতে পারেন। </p> */}
                             
-                            <a className='btn-success rounded py-1 px-3' href="https://docs.google.com/forms/d/e/1FAIpQLSd-JNO4jrMPEzp5MWM9OB9hYRiP4baO53h2Q6pmLlK1Itsgfw/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-3' icon="fa-solid fa-link" />পেমেন্ট ক্লিয়ারেন্স ফর্ম</a>
+                            <a className='btn btn-success rounded py-1 px-3' href="https://docs.google.com/forms/d/e/1FAIpQLSd-JNO4jrMPEzp5MWM9OB9hYRiP4baO53h2Q6pmLlK1Itsgfw/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='pr-3' icon="fa-solid fa-link" />পেমেন্ট ক্লিয়ারেন্স ফর্ম</a>
                         </div>
 
                         

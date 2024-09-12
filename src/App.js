@@ -7,14 +7,12 @@ import Home from './Components/Home';
 import Registration from './Components/Registration';
 import NotFound from './Components/NotFound';
 import Schedule from './Components/Schedule/Schedule';
-import Messenger from './Components/Messenger';
 import AboutUs from './Components/AboutUs';
 import NoticeBoard from './Components/NoticeBoard/NoticeBoard';
 import Login from './Components/Login/Login';
 import Aqeedah from './Components/NoticeBoard/Aqeedah/Aqeedah';
 import AqeedahResultPage from './Components/NoticeBoard/Aqeedah/AqeedahResultPage';
 import AqeedahDetails from './Components/NoticeBoard/Aqeedah/AqeedahDetails';
-import MeritList from './Components/NoticeBoard/Aqeedah/MeritList';
 import SignUp from './Components/Login/SignUp';
 import ForgotPassword from './Components/Login/ForgotPassword';
 // import Aqeedah3ResultUpdate from './Components/NoticeBoard/Aqeedah/Aqeedah3ResultUpdate';
@@ -64,6 +62,7 @@ import DuaDetails from './Components/NoticeBoard/Dua/DuaResultPage/DuaDetails';
 import ResultUpdater from './Components/Updater/ResultUpdater';
 import NewRegDua from './Components/NoticeBoard/Dua/NewRegDua';
 import CertificateNameQuery from './Components/CertificateNameQuery/CertificateNameQuery';
+import MeritList from './Components/NoticeBoard/Aqeedah/LeaderBoard/MeritList';
 
 function App() {
   return (
@@ -141,7 +140,6 @@ function App() {
         <Route path='forgot-password' element={<ForgotPassword/>}></Route>
         <Route path='*' element={<NotFound/>}></Route>
       </Routes>
-      <Messenger></Messenger>
       <Footer></Footer>
     </div>
   );

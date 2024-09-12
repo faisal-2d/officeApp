@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import digitConverter from '../../../tools/digitConverter';
 import thConverter from '../../../tools/thConverter';
 
 const Aqeedah1LeaderBoardRow = ({merit, student, setMyPosition, mySn}) => {
 
-    if(student.sn == mySn){
-        setMyPosition(merit+1);
-    }
+    useEffect(() => {
+        if (student.sn === mySn) {
+          setMyPosition(merit + 1);
+        }
+      }, [student.sn, mySn, merit, setMyPosition]);
     
 
 
 //    console.log(student);
     return (
         <tr className=" ">
-            <th className='bg-green-100 font-bold'>{digitConverter(merit+1)} <sup>{thConverter(merit+1)}</sup>            
+            <th className='bg-green-100 font-bold'>{digitConverter(merit+1)}<sup>{thConverter(merit+1)}</sup>            
             </th>
             <th>{student?.sn}</th>
             {/* <td>{student?.name.toUpperCase()} {student?.gender === "male" ? "BIN" : "BINTE"} {student?.fatherName.toUpperCase()}</td> */}

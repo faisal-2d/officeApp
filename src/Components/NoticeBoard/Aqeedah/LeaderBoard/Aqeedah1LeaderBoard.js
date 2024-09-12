@@ -15,8 +15,6 @@ const Aqeedah1LeaderBoard = () => {
     const { data } = await axios.get(
       `https://alharamanin-backend-web.onrender.com/aqeedah/leaderboard/get/${params.batch}/1/`
     );
-    // http://localhost:5000
-    // https://alharamanin-backend-web.onrender.com/
     return data;
   };
 
@@ -31,15 +29,20 @@ const Aqeedah1LeaderBoard = () => {
     return <Loading></Loading>;
   }
 
-
-
 const myResult = (students?.result).find(student => student.sn == params.sn);
 
-const th = m => {
-  if (m==1) return 'st';
-  if (m==2) return 'nd';
-  if (m==3) return 'rd';
-  return 'th';
+// dynamic merit position
+let p = 500;
+let i = -1;
+const getPosition = score => {
+  if(!score)
+    return;
+
+  if(score<p){
+    p=score;
+    i=i+1;    
+  }  
+  return i;
 }
 
   return (
@@ -80,7 +83,7 @@ const th = m => {
               {(students.result)?.map((student, index) => (
                 <Aqeedah1LeaderBoardRow
                   key={index}
-                  merit={index}
+                  merit={getPosition(student.aqeedah1Total)}
                   student={student}
                   setMyPosition={setMyPosition}
                   mySn={myResult?.sn}

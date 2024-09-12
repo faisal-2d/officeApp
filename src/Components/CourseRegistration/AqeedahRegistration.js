@@ -23,8 +23,8 @@ import NextBatchReg from './NextBatchReg';
 
 
 const AqeedahRegistration = () => {
-    const Level_0_Male_link ="https://t.me/+g4lSTnM5Fjk4NTU8";
-    const Level_0_Female_link ="https://t.me/+xvumye3q8hdkZGI0";
+    const Level_0_Male_link ="https://t.me/+96YkFcCwTQcxNDQ0";
+    const Level_0_Female_link ="https://t.me/+ujDmSj2uDPk1MWFk";
 
         // <div className='h-screen'>            
         //     <NextBatchReg></NextBatchReg>

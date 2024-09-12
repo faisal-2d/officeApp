@@ -84,7 +84,7 @@ const AqeedahInfo = () => {
 
            {/* next batch  */}
            <section>
-           {/* <NextBatchReg></NextBatchReg> */}
+           <NextBatchReg></NextBatchReg>
            </section>
 
            {/* Levels  */}

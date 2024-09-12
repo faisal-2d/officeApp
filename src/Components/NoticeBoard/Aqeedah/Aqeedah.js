@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import digitConverter from "../../tools/digitConverter";
 
 const Aqeedah = () => {
-  const batchList = [22, 21, 20, 19, 18, 17, 16, 15, 14 ]
+  const batchList = [23, 22, 21, 20, 19, 18, 17, 16, 15, 14 ]
   return (
     <div className="my-10">
       <p className="text-center text-2xl">আক্বিদাহ কোর্সের ব্যাচসমূহ</p>

@@ -9,7 +9,7 @@ const NewRegAqeedah = () => {
     const [studSn, setStudSn] = useState();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const batch = 22;
+    const batch = 23;
     useEffect(() => {
         axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/count/get/${batch}`)
         .then(data => setStudSn(data.data.result))
