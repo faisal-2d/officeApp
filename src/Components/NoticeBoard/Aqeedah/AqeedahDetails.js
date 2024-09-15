@@ -22,6 +22,7 @@ import thConverter from "../../tools/thConverter";
 import AqeedahPaymentCard from "./AqeedahPaymentCard";
 import LevelUp from "./LevelUp";
 import AqeedahGroupCard from "./AqeedahGroupCard";
+import RefundPolicy from "./RefundPolicy";
 
 
 
@@ -340,7 +341,7 @@ if(!student){
             </section>
             }
 
-             
+            <RefundPolicy></RefundPolicy> 
             
             {
                 (admin || moderator) && <div className="text-center mt-40">

@@ -3,6 +3,7 @@ import { faFileInvoice, faMoneyBillTransfer, faUser } from '@fortawesome/free-so
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import due_payment_form_qr from '../../assets/due-payment-form.png'
 import india from '../../assets/india.png'
+import taptap from '../../assets/taptap.png'
 import bKash from '../../assets/bKash.png'
 import nagad from '../../assets/nagad.png'
 import rocket from '../../assets/rocket.png'
@@ -74,19 +75,53 @@ const AqeedahDue = () => {
                             <p className='text-xl mb-5'> Upi Id: 9681623868@ybl</p>
                         </div>
                     </div> */}
-                    <p className='mt-5'>সরাসরি ব্যাংকে পাঠাতে পারেন</p>
-                    <div className='flex gap-5 mt-5'>
-                        <div className='w-16'>
-                            <img className='rounded' src={islamiBank} alt="" />
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                            <div>
+                                <p className='mt-5'>সরাসরি ব্যাংকে পাঠাতে পারেন</p>
+                                <div className='flex gap-5 mt-5'>
+                                    <div className='w-16'>
+                                        <img className='rounded' src={islamiBank} alt="" />
+                                    </div>
+                                    <div>
+                                        <p className=''> A/C Name: <span className='text-green-600'><strong>Abdullah Al Baki</strong></span></p>
+                                        <p className=' '> A/C No: <span className='text-green-600'><strong>20501 1702 0073 9805</strong></span></p>
+                                        <p className=' '> Branch: <span className='text-green-600'><strong>Rangpur</strong></span></p>
+                                        <p className=' '> Branch Code: <span className='text-green-600'><strong>IBBLBDDH117</strong></span></p>
+                                        <p className=' mb-5'> Islami Bank Bangladesh Ltd</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p className='mt-5'>ট্যাপট্যাপ সেন্ডের মাধ্যমেও টাকা পাঠাতে পারেন</p>
+                                <div className='flex gap-5 mt-5'>
+                                    <div className='w-16'>
+                                        <img className='' src={taptap} alt="" />
+                                    </div>
+                                    <div>
+                                        <p className=''> Phone  :  <span className='text-green-600'><strong>+880 1883 99 80 81</strong></span></p>
+                                        <p className=''> Full Name: <span className='text-green-600'><strong>Faisal Faisal</strong></span></p>
+                                        <p className=''> YYYY: <span className='text-green-600'><strong>1996</strong></span></p>
+                                        <p className='mb-5'> Address: <span className='text-green-600'><strong>Rangpur, Bangladesh</strong></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p className='mt-5'>ভারত থেকে ভর্তি হওয়ার জন্য  
+                                    <span className='text-blue-600'><li>লেভেল ১ = ১৩০০ রুপি,</li></span>
+                                    <span className='text-blue-600'><li> লেভেল ২ = ১৩০০ রুপি,</li></span>
+                                    <span className='text-blue-600'><li>লেভেল ৩ = ৬৫০ রুপি,</li></span> পাঠাবেন।</p>
+
+                                <div className='flex gap-5 mt-5'>
+                                    {/* <div className='w-16'>
+                                        <img className='rounded' src={india} alt="" />
+                                    </div> */}
+                                    <div>
+                                        <p className=''>ফোন পে নাম্বার পেতে ইনবক্সে মেসেজ দিন।</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p className=''> A/C Name: <span className='text-green-600'><strong>Abdullah Al Baki</strong></span></p>
-                            <p className=' '> A/C No: <span className='text-green-600'><strong>20501 1702 0073 9805</strong></span></p>
-                            <p className=' '> Branch: <span className='text-green-600'><strong>Rangpur</strong></span></p>
-                            <p className=' '> Branch Code: <span className='text-green-600'><strong>IBBLBDDH117</strong></span></p>
-                            <p className=' mb-5'> Islami Bank Bangladesh Ltd</p>
-                        </div>
-                    </div>
                 </div>
             </section>
             {/* <section className='mb-10' id='contact-admin'>

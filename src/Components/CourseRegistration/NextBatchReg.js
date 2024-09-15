@@ -52,9 +52,9 @@ const NextBatchReg = () => {
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 text-black text-xl'>
                     {/* <p className='p-3 bg-green-300 rounded'>ভর্তি শুরু হবে ৩০ মার্চ </p> */}
-                    <p className='p-3 bg-orange-300 rounded'>ভর্তি শেষ হবে ১২ সেপ্টেম্বর </p>
+                    <p className='p-3 bg-orange-300 rounded'>ভর্তি শেষ হবে ২০ সেপ্টেম্বর </p>
                     {/* <p className='p-3 bg-blue-300 rounded'>অরিয়েন্টেশন ক্লাস ১৯ সেপ্টেম্বর</p> */}
-                    <p className='p-3 bg-yellow-300 rounded'>ক্লাস শুরু হবে ১৩ সেপ্টেম্বর</p>
+                    <p className='p-3 bg-yellow-300 rounded'>ক্লাস শুরু হবে ২১ সেপ্টেম্বর</p>
                     <Link to="/courses/aqeedah"><p className='p-3 bg-pink-300 rounded shadow-md'>কোর্স সম্পর্কে বিস্তারিত জানুন <FontAwesomeIcon className='text-pink-600' icon={faMousePointer} fade/></p></Link>
                     <Link to="/registration-aqeedah"><p className='p-3 bg-green-300 rounded shadow-md'>এখনি রেজিস্ট্রেশন করুন <FontAwesomeIcon className='text-green-600' icon={faMousePointer} fade/></p></Link>
                     
