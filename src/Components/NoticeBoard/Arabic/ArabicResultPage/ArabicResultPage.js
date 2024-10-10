@@ -19,9 +19,9 @@ const ArabicResultPage = () => {
     const params = useParams();
     let searchName = '';
     const getStudentList = async (searchName) => {
-      const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/${searchName}`)
+      const {data} = await axios.get(`${process.env.REACT_APP_BACKEND_API}/arabic/${params.batch}/${searchName}`)
       // http://localhost:5000
-      // https://alharamanin-backend-web.onrender.com
+      // ${process.env.REACT_APP_BACKEND_API}
       return data;
     }
   
@@ -97,9 +97,9 @@ const levelOneReg = () => {
              ]
          }
          
-        //  axios.put(`https://alharamanin-backend-web.onrender.com/update/arabic/3/${stud.sn}`, data.arabic2payment)
+        //  axios.put(`${process.env.REACT_APP_BACKEND_API}/update/arabic/3/${stud.sn}`, data.arabic2payment)
         //  .then(data => console.log(data.data))
-         axios.post(`https://alharamanin-backend-web.onrender.com/arabic/newregister3`, data)
+         axios.post(`${process.env.REACT_APP_BACKEND_API}/arabic/newregister3`, data)
          .then(data => console.log(data.data))
 
          

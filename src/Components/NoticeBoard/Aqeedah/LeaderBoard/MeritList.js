@@ -13,9 +13,9 @@ const MeritList = () => {
   const [myPosition, setMyPosition] = useState(0);
     const params = useParams();
   const getStudentList = async () => {
-    const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/leaderboard/get/${params.batch}/3`)
+    const {data} = await axios.get(`${process.env.REACT_APP_BACKEND_API}/aqeedah/leaderboard/get/${params.batch}/3`)
     // http://localhost:5000
-    // https://alharamanin-backend-web.onrender.com
+    // ${process.env.REACT_APP_BACKEND_API}
         return data;
   }
 

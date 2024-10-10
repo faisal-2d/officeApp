@@ -72,7 +72,7 @@ const DuaList = ({student, update_profile}) => {
             "index" : dua.dua_index,
         }     
 
-        await axios.put(`https://alharamanin-backend-web.onrender.com/dua/dua_update/${params.batch}/${params.sn}`, data)
+        await axios.put(`${process.env.REACT_APP_BACKEND_API}/dua/dua_update/${params.batch}/${params.sn}`, data)
         .then(data => {
             duaCompletion(params?.batch, params?.sn);
             update_profile(true);

@@ -17,9 +17,9 @@ const FiqhResultPage = () => {
   const params = useParams();
   let searchName = '';
   const getStudentList = async (searchName) => {
-    const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/${searchName}`)
+    const {data} = await axios.get(`${process.env.REACT_APP_BACKEND_API}/fiqh/${params.batch}/${searchName}`)
     // http://localhost:5000
-    // https://flannel-loonie-61461.herokuapp.com
+    // 
     return data;
   }
 

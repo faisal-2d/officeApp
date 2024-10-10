@@ -11,7 +11,7 @@ const AqeedahPaymentCard = ({payment, level}) => {
         p = 'green'
     
     return (
-        <div className={`relative overflow-hidden rounded py-2 px-5 bg-gradient-to-tl ${ payment === 'due' ? 'from-red-200 to-red-100' : 'from-green-300 to-green-200'} `}>
+        <div className={`relative overflow-hidden h-32 my-auto rounded py-2 px-5 bg-gradient-to-tl ${ payment === 'due' ? 'from-red-200 to-red-100' : 'from-green-300 to-green-200'} `}>
                 <Link to={`${payment === 'due' ? '/aqeedah-due' : ''}`}>
                 <div className="w-auto  flex justify-between">                
                 <div className="mr-16">

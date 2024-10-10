@@ -37,15 +37,15 @@ const FiqhDetails = () => {
     const [adminDesk, setAdminDesk] = useState(false);
     // setStudent()
 // useEffect(()=> {
-//   axios.get(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/sn/${params.sn}`)
-// //   https://alharamanin-backend-web.onrender.com/
+//   axios.get(`${process.env.REACT_APP_BACKEND_API}/fiqh/${params.batch}/sn/${params.sn}`)
+// //   ${process.env.REACT_APP_BACKEND_API}/
 //   .then(data => setStudent(data.data))
 // },[params]);
 
 
 const getStudent = () => {
 
-        axios.get(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/sn/${params.sn}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/fiqh/${params.batch}/sn/${params.sn}`)
         .then(data => { setStudent(data.data)
             // console.log("i got the student ",data.data);
         });       
@@ -118,7 +118,7 @@ if(!student){
                      }
 
 
-            axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/accessLevelTwo/${params.batch}/${params.sn}`, data)
+            axios.put(`${process.env.REACT_APP_BACKEND_API}/fiqh/accessLevelTwo/${params.batch}/${params.sn}`, data)
            .then(data => console.log(data.data))
     }
 
@@ -129,13 +129,13 @@ if(!student){
                 "fiqh1payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/fiqh/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
             // console.log(data.data);
         })
-        //https://alharamanin-backend-web.onrender.com/
-        //https://alharamanin-backend-web.onrender.com
+        //${process.env.REACT_APP_BACKEND_API}/
+        //${process.env.REACT_APP_BACKEND_API}
     }
     const payment2Update = (level) => {
 
@@ -143,13 +143,13 @@ if(!student){
                 "fiqh2payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/fiqh/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
             // console.log(data.data);
         })
-        //https://alharamanin-backend-web.onrender.com/
-        //https://alharamanin-backend-web.onrender.com
+        //${process.env.REACT_APP_BACKEND_API}/
+        //${process.env.REACT_APP_BACKEND_API}
     }
     const payment3Update = (level) => {
 
@@ -157,13 +157,13 @@ if(!student){
                 "fiqh3payment" : "paid",           
             }     
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/fiqh/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/fiqh/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
             // console.log(data.data);
         })
-        //https://alharamanin-backend-web.onrender.com/
-        //https://alharamanin-backend-web.onrender.com
+        //${process.env.REACT_APP_BACKEND_API}/
+        //${process.env.REACT_APP_BACKEND_API}
     }
 
 

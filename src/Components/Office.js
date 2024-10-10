@@ -80,6 +80,19 @@ const Office = () => {
                     </div>
                     </div>
                 </div>
+
+                <div className="card bg-base-100 shadow-xl">
+                    <div className="card-body">
+                    <h2 className="card-title">Student Import</h2>
+                    <p>
+                    এক ব্যাচ থেকে অন্য ব্যাচে স্টুডেন্ট ইম্পোর্ট
+                    </p>
+                    <div className="card-actions justify-end">
+                        <Link to='/student-import'><button className="btn btn-secondary">প্রবেশ করুন</button></Link>
+                    </div>
+                    </div>
+                </div>
+                
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
                     <h2 className="card-title">Certificate Name Query</h2>
@@ -91,6 +104,7 @@ const Office = () => {
                     </div>
                     </div>
                 </div>
+                
 
 
                 

@@ -8,7 +8,7 @@ const getReportUpdate = (topic, batch, sn) => {
         "index" : getRamadanDate()-1,
     } 
     
-    axios.put(`https://alharamanin-backend-web.onrender.com/dua/report_update/${topic}/${batch}/${sn}`, data)
+    axios.put(`${process.env.REACT_APP_BACKEND_API}/dua/report_update/${topic}/${batch}/${sn}`, data)
         .then(data => {
             console.log(data);
         })

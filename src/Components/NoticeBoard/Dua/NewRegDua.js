@@ -8,7 +8,7 @@ const NewRegDua = () => {
 
 
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/dua/count/get/2`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/dua/count/get/2`)
         .then(data => {
             console.log(data.data.result);
             setStudSn(data.data.result);
@@ -60,7 +60,7 @@ const NewRegDua = () => {
             "completion": 0            
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/dua/2/register`, insertData)
+        axios.post(`${process.env.REACT_APP_BACKEND_API}/dua/2/register`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 

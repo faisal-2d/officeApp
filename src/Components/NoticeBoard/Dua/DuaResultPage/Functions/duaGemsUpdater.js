@@ -5,7 +5,7 @@ const duaGemsUpdater = (gems, batch, sn) => {
     const data = {
         "gems" : gems + 1,
     }     
-    axios.put(`https://alharamanin-backend-web.onrender.com/dua/gems/update/${batch}/${sn}`, data)
+    axios.put(`${process.env.REACT_APP_BACKEND_API}/dua/gems/update/${batch}/${sn}`, data)
     .then(data => {
         console.log(data);
     })

@@ -15,13 +15,12 @@ const DuaResultPage = () => {
     const [admin, isLoadingAdmin] = useAdmin(user);
       const navigate = useNavigate();
   
-  
       const params = useParams();
       let searchName = '';
       const getStudentList = async (searchName) => {
         const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/dua/${params.batch}/${searchName}`)
         // http://localhost:5000
-        // https://alharamanin-backend-web.onrender.com
+        // ${process.env.REACT_APP_BACKEND_API}
         return data;
       }
       const {isLoading, isFetching, data: students, refetch} = useQuery('dua_studentList', () => getStudentList(searchName))

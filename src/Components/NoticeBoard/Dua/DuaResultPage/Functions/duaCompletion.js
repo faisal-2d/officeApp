@@ -2,7 +2,7 @@ import axios from "axios";
 
 const duaCompletion = (batch, sn) => {
 
-    axios.put(`https://alharamanin-backend-web.onrender.com/dua/completion/update/${batch}/${sn}`, )
+    axios.put(`${process.env.REACT_APP_BACKEND_API}/dua/completion/update/${batch}/${sn}`, )
     .then(data => {
     })
     return;

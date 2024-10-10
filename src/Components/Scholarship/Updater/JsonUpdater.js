@@ -28,7 +28,7 @@ const JsonUpdater = () => {
                                 "comment" : data.comment       
                             }
                         
-                                axios.post(`https://alharamanin-backend-web.onrender.com/register/scholarship/aqeedah`, insertData)
+                                axios.post(`${process.env.REACT_APP_BACKEND_API}/register/scholarship/aqeedah`, insertData)
                                 .then(data => {
                                     console.log("Scholarship Stud " + insertData?.sn);
                                 })

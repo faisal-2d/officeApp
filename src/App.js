@@ -63,11 +63,16 @@ import ResultUpdater from './Components/Updater/ResultUpdater';
 import NewRegDua from './Components/NoticeBoard/Dua/NewRegDua';
 import CertificateNameQuery from './Components/CertificateNameQuery/CertificateNameQuery';
 import MeritList from './Components/NoticeBoard/Aqeedah/LeaderBoard/MeritList';
+import MessengerPlugin from './Components/MessengerPlugin';
+import StudentImport from './Components/Updater/StudentImport';
 
 function App() {
   return (
     <div>
       <Header></Header>
+      <div className='w-full'>
+        <MessengerPlugin></MessengerPlugin>
+      </div>
       <Routes>
         <Route path='' element={<Home/>}></Route>
         <Route path='courses' element={<Courses/>}></Route>
@@ -134,6 +139,7 @@ function App() {
         <Route path='registration-arabic' element={<ArabicRegistration/>}></Route>
         <Route path='registration-dua' element={<DuaRegistration/>}></Route>
         <Route path='all-student-names' element={<CertificateNameQuery/>}></Route>
+        <Route path='student-import' element={<StudentImport/>}></Route>
 
         <Route path='login' element={<Login/>}></Route>
         <Route path='signup' element={<SignUp/>}></Route>

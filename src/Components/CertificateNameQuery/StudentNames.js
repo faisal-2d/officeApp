@@ -16,7 +16,7 @@ const StudentNames = () => {
         const course = e.course;
         const batchNo = parseInt(e.batch);                
 
-        const {data} = await axios.get(`https://alharamanin-backend-web.onrender.com/${course}/${batchNo}`)    
+        const {data} = await axios.get(`${process.env.REACT_APP_BACKEND_API}/${course}/${batchNo}`)    
 
         setStudents(data);
         showProgess = false;

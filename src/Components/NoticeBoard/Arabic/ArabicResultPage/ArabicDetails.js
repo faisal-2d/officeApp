@@ -31,14 +31,14 @@ const ArabicDetails  = () => {
 
 
     // useEffect(()=> {
-    //   axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/sn/${params.sn}`)
-    // //   https://alharamanin-backend-web.onrender.com
+    //   axios.get(`${process.env.REACT_APP_BACKEND_API}/arabic/${params.batch}/sn/${params.sn}`)
+    // //   ${process.env.REACT_APP_BACKEND_API}
     //   .then(data => setStudent(data.data))
     // },[params]);
     
     const getStudent = () => {
 
-      axios.get(`https://alharamanin-backend-web.onrender.com/arabic/${params.batch}/sn/${params.sn}`)
+      axios.get(`${process.env.REACT_APP_BACKEND_API}/arabic/${params.batch}/sn/${params.sn}`)
       .then(data => { setStudent(data.data)
           // console.log("i got the student ",data.data);
       });       

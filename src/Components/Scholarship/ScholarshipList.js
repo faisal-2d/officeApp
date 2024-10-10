@@ -19,10 +19,10 @@ const ScholarshipList = () => {
     const params = useParams();
   
   let searchName ='';
-  const {isLoading, isFetching, data: students, refetch} = useQuery('scholarship_studentList', () => axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/${params.course}`))
-//   const {isLoading, isFetching, data: students, refetch} = useQuery('scholarship_studentList', () => axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/${params.course}/${params.batch}`))
+  const {isLoading, isFetching, data: students, refetch} = useQuery('scholarship_studentList', () => axios.get(`${process.env.REACT_APP_BACKEND_API}/scholarship/${params.course}`))
+//   const {isLoading, isFetching, data: students, refetch} = useQuery('scholarship_studentList', () => axios.get(`${process.env.REACT_APP_BACKEND_API}/scholarship/${params.course}/${params.batch}`))
 
-// const studentCount = async () => await axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/count/get/21`).then(data=>setTotalStud(data));
+// const studentCount = async () => await axios.get(`${process.env.REACT_APP_BACKEND_API}/aqeedah/count/get/21`).then(data=>setTotalStud(data));
 //     console.log(studentCount);
     // console.log(totoalStud);
   

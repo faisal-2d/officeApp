@@ -21,7 +21,7 @@ const JsonUpdater = () => {
                     console.log("I'm uploading certificates");
                     jsonData.map(data => {
                         
-                        axios.put(`https://alharamanin-backend-web.onrender.com/${course}/certificate/upload/${batchNo}/${level}/${data.sn}`, data)
+                        axios.put(`${process.env.REACT_APP_BACKEND_API}/${course}/certificate/upload/${batchNo}/${level}/${data.sn}`, data)
                         .then(data => console.log("Certificate Updated - ",data.data))
                     })
                 }
@@ -35,7 +35,7 @@ const JsonUpdater = () => {
                             "Score" : data.score            
                             }
                     console.log(course, batchNo, level, exmNo, data.sn)
-                    axios.put(`https://alharamanin-backend-web.onrender.com/${course}/${batchNo}/${level}/${exmNo}/${data.sn}`, resultData)
+                    axios.put(`${process.env.REACT_APP_BACKEND_API}/${course}/${batchNo}/${level}/${exmNo}/${data.sn}`, resultData)
                     .then(data => console.log(data.data))
                     
                 })
@@ -47,7 +47,7 @@ const JsonUpdater = () => {
                         
                         let leadData = {};
                         
-                        axios.put(`https://alharamanin-backend-web.onrender.com/${course}/leaderboard/update/${batchNo}/${level}/${data.sn}`, leadData)
+                        axios.put(`${process.env.REACT_APP_BACKEND_API}/${course}/leaderboard/update/${batchNo}/${level}/${data.sn}`, leadData)
                         .then(data => console.log(data.data))                      
                         
                     })
@@ -77,7 +77,7 @@ const JsonUpdater = () => {
                     
                 }
                 
-                        axios.post(`https://alharamanin-backend-web.onrender.com/${course}/${batchNo}/register`, insertData)
+                        axios.post(`${process.env.REACT_APP_BACKEND_API}/${course}/${batchNo}/register`, insertData)
                         .then(data => {
                             console.log("Registration Successfull ! Student " + insertData?.sn);
                         })

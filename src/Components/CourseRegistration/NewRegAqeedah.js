@@ -11,7 +11,7 @@ const NewRegAqeedah = () => {
 
     const batch = 23;
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/count/get/${batch}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/aqeedah/count/get/${batch}`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -39,7 +39,7 @@ const NewRegAqeedah = () => {
             
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/aqeedah/${batch}/register`, insertData)
+        axios.post(`${process.env.REACT_APP_BACKEND_API}/aqeedah/${batch}/register`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 

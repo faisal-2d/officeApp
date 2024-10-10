@@ -22,15 +22,11 @@ const AqeedahRow = ({student, batch}) => {
             <td>{student?.name.toUpperCase()}</td>
             <td>{student?.fatherName.toUpperCase()}</td>
             <td>{student?.phone}</td>
-            {/* <td>{student?.gender.toUpperCase()}</td> */}
-            {/* <td>{student?.aqeedah1payment}</td>
-            <td>{student?.aqeedah1data[1].Score}</td>
-            <td>{student?.aqeedah1data[2].Score}</td>
-            <td>{student?.aqeedah1Total}</td> */}
-            
+                       
             
       </tr>
     );
 };
 
 export default AqeedahRow;
+

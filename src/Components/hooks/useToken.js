@@ -7,7 +7,7 @@ const useToken = (user) => {
         const userEmail = user?.user?.email;
         const currentUser = {email : userEmail};
         if(userEmail){            
-            axios.put(`https://alharamanin-backend-web.onrender.com/user/${userEmail}`, currentUser)
+            axios.put(`${process.env.REACT_APP_BACKEND_API}/user/${userEmail}`, currentUser)
             .then(data => {
                 const accessToken = data.data.token;
                 localStorage.setItem("accessToken",accessToken)

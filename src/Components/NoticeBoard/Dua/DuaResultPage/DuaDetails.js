@@ -41,7 +41,7 @@ const DuaDetails = () => {
 
 const getStudent = () => {
 
-        axios.get(`https://alharamanin-backend-web.onrender.com/dua/${params.batch}/sn/${params.sn}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/dua/${params.batch}/sn/${params.sn}`)
         .then(data => { setStudent(data.data);
         });       
        
@@ -58,7 +58,7 @@ if(!student){
         const data = {
             "date" : date
         }
-        axios.put(`https://alharamanin-backend-web.onrender.com/dua/date/update/${params.batch}/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/dua/date/update/${params.batch}/${params.sn}`, data)
             .then(data => {
                 update_profile(true);
             })
@@ -71,7 +71,7 @@ if(!student){
                 "dua1payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/dua/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/dua/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
 

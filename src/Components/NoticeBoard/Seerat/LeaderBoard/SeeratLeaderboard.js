@@ -17,10 +17,10 @@ const SeeratLeaderboard = () => {
 
   const getStudentList = async () => {
     const { data } = await axios.get(
-      `https://alharamanin-backend-web.onrender.com/seerat/leaderboard/get/${params.batch}/${level}`
+      `${process.env.REACT_APP_BACKEND_API}/seerat/leaderboard/get/${params.batch}/${level}`
     );
     // http://localhost:5000
-    // https://alharamanin-backend-web.onrender.com/
+    // ${process.env.REACT_APP_BACKEND_API}/
     return data;
   };
 

@@ -13,7 +13,7 @@ const Aqeedah1LeaderBoard = () => {
   const params = useParams();
   const getStudentList = async () => {
     const { data } = await axios.get(
-      `https://alharamanin-backend-web.onrender.com/aqeedah/leaderboard/get/${params.batch}/1/`
+      `${process.env.REACT_APP_BACKEND_API}/aqeedah/leaderboard/get/${params.batch}/1/`
     );
     return data;
   };

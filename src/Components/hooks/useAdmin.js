@@ -8,7 +8,7 @@ const useAdmin = (user) => {
     useEffect(()=> {
         const userEmail = user?.email;        
         if(userEmail){                       
-            axios.get(`https://alharamanin-backend-web.onrender.com/users/isadmin/${userEmail}`)
+            axios.get(`${process.env.REACT_APP_BACKEND_API}/users/isadmin/${userEmail}`)
             .then(data => {
                 setAdmin(data.data.isAdmin);
                 setIsLoading(false);                

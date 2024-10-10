@@ -8,7 +8,7 @@ const useAssistant = (user) => {
     useEffect(()=> {
         const userEmail = user?.email;        
         if(userEmail){                       
-            axios.get(`https://alharamanin-backend-web.onrender.com/users/isassistant/${userEmail}`)
+            axios.get(`${process.env.REACT_APP_BACKEND_API}/users/isassistant/${userEmail}`)
             .then(data => {
                 setAssistant(data.data.isAssistant);
                 setIsLoading(false);                

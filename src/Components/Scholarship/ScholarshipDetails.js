@@ -25,7 +25,7 @@ const ScholarshipDetails = () => {
     const [count, setCount] = useState();
   
 const getStudent = () => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/scholarship/aqeedah/${params.sn}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/scholarship/aqeedah/${params.sn}`)
         .then(data => { setStudent(data.data)
         });        
 }
@@ -44,7 +44,7 @@ const updateData = sn => {
             "isAccepted" : true, 
             "accepted_by" : user.displayName         
         }        
-    axios.put(`https://alharamanin-backend-web.onrender.com/update/scholarship/aqeedah/${sn}`, data)
+    axios.put(`${process.env.REACT_APP_BACKEND_API}/update/scholarship/aqeedah/${sn}`, data)
     .then(data => {
         getStudent();
     })
@@ -52,7 +52,7 @@ const updateData = sn => {
 
 const acceptScholarship = async () => {
    
-    await axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/aqeedah/22`).then(data=>setCount(data.data.result+1));
+    await axios.get(`${process.env.REACT_APP_BACKEND_API}/aqeedah/aqeedah/22`).then(data=>setCount(data.data.result+1));
     
     const insertData = {
         "sn" : count,
@@ -74,7 +74,7 @@ const acceptScholarship = async () => {
         ] 
     }
     
-        {count && axios.post(`https://alharamanin-backend-web.onrender.com/register/aqeedah/21`, insertData)
+        {count && axios.post(`${process.env.REACT_APP_BACKEND_API}/register/aqeedah/21`, insertData)
         .then(data => {updateData(params.sn)})
         
     }

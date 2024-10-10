@@ -10,7 +10,7 @@ const NewRegArabic = () => {
 
 
     useEffect(() => {
-        axios.get(`https://alharamanin-backend-web.onrender.com/arabic/count/get/4`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/arabic/count/get/4`)
         .then(data => setStudSn(data.data.result))
     },[])
     
@@ -65,7 +65,7 @@ const NewRegArabic = () => {
             
         }
         
-        axios.post(`https://alharamanin-backend-web.onrender.com/arabic/4/register`, insertData)
+        axios.post(`${process.env.REACT_APP_BACKEND_API}/arabic/4/register`, insertData)
         .then(data => {setStudSn(studSn+1)})
         reset();    
         }; 

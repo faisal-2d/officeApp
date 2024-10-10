@@ -31,8 +31,8 @@ const AqeedahDue = () => {
                     <p className=' mt-3'>নিচের যে কোন নাম্বারে আপনার টাকা <strong className='text-red-600'>সেন্ডমানি</strong> করুন।</p>
                     <p>আপনার যদি মনে না থাকে কতো টাকা বকেয়া আছে, এডমিনকে মেসেজ দিয়ে জেনে নিন। </p>
                     <p className=''><strong className='text-red-600'>দোকান থেকে টাকা না পাঠিয়ে </strong> নিজের/বাড়ির কারো নাম্বার থেকে পাঠান, তাহলে টাকাটা গেল কিনা, ঠিক নাম্বারে গেল কিনা নিশ্চিত হতে পারবেন।</p>
-                    <p className='mt-1'><FontAwesomeIcon className='text-blue-500' icon={'image'}/> সম্ভব হলে টাকা পাঠানোর পর <strong className='text-blue-600'>স্ক্রিনশট/মানি রিসিটের ছবি</strong> তুলুন। </p>
-                    <p className='mb-5'><FontAwesomeIcon className='text-red-500' icon={'ban'}/> টাকা পাঠানোর এই নাম্বারগুলোতে <strong className='text-red-600'>কল করবেন না</strong> । যে কোন প্রয়োজনে <a target="_blank" href='https://m.me/alharamain.ac' className='bg-sky-300 px-1 rounded-sm'>মেসেঞ্জারে</a>/<a target="_blank" href='https://wa.me/+966578621278' className='bg-lime-400 px-1 rounded-sm'>হোয়াটসঅ্যাপে</a>/<a target="_blank" href='https://t.me/+966578621278' className='bg-blue-400 px-1 rounded-sm'>টেলিগ্রামে</a> যোগাযোগ করুন।</p>
+                    <p className='mt-1 mb-5'><FontAwesomeIcon className='text-blue-500' icon={'image'}/> সম্ভব হলে টাকা পাঠানোর পর <strong className='text-blue-600'>স্ক্রিনশট/মানি রিসিটের ছবি</strong> তুলুন। </p>
+                    {/* <p className='mb-5'><FontAwesomeIcon className='text-red-500' icon={'ban'}/> টাকা পাঠানোর এই নাম্বারগুলোতে <strong className='text-red-600'>কল করবেন না</strong> । যে কোন প্রয়োজনে <a target="_blank" href='https://m.me/alharamain.ac' className='bg-sky-300 px-1 rounded-sm'>মেসেঞ্জারে</a>/<a target="_blank" href='https://wa.me/+966578621278' className='bg-lime-400 px-1 rounded-sm'>হোয়াটসঅ্যাপে</a>/<a target="_blank" href='https://t.me/+966578621278' className='bg-blue-400 px-1 rounded-sm'>টেলিগ্রামে</a> যোগাযোগ করুন।</p> */}
 
 
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'>
@@ -165,7 +165,9 @@ const AqeedahDue = () => {
                 </div>
             </section>            
 
-            <ContactInfo></ContactInfo>
+            {/* <ContactInfo></ContactInfo> */}
+            <p className='my-3'>টাকা পাঠানো বা গ্রুপে যুক্ত হওয়া নিয়ে কোন সমস্যা হলে আমাদেরকে সাপোর্টে/ফেসবুক পেইজে মেসেজ দিন।</p>
+
 
             </div>
     );

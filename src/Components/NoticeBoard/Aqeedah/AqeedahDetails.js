@@ -40,7 +40,7 @@ const AqeedahDetails = () => {
 
 const getStudent = () => {
 
-        axios.get(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/sn/${params.sn}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_API}/aqeedah/${params.batch}/sn/${params.sn}`)
         .then(data => { setStudent(data.data)
         });       
        
@@ -88,7 +88,7 @@ if(!student){
                      }
 
 
-            axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/accessLevelTwo/${params.batch}/${params.sn}`, data)
+            axios.put(`${process.env.REACT_APP_BACKEND_API}/aqeedah/accessLevelTwo/${params.batch}/${params.sn}`, data)
             .then(data => {
                 getStudent();
             })
@@ -101,7 +101,7 @@ if(!student){
                 "aqeedah1payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/aqeedah/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();
         })
@@ -113,7 +113,7 @@ if(!student){
                 "aqeedah2payment" : "paid",           
             }        
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/aqeedah/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();            
         })
@@ -125,7 +125,7 @@ if(!student){
                 "aqeedah3payment" : "paid",           
             }     
 
-        axios.put(`https://alharamanin-backend-web.onrender.com/aqeedah/${params.batch}/payment/${params.sn}`, data)
+        axios.put(`${process.env.REACT_APP_BACKEND_API}/aqeedah/${params.batch}/payment/${params.sn}`, data)
         .then(data => {
             getStudent();           
         })
@@ -354,9 +354,10 @@ if(!student){
                             </div>
 
                             {adminDesk && <div className="my-10">
-                                <button onClick={payment1Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 1</button>
-                                <button onClick={payment2Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 2</button>
-                                <button onClick={payment3Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 3</button>
+                                <button onClick={payment1Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 1</button> 
+                                <button onClick={payment2Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 2</button> 
+                                <button onClick={payment3Update} className="p-2 px-4 m-2 btn btn-success rounded-md"> Payement : Level 3</button> 
+                                {!student.aqeedah3data && <button onClick={accessLevelTwo} className="p-2 px-4 m-2 btn btn-secondary rounded-md"> LevelUp</button> }
                             </div>} 
                         </div>
                     
