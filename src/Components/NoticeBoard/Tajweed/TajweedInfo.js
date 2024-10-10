@@ -2,40 +2,30 @@ import {
   faCircleCheck,
   faMoneyBill1,
 } from "@fortawesome/free-regular-svg-icons";
-import {
-  faCalendarWeek,
-  faFemale,
-  faGift,
-  faMousePointer,
-  faQuestion,
-  faRecordVinyl,
-  faUserGroup,
-  faVideo,
-} from "@fortawesome/free-solid-svg-icons";
+import { faRecordVinyl, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
-import dua_img from "../../../assets/dua_image.jpg";
+import bd_flag from "../../../assets/icons/bd_flag.ico";
 import partyFlag from "../../../assets/partyFlag.png";
-import trophy_img from "../../../assets/trophy/trophy_top3.png";
-import ContactInfo from "../../ContactInfo";
+import online_quran_class_img from "../../../assets/quran_tajweed/online_quran_classes.png";
+import Tajweed1Schedule from "./Tajweed1Schedule.js";
+import TajweedNextBatch from "./TajweedNexBatch.js";
 
 export default function TajweedInfo() {
   return (
     <div className="container mx-auto px-5 my-10">
-      {/* Welcome  */}
       <section>
         <div className="rounded bg-gradient-to-tl from-sky-200 flex justify-between">
           <div className="p-5">
-            <p className="text-3xl">দোআ ও যিকির কোর্সে</p>
+            <p className="text-3xl">সহজ তাজউইদ কোর্সে</p>
             <p className="text-4xl">স্বাগতম!</p>
           </div>
           <div className="p-5 hidden md:inline">
             <div className="flex justify-between">
               <div className="text-right font-serif align-middle mr-10">
-                <p className="text-4xl ">الدعاء و الذِكرُ</p>
-                <p className="text-2xl">من الكتابِ و السنةِ</p>
+                <p className="text-4xl ">سلسلة دورة التجويد</p>
+                <p className="text-2xl">و ترتيل القرآن</p>
               </div>
               <div>
                 <img src={partyFlag} alt="" />
@@ -49,55 +39,48 @@ export default function TajweedInfo() {
       <section className="my-10">
         <p className="text-xl">
           কোর্স পরিচিতিঃ{" "}
-          <span className="badge badge-success">রমাদান স্পেশাল কোর্স</span>
+          <span className="badge bg-pink-300">শুধুমাত্র মহিলাদের জন্য</span>
         </p>
-        <p>এই রমাদানে আমরা কুরআন ও হাদিস থেকে ১৫০টি দোআ শিখব, ইনশা আল্লাহ।</p>
+        <p>সহীহ-শুদ্ধভাবে কুরআন শেখার কোন বিকল্প নেই!</p>
         <p>
-          যার মধ্যে ১০০টি দোআ/যিকির, যেগুলো যে কোন সময় পড়া যায়। নবী-রাসূলদের
-          (عليهم السلام) সুন্দর সুন্দর দোআ, যেগুলো আল্লাহ তা'আলা পছন্দ করেছেন
-          এবং আমরা কুরআন - হাদিস থেকে আমরা জানতে পেরেছি।{" "}
-        </p>
-        <p>
-          এবং ৫০টি দোআ বিষয়ভিত্তিক (নির্দিষ্ট ক্ষেত্রে পড়ার দোআঃ মসজিদে প্রবেশের
-          দোআ, খাবার খাওয়ার আগে দোআ ইত্যাদি){" "}
+          কেয়ামতের দিন যে কুরআন আপনার পরম বন্ধু হবে, সে কুরআন সঠিকভাবে পড়তে না
+          জেনে উপায় নেই।
         </p>
         <p>
-          রমাদানের বরকতময় দিন-রাতগুলো, বিশেষ করে শেষ দশকের রাতগুলো যেন দোআ ও
-          যিকিরপূর্ণ হয়, তাই এই কোর্সের আয়োজন। তাছাড়া, সারাবছরই এই দোআগুলো আমল
-          করতে পারবেন।
+          তাজউইদের বিষয়গুলো খুব কঠিন নয়, কিন্তু নিজের ভুল তো নিজে সংশোধন করা যায়
+          না।
         </p>
+        <p>তাই অভিজ্ঞ উস্তাদার কাছে লাইভ ক্লাসে তাজউইদ শিখুন!</p>
       </section>
 
       {/* study method  */}
       <section className="mt-20 mb-10">
         <div className="flex flex-col md:flex-row justify-around items-center">
           <div className="mb-8 md:mb-0">
-            <img className="rounded-lg" src={dua_img} />
+            <img className="rounded-lg" src={online_quran_class_img} />
           </div>
           <div>
-            <p className="text-xl my-4">কিভাবে কোর্স পরিচালিত হবে?</p>
+            <p className="text-xl my-4">এক নজরে</p>
             <p>
               <FontAwesomeIcon
-                className="text-red-600 pr-2"
-                icon={faCalendarWeek}
+                className="text-green-600 pr-2"
+                icon={faCircleCheck}
               />
-              ২৫ দিনের কোর্স (১ম রমাদান থেকে ২৫ রমাদান)
+              ৫ মাসের কোর্স
             </p>
             <p>
               <FontAwesomeIcon
-                className="text-red-600 pr-2"
+                className="text-green-600 pr-2"
+                icon={faCircleCheck}
+              />
+              শুধুমাত্র মহিলাদের কোর্স
+            </p>
+            <p>
+              <FontAwesomeIcon
+                className="text-green-600 pr-2"
                 icon={faUserGroup}
               />
-              পুরুষ-মহিলা আলাদা গ্রুপ
-            </p>
-            <p>
-              <FontAwesomeIcon className="text-red-600 pr-2" icon={faFemale} />
-              মহিলাদের জন্য মহিলা উস্তাদা থাকবেন
-            </p>
-            <p>
-              <FontAwesomeIcon className="text-red-600 pr-2" icon={faVideo} />
-              <FontAwesomeIcon icon="fa-brands fa-skype" />
-              প্রতিদিন ৫/৬টি দোআর অডিও/ভিডিও দেওয়া হবে
+              আসন সীমিতঃ মাত্র ৩০ জন
             </p>
             <p>
               <FontAwesomeIcon
@@ -105,19 +88,28 @@ export default function TajweedInfo() {
                 icon={faRecordVinyl}
                 fade
               />
-              প্রতিদিন ২০ মিনিট লাইভে ক্লাসে দোআ প্রাকটিস করানো হবে
+              স্কাইপিতে লাইভে ক্লাস
             </p>
-            {/* <p><FontAwesomeIcon className='text-red-600 pr-2' icon={faMicrophone} />২টি মৌখিক পরীক্ষা নেওয়া হবে</p> */}
             <p>
-              <FontAwesomeIcon className="text-red-600 pr-2" icon={faGift} />
-              সেরা ৬ জনকে (পুরুষ ৩, মহিলা ৩) পুরষ্কৃত করা হবে
+              <FontAwesomeIcon
+                className="text-green-600 pr-2"
+                icon="fa-solid fa-clock"
+              />
+              সপ্তাহে ১ দিন, ২ ঘন্টার লাইভ ক্লাস
+            </p>
+            <p>
+              <FontAwesomeIcon
+                className="text-green-600 pr-2"
+                icon={faCircleCheck}
+              />
+              নিয়মিত হোমওয়ার্ক
             </p>
           </div>
         </div>
       </section>
 
       {/* How to select best students */}
-      <section className="my-20">
+      {/* <section className="my-20">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="order-2">
             <p className="text-xl my-4">কিভাবে সেরা ৬ জনকে পুরষ্কৃত করা হবে?</p>
@@ -170,6 +162,18 @@ export default function TajweedInfo() {
             <img className="rounded-lg block mx-auto my-10 " src={trophy_img} />
           </div>
         </div>
+      </section> */}
+
+      {/* Schedule  */}
+      <section className="my-24">
+        <div className="flex items-center">
+          <span className="text-xl">ক্লাসের সময়ঃ </span>
+          <div className="ml-3">
+            <img className="" src={bd_flag} alt="" />
+          </div>
+          <span className="ml-3">বাংলাদেশের সময় অনুযায়ী</span>
+        </div>
+        <Tajweed1Schedule />
       </section>
 
       {/* admission system  */}
@@ -191,15 +195,18 @@ export default function TajweedInfo() {
               icon="fa-regular fa-circle"
             />
             <p className={`text-center font-bold text-xl my-2 text-cyan-600 `}>
-              <span className="uppercase font-bold text-2xl">৳৫০০</span>
+              <span className="uppercase font-bold text-2xl">৳২৫০০</span>
             </p>
           </div>
 
           <div className="md:col-span-2">
             <p>কোর্স ফী পাঠাতে হবে। তারপর টেলিগ্রাম গ্রুপে জয়েন করতে হবে।</p>
-            <p>কোর্স ফী ৫০০ টাকা। ভর্তির পর আর কোন খরচ নেই।</p>
+            <p>
+              কোর্স ফী ২৫০০ টাকা। ভর্তির পর আর কোন খরচ নেই। কোর্স ফী কিস্তিতে
+              দেওয়ার সুযোগ আছে।
+            </p>
 
-            <section className="my-3 lg:w-2/3">
+            {/* <section className="my-3 lg:w-2/3">
               <Link to="/registration-dua">
                 <p className="p-3 bg-orange-100 rounded shadow-md">
                   ভর্তি ফর্ম এবং গ্রুপ লিংক এখানে{" "}
@@ -210,878 +217,16 @@ export default function TajweedInfo() {
                   />
                 </p>
               </Link>
-            </section>
+            </section> */}
           </div>
         </div>
       </section>
 
-      {/* Course Module  */}
-      <section className="my-10">
-        <p className="text-xl">কোর্সে যা শেখানো হবেঃ</p>
-        <p className="font-bold text-orange-700">বিষয়ভিত্তিক দোআ</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 mx-5">
-          <div>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              খাবার খাওয়ার আগে ও পরের দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ইফতারের দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              শিরক থেকে বাচার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              অযুর দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নামাযের দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সালাম ফিরানোর শেষে দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আযানের দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              কুনুতের দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মসজিদে প্রবেশ ও বের হওয়ার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ঘুমানোর আগে এবং ঘুম থেকে ওঠার পর দোআ
-            </p>
-          </div>
-          <div>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ইস্তেখারার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সকাল সন্ধ্যার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বাড়িতে প্রবেশ ও বের হওয়ার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              টয়লেটে প্রবেশ ও বের হওয়ার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বাহনে (বাস, ট্রেন) ওঠার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সফরের দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              কাপড় পরা ও খোলার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নতুন কাপড় পরার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নতুন চাঁদ দেখার দোআ
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-orange-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ঈদের দোআ
-            </p>
-          </div>
-
-          <div>
-            <iframe
-              className="w-full rounded"
-              height="315"
-              src="https://www.youtube.com/embed/Tm2vqEVTCzE?si=VjcPvCFKYOGsBOMB"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-        <p className="font-bold mt-10 text-blue-700">কুরআন থেকে দোআ</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 mx-5">
-          <div>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা বাকারা ১২৭, ১২৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা বাকারা ১২৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা বাকারা ২০১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা বাকারা ২৮৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আল ইমরান ৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আল ইমরান ১৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আল ইমরান ৩৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আল ইমরান ৫৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আল ইমরান ১৪৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা মা'য়িদাহ ৮৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আ'রাফ ২৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আ'রাফ ৪৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আ'রাফ ১৫৫, ১৫৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা তাওবাহ ১২৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ইউনুস ৮৫, ৮৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা হুদ ৪৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ইউসুফ ১০১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ইবরাহীম ৪০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ইবরাহীম ৪১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা কাহাফ ১০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা তহা ২৫-২৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা তহা ১১৪
-            </p>
-          </div>
-          <div>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আম্বিয়া ৮৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আম্বিয়া ৮৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা মুমিনুন ৯৭, ৯৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা মুমিনুন ১০৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা মুমিনুন ১১৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ফুরকান ৬৫, ৬৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ফুরকান ৭৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ফুরকান ৮৩-৮৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ফুরকান ৮৭-৮৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা কাসাস ১৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা কাসাস ২১, ২২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা কাসাস ২৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা আনকাবুত ৩০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা সফফাত ১০০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা হাশর ১০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা মুমতাহিনা ৪, ৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা তাহরীম ৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা নূহ ২৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা ইবরাহীম ২৭ *
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা হুজুরাত ৭ *
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-blue-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সূরা তাগাবুন ১৬ *
-            </p>
-          </div>
-          <div>
-            <iframe
-              className="w-full rounded"
-              height="315"
-              src="https://www.youtube.com/embed/ckawqGK3hGE?si=LbOLmfwoxhMNqcJF"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-        <p className="font-bold mt-10 text-green-700">হাদিস থেকে দোআ</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 mx-5">
-          <div>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ৪৫২২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২৭২১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২৭২৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২৭৩৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২৭১৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ১৯৮২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ৬৩৪৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আবু দাউদ ৫০৯০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২৬৫৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৫২২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৫১৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ইবনু হিব্বান ২৪২৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৫২১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আবু দাউদ ১৫৫৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৫৫১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৫১৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ৮৩৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সহীহুল জামে ৫৯০২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৫০০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              সহীহুল জামে ১২৭৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আবু দাঊদ ১৫৪৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ১১৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নাসাঈ ৫৫১৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৪৮২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ২৫৭২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ১৪৩
-            </p>
-          </div>
-
-          <div>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আহমাদ ৪/৪০৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ইবনু মাজাহ ৯২৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আবু দাউদ ১৫১৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নাসাঈ ৫৪৬৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নাসাঈ ১৩৪৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              তিরমিযী ৩৪৮৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নাসাঈ ৭৮৬৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আল হাকিম ১/৫২৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আল হাকিম ১/৫৩২
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আহমাদ ৬/৪৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আবু দাউদ ১৫২৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ইবনু হিব্বান ২৪৩৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নাসাঈ ৫৪৭৫
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              নাসাঈ ১৬১৭
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আল হাকিম ১/৫৪১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২৬৯৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আহমাদ ৬/৬৮
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ৬৩৩৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ২৭৯০
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আল হাকিম ১/৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              আহমাদ ২৯/৫৯৬
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              ইবনু মাজাহ ৩৮৫১
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বুখারি ৬৩৬৩
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ১৯০৯
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              মুসলিম ২১৪
-            </p>
-            <p>
-              <FontAwesomeIcon
-                className="text-green-700 pr-2"
-                icon={faCircleCheck}
-              />
-              বাইহাকী ৫/৯৫
-            </p>
-          </div>
-          <div>
-            <iframe
-              className="w-full rounded"
-              height="315"
-              src="https://www.youtube.com/embed/_4SyPEKN0Vk?si=IRbRhBvuksCJxob-"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
+      <section>
+        <TajweedNextBatch />
       </section>
-
       {/* FAQs  */}
-      <section className="my-10">
+      {/* <section className="my-10">
         <div className="divider text-4xl text-slate-500 my-20">FAQs</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:mx-32">
           <div className="flex">
@@ -1233,9 +378,9 @@ export default function TajweedInfo() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="my-28 lg:w-1/3 mx-auto">
+      {/* <section className="my-28 lg:w-1/3 mx-auto">
         <Link to="/registration-dua">
           <p className="p-3 bg-orange-200 rounded shadow-md">
             ভর্তি ফর্ম এবং গ্রুপ লিংক এখানে{" "}
@@ -1246,10 +391,7 @@ export default function TajweedInfo() {
             />
           </p>
         </Link>
-      </section>
-
-      {/* Course Teacher  */}
-      <ContactInfo></ContactInfo>
+      </section> */}
     </div>
   );
 }
