@@ -39,7 +39,7 @@ const Courses = () => {
             name: "আল কুরআন কোর্স",
             duration: "১ বছর",
             teacher: "উস্তাদা হাবিবা সাদিয়া",
-            info: "quran",
+            info: "alquran",
             badge: "শুধুমাত্র মহিলাদের জন্য",
             badge_cls: "bg-purple-400",
           }}

@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
+import bd_flag from "../../../assets/icons/bd_flag.ico";
 
 const Aqeedah2Shcedule = () => {
-    return (
-        <div>
-            {/* Aqeedah  */}      
-      <div className="mt-20 mb-10">
-        <p className="text-center text-sky-900 font-bold text-3xl">
-        আক্বিদাহ কোর্সঃ তাওহীদ লেভেল ২
-        </p>
-        <p className="text-xl text-center my-4">(টেলিগ্রামে ক্লাস, সপ্তাহে ৩ দিন)</p>
+  return (
+    <div className="my-10 py-10 bg-orange-200 rounded">
+      <div className="">
+        <p className="text-xl text-center my-10">লেভেল ২, সপ্তাহে ৩ দিন</p>
       </div>
       <div className="overflow-x-auto ">
         <table className="table w-full w-3/4 mx-auto text-xl ">
@@ -16,7 +13,14 @@ const Aqeedah2Shcedule = () => {
             <tr>
               <th></th>
               <th className="text-xl">বার</th>
-              <th className="text-xl">সময় (বাংলাদেশ)</th>
+              <th className="text-xl">
+                <span className="flex items-center">
+                  <span>সময়</span>
+                  <div className="ml-3">
+                    <img className="" src={bd_flag} alt="" />
+                  </div>
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -35,14 +39,13 @@ const Aqeedah2Shcedule = () => {
             <tr className="hover">
               <th>৩</th>
               <td>বৃহস্পতিবার</td>
-              <td className='text-red-600'>সন্ধ্যা ৮ঃ৩০</td>
+              <td className="text-red-600">সন্ধ্যা ৮ঃ৩০</td>
             </tr>
           </tbody>
         </table>
       </div>
-            
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Aqeedah2Shcedule;

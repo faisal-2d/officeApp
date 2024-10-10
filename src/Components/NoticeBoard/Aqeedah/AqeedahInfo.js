@@ -8,11 +8,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
+import bd_flag from "../../../assets/icons/bd_flag.ico";
 import partyFlag from "../../../assets/partyFlag.png";
 import NextBatchReg from "../../CourseRegistration/NextBatchReg";
-import Aqeedah1Schedule from "../../Schedule/Aqeedah1Schedule";
-import Aqeedah2Schedule from "../../Schedule/Aqeedah2Schedule";
-import Aqeedah3Schedule from "../../Schedule/Aqeedah3Schedule";
+import Aqeedah1Schedule from "./Aqeedah1Schedule";
+import Aqeedah2Schedule from "./Aqeedah2Schedule";
+import Aqeedah3Schedule from "./Aqeedah3Schedule";
 
 const AqeedahInfo = () => {
   return (
@@ -481,7 +482,13 @@ const AqeedahInfo = () => {
       </section>
 
       <section className="my-24">
-        <p className="text-xl">ক্লাসের সময়ঃ</p>
+        <div className="flex items-center">
+          <span className="text-xl">ক্লাসের সময়ঃ </span>
+          <div className="ml-3">
+            <img className="" src={bd_flag} alt="" />
+          </div>
+          <span className="ml-3">বাংলাদেশের সময় অনুযায়ী</span>
+        </div>
         <Aqeedah1Schedule />
         <Aqeedah2Schedule />
         <Aqeedah3Schedule />
