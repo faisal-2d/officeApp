@@ -26,7 +26,7 @@ export default function Tajweed1Schedule() {
             <tr className="hover">
               <th>১</th>
               <td>বৃহস্পতিবার</td>
-              <td>দুপুর ২ঃ০০ থেকে ৪ঃ০০</td>
+              <td>দুপুর ৩:০০ - ৫:০০</td>
             </tr>
           </tbody>
         </table>

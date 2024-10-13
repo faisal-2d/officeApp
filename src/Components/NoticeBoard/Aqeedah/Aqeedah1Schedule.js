@@ -26,19 +26,19 @@ const Aqeedah1Schedule = () => {
             <tr className="hover">
               <th>১</th>
               <td>রবিবার</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>সন্ধ্যা ৭:৩০</td>
             </tr>
 
             <tr className="hover">
               <th>২</th>
               <td>মঙ্গলবার</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>সন্ধ্যা ৭:৩০</td>
             </tr>
 
             <tr className="hover">
               <th>৩</th>
               <td>বৃহস্পতিবার</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>সন্ধ্যা ৭:৩০</td>
             </tr>
           </tbody>
         </table>

@@ -4,11 +4,14 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { faRecordVinyl, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bd_flag from "../../../assets/icons/bd_flag.ico";
 import partyFlag from "../../../assets/partyFlag.png";
+import al_quran from "../../../assets/quran_tajweed/3d_quran_only.png";
 import online_quran_class_img from "../../../assets/quran_tajweed/online_quran_classes.png";
+import male_teacher from "../../../assets/quran_tajweed/online_quran_male.png";
 import Tajweed1Schedule from "./Tajweed1Schedule.js";
 import TajweedNextBatch from "./TajweedNexBatch.js";
 
@@ -225,6 +228,62 @@ export default function TajweedInfo() {
       <section>
         <TajweedNextBatch />
       </section>
+
+      <section className="my-40">
+        <div className="flex flex-col md:flex-row justify-around items-center">
+          <div>
+            <img src={al_quran} alt="" />
+          </div>
+          <div>
+            <h3 className="text-xl text-violet-600 my-5">
+              আপনি কি কুরআন পড়তে চান?
+            </h3>
+            <p>
+              আপনি যদি তাজউইদের বেসিক নিয়মগুলো জানেন, তাহলে একজন উস্তাদার
+              তত্ত্বাবধানে সম্পূর্ণ কুরআন কারীম তেলাওয়াত ও হিফজ করতে পারেন।
+            </p>
+            <p>
+              তাজউইদের অন্তত বেসিক নিয়মগুলো জেনে তারপর কুরআন পড়া শুরু করা উচিত।
+            </p>
+            <p>
+              কোর্স সম্পর্কে বিস্তারিত দেখুন এখানে
+              <Link
+                className="ml-5 btn bg-violet-400 btn-sm px-3  "
+                to="/courses/alquran"
+              >
+                আল কুরআন
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Male Teacher  */}
+      <section className="my-32">
+        <div className="flex flex-col md:flex-row justify-around items-center">
+          <div>
+            <img src={male_teacher} alt="" />
+          </div>
+          <div>
+            <h3 className="text-xl text-sky-600 my-5">
+              আপনার সন্তানের জন্য পুরুষ উস্তাদ প্রয়োজন?
+            </h3>
+            <p>
+              যেহেতু এই কোর্সটি শুধুমাত্র বোনদের জন্য, তাই ভাইদের কথা চিন্তা করে
+              আলাদা ব্যবস্থা রাখা হয়েছে।
+            </p>
+            <p>
+              ভাইদেরকে কোর্স করানো হবে না, তবে একজন উস্তাদের কাছে ১-১ লাইভ ক্লাস
+              করতে পারবেন। বিশেষভাবে, প্রবাসী ভাইরা উপকৃত হবেন, ইনশাআল্লাহ।
+            </p>
+            <p>
+              তাই আপনার ভাই, ছেলে বা অন্য কারো জন্য পুরুষ উস্তাদের প্রয়োজন হলে
+              আমাদের সাথে যোগাযোগ করতে পারেন।
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs  */}
       {/* <section className="my-10">
         <div className="divider text-4xl text-slate-500 my-20">FAQs</div>

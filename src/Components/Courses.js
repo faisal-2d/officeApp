@@ -24,13 +24,22 @@ const Courses = () => {
         />
         <CourseCard
           course={{
+            img: seeratThumbnail,
+            name: "সীরাতুন নববী (সাঃ)",
+            duration: "৩ মাস",
+            teacher: "শায়খ আব্দুল্লাহ আল কাফী (রহি.)",
+            info: "seerat",
+          }}
+        />
+        <CourseCard
+          course={{
             img: tajweedThumbnail,
             name: "তাজউইদ কোর্স",
             duration: "১ বছর ৩ মাস",
             teacher: "উস্তাদা শামসুন্নাহার",
             info: "tajweed",
             badge: "শুধুমাত্র মহিলাদের জন্য",
-            badge_cls: "bg-purple-400",
+            badge_cls: "bg-pink-300",
           }}
         />
         <CourseCard
@@ -41,7 +50,7 @@ const Courses = () => {
             teacher: "উস্তাদা হাবিবা সাদিয়া",
             info: "alquran",
             badge: "শুধুমাত্র মহিলাদের জন্য",
-            badge_cls: "bg-purple-400",
+            badge_cls: "bg-pink-300",
           }}
         />
         <CourseCard
@@ -80,15 +89,6 @@ const Courses = () => {
             duration: "৩ মাস",
             teacher: "শায়খ আব্দুল্লাহ আল কাফী (রহি.)",
             info: "tafseer",
-          }}
-        />
-        <CourseCard
-          course={{
-            img: seeratThumbnail,
-            name: "সীরাতে নববী (সাঃ)",
-            duration: "৩ মাস",
-            teacher: "শায়খ আব্দুল্লাহ আল কাফী (রহি.)",
-            info: "seerat",
           }}
         />
       </div>

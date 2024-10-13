@@ -27,19 +27,19 @@ const Aqeedah2Shcedule = () => {
             <tr className="hover">
               <th>১</th>
               <td>সোমবার</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>সন্ধ্যা ৭:৩০</td>
             </tr>
 
             <tr className="hover">
               <th>২</th>
               <td>বুধবার</td>
-              <td>সন্ধ্যা ৭ঃ৩০</td>
+              <td>সন্ধ্যা ৭:৩০</td>
             </tr>
 
             <tr className="hover">
               <th>৩</th>
               <td>বৃহস্পতিবার</td>
-              <td className="text-red-600">সন্ধ্যা ৮ঃ৩০</td>
+              <td className="text-red-600">সন্ধ্যা ৮:৩০</td>
             </tr>
           </tbody>
         </table>
