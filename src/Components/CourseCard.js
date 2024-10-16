@@ -10,9 +10,7 @@ const CourseCard = ({ course }) => {
       <div className="card-body">
         <h2 className="card-title">
           {course.name}
-          <badge className={`badge ${course?.badge_cls}`}>
-            {course?.badge}
-          </badge>
+          <span className={`badge ${course?.badge_cls}`}>{course?.badge}</span>
         </h2>
         <p className="">কোর্সের মেয়াদ: {course.duration}</p>
         <p className="">কোর্স টিচার: {course.teacher}</p>

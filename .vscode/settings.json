@@ -1,0 +1,6 @@
+{
+  "python.analysis.autoImportCompletions": true,
+  "javascript.preferences.autoImportSpecifierExcludeRegexes": [""],
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "editor.foldingImportsByDefault": true
+}
